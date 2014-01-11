@@ -1,0 +1,50 @@
+/*********************
+ Site Name:  Heimdallr
+ Company:    NorthernFolks
+ Author:     Aaron Sananes & Daniel Sandvik
+ Website:    http://www.northernfolks.com
+
+
+TYPOGRAPHY
+*********************/
+@import url(http://fonts.googleapis.com/css?family=Exo+2:400,100,200,300,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic);
+
+$sans-serif:        "Exo 2", Helvetica, Arial, sans-serif;
+$serif:             Cambria, Times New Roman, Times, serif;
+
+/*
+ * MONO SOCIAL ICONS FONT
+ * http://drinchev.github.io/monosocialiconsfont/
+*/
+
+@font-face {
+    font-family: 'Mono Social Icons Font';
+    src: url('../fonts/monosocial/MonoSocialIconsFont-1.10.eot');
+    src: url('../fonts/monosocial/MonoSocialIconsFont-1.10.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/monosocial/MonoSocialIconsFont-1.10.woff') format('woff'),
+    url('../fonts/monosocial/MonoSocialIconsFont-1.10.ttf') format('truetype'),
+    url('../fonts/monosocial/MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont') format('svg');
+    src: url('../fonts/monosocial/MonoSocialIconsFont-1.10.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.symbol, a.symbol:before {
+    font-family: 'Mono Social Icons Font';
+    -webkit-text-rendering: optimizeLegibility;
+    -moz-text-rendering: optimizeLegibility;
+    -ms-text-rendering: optimizeLegibility;
+    -o-text-rendering: optimizeLegibility;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+a.symbol:before {
+    content: attr(title);
+    margin-right: 0.3em;
+    font-size: 130%;
+}

@@ -1,0 +1,690 @@
+/******************************************************************
+Site Name:  Heimdallr
+Company:    NorthernFolks
+Author:     Aaron Sananes & Daniel Sandvik
+Website:    http://www.northernfolks.com
+
+Stylesheet: Base Mobile Stylesheet
+
+Be light and don't over style since everything here will be
+loaded by mobile devices. You want to keep it as minimal as
+possible. This is called at the top of the main stylsheet
+and will be used across all viewports.
+
+******************************************************************/
+
+/*********************
+GENERAL STYLES
+*********************/
+
+body {
+	font-family: $serif;
+	font-size: 100%;
+	line-height: 2;
+	color: #565656;
+}
+
+img {
+    height:auto;
+    display:block;
+    width:100%;
+    height:100%;
+}
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+
+.wrap {
+	width: 96%;
+	margin: 0 auto;
+    padding:0 20px;
+}
+
+/*********************
+LINK STYLES
+*********************/
+
+a {
+	color: $link-hover;
+    @include transition(color .2s ease-out, background 2s ease-in);
+	/* on hover */
+	&:hover, &:focus {
+		color: $link-color;
+	}
+
+	/* on click */
+	&:active {
+
+	}
+
+	/* mobile tap color */
+	&:link {
+		/*
+		this highlights links on iPhones/iPads.
+		so it basically works like the :hover selector
+		for mobile devices.
+		*/
+		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+	}
+
+}
+.center {
+    float:none;
+}
+.align-center {
+    float:none !important;
+    margin:0 auto !important;
+}
+
+.button {
+    background: $lightgrey;
+    border-radius: 3px;
+    font-size: 14px;
+    margin:0;
+
+}
+.read-more {
+    padding-top:20px;
+    
+    a {
+        font-family: $sans-serif !important;
+        text-transform: normal;
+        color: $white !important;
+    }
+}
+#loading {
+    width:100%;
+    background:#d4dae0;
+    border-radius: 3px;
+    text-align:center;
+    padding:8px 0;
+    display:inline-block;
+    span {
+        @include retina-image('../images/loading-icon', png, 100%, 100%);
+        @include size(24px, 24px); 
+        vertical-align:middle;
+        text-indent:-999em;     
+        display:inline-block;
+        opacity:1;
+    }
+}
+.endless {
+    margin-bottom:40px;
+}
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+	font-family: $sans-serif;
+	text-rendering: optimizelegibility;
+	font-weight: 800;
+    letter-spacing:-1px;
+    text-transform:normal;
+	/*
+	if you're going to use webfonts, be sure to check your weights
+	http://css-tricks.com/watch-your-font-weight/
+	*/
+    
+	/* removing text decoration from all headline links */
+	a {
+    	text-decoration: none;
+	}
+}
+
+h1, .h1 {
+	font-size: 3.5em;
+	line-height: 1.333em;
+}
+
+h2, .h2 {
+	font-size: 2.75em;
+	line-height: 1.4em;
+	margin-bottom: 0.375em;
+}
+
+h3, .h3 {
+	font-size: 2em;
+}
+
+h4, .h4 {
+	font-size: 1.5em;
+	font-weight: 700;
+}
+
+h5, .h5 {
+	font-size: 1.1em;
+	line-height: 2.09em;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+/*********************
+HEADER STYLES
+*********************/
+.home-template, .archive-template {
+    #main {
+        padding-bottom:0px;
+    }
+}
+.header {
+    position:relative;
+    clear:both;
+    line-height: $header-height;
+    height: $header-height;
+    z-index:100;
+    background: $primary url(../images/header-image.jpg) no-repeat top center;
+    background-size:cover;
+    #logo {
+        line-height:normal !important;
+        min-height:30px;
+        max-height:40px;
+        margin: 0 auto;
+        display:inline-block;
+        line-height: $header-height;
+        vertical-align:middle;
+
+        img {
+            width:auto !important;
+            height: auto !important;
+            max-width: auto !important;
+        }
+    }
+    #inner-header {
+        position:relative;
+        z-index:100;
+        text-align:center;
+        float:none !important;
+        margin:0 auto;
+    }
+    #site-title {
+        display:inline-block;
+
+        a:hover {
+            color: rgba(255,255,255,0.8) !important;
+        }
+    }
+    .menu-toggle {
+        height:200px;
+        float:left;
+        opacity:0.8;
+
+        &:hover {
+            opacity:1;
+        }
+    }
+    .menu-icon, #mail a {
+        text-indent:-999em;
+        @include retina-image('../images/menu-icon', 'png', 100%, 100%);
+        @include size (32px, 28px);
+        display:inline-block;
+        vertical-align:middle;
+        line-height:200px;
+
+    }
+
+    #mail {
+        display:inline-block;
+        float:right;
+        height:200px;
+        a {
+            @include retina-image('../images/mail-icon', 'png', 100%, 100%);
+            @include size (30px, 30px);
+            opacity:0.8;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+#logo {
+    img {
+        //max-width: 100%;
+    }
+}
+
+#site-title {
+    font-size: 1.8em;
+    text-align:center;
+    line-height: $header-height;
+    position:relative;
+    z-index:999;
+    
+    a {
+        color: $white;
+        text-transform:uppercase;
+    }
+}
+
+/*********************
+NAVIGATION STYLES
+*********************/
+.overlay {
+    position:absolute;
+    top:$menu-height;
+    bottom:0;
+    display:none;
+    left:0;
+    z-index:888;
+    right:0;
+    width:100%;
+    height:100%;
+}
+
+.close, .menu-toggle, .back-to-top a, .mail-icon {
+    @include transition(opacity .3s ease-in-out);
+}
+/* The {{nav}} helper outputs a site-navigation div */
+.nav {
+    position:relative;
+    background: #3f484b;
+    line-height:$menu-height;
+    height:0;
+    overflow:hidden;
+    @include transition(height .2s ease-in-out);
+
+
+    &.show {
+    display:block;
+    max-height:$menu-height;
+    height:$menu-height;
+
+    }
+
+    #inner-nav {
+        margin:0 auto;
+        float:none;
+        line-height:$menu-height;
+        height:$menu-height;
+    }
+    .menu {
+        float:left;
+    }
+    .social-icons {
+        float:right;
+        margin-right:30px;
+
+        li {
+            margin-right:5px;
+        }
+        a {
+            color:#7d8f95;
+        }
+        .symbol {
+            font-size:26px;
+        }
+    }
+    .close {
+        @include retina-image('../images/close', 'png', 100%, 100%);
+        @include size (16px, 16px);
+        text-indent:-999em;
+        display:inline-block;
+        vertical-align:middle;
+        position:absolute;
+        right:20px;
+        top:17px;
+        opacity:0.7;
+
+        &:hover {
+            opacity:1;
+        }
+    }
+    ul {
+        margin:0;
+        line-height:$menu-height;
+        height:$menu-height;
+        li {
+            display:inline-block;
+            margin-right:15px;
+            line-height:$menu-height;
+            height:$menu-height;
+
+            a {
+                color: darken($white, 30%);
+                text-decoration:none;
+                line-height:$menu-height;
+                height:$menu-height;
+                display:inline-block;
+
+                &:hover, &.active {
+                    color: $white;
+                }
+                &.active {
+                    border-bottom: 2px solid $white;
+                }
+            }
+        }
+    }
+}
+#site-navigation {
+	border: 1px solid #ccc;
+	border-bottom: 0;
+
+    ul {
+      margin : 0;
+    }
+
+	li {
+
+		a {
+			display: block;
+			text-decoration: none;
+			padding: 10px 10px;
+			background-color: #eee;
+			border-bottom: 1px solid #ccc;
+
+			/*
+			remember this is for mobile ONLY, so there's no need
+			to even declare hover styles here, you can do it in
+			the style.scss file where it's relevant. We want to
+			keep this file as small as possible!
+			*/
+			&:hover, &:focus {
+
+			}
+		}
+
+		&:first-child {}
+
+		&:last-child {}
+
+	} /* end .menu li */
+
+} /* end .nav */
+
+/*********************
+AUTHOR BIO
+*********************/
+.author {
+    padding:40px 0;
+    margin:0 auto !important;
+    float:none !important;
+}
+.avatar {
+    overflow:hidden;
+    border-radius:300px;
+}
+.author-img {
+    border-radius:300px;
+}
+.author-bio {
+    padding-left:10px;
+    text-align:left;
+    h4 {
+        text-align:left !important;
+        margin-top:0px;
+        margin-bottom:0px;
+    }
+    p {
+        margin-top:0px;
+    }
+    small {
+        font-size: 14px;
+    }
+}
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+
+.post-template .entry-content {
+    text-align:left;
+}
+.entry-content {
+
+    h1, h2, h3, h4, h5 {
+        text-align:center;
+    }
+    h2 {
+        //font-weight:700 !important;
+    }
+    a {
+        color: $primary;
+        text-decoration:none;
+
+        &:hover {
+            color: darken($primary, 20%);
+        }
+    }    
+}
+
+
+
+hr {
+    border:1px dotted lighten(#000, 80%);
+    border-bottom:0px;
+}
+#content {
+	margin-top: 2.2em;
+    text-align:center;
+}
+#inner-content {
+    text-align:center;
+    float:none !important;
+    margin:0 auto !important;
+}
+#main {
+
+    padding-bottom:40px;
+}
+.post {
+    margin-bottom: 40px;
+
+    &:last-child, &.last, &:last {
+        hr {
+            display:none;
+        }
+    }
+}
+.hentry {
+
+    header {}
+
+    footer {}
+
+} /* end .hentry */
+
+.tag-slug {}        /* style by tag (i.e. tag-news) */
+
+/* post meta */
+.byline {
+    color: #999;
+    time {}
+}
+
+/* Article entry content */
+.entry-content {
+
+    p { margin: 0 0 1.618em 0; }
+
+    ul, ol, table, dl {
+        list-style: disc;
+        vertical-align:baseline;
+    }
+
+    ul, ol {
+        margin:0 0 1.618em 1.618em;
+        li {}
+    }
+
+    ul {
+        li {}
+    }
+
+    ol {
+        li {}
+    }
+
+    blockquote {
+        border-left: 8px solid $primary;
+        padding-left:20px;
+        margin-left:0;
+        font-style:italic;
+        font-weight:bold;
+        &:before {}
+    }
+
+    dl {}
+    dt {}
+    dd {
+        margin-left: 0;
+        font-size: 0.9em;
+        color: #787878;
+        margin-bottom: 1.5em;
+    }
+
+    img {
+        margin: 0 0 1.5em 0;
+        max-width: 100%;
+        height: auto;
+    }
+
+    video, object {
+        max-width: 100%;
+        height: auto;
+    }
+
+    pre {
+        background: #eee;
+        border: 1px solid #cecece;
+        padding: 10px;
+    }
+
+} /* end .entry-content */
+
+.img-caption {
+    max-width: 100%;
+    background: #eee;
+    padding: 5px;
+
+    /* images inside img-caption */
+    img {
+        max-width: 100%;
+        margin-bottom: 0;
+        width: 100%;
+    }
+
+    p.img-caption-text {
+        font-size: 0.85em;
+        margin: 4px 0 7px;
+        text-align: center;
+    }
+
+} /* end .img-caption */
+
+/* Add a comma after tags, unless it is the last one */
+.tag-label:after {
+    content: ",";
+}
+
+.tag-label:last-child:after {
+    content: "";
+}
+
+/******************************************************************
+PAGINATION (Thanks to the Ghost team for this)
+******************************************************************/
+
+/* The main wrapper for our pagination links */
+.pagination {
+  position: relative;
+  width: 80%;
+  margin: 2rem auto 1.8rem auto;
+  font-size: 1.3rem;
+  text-align: center;
+
+  a {}
+}
+
+/* Push the previous/next links out to the left/right */
+.older-posts,
+.newer-posts {
+  display: inline-block;
+  padding: 10px 10px;
+  font-size:14px;
+  text-decoration: none;
+  text-align:center;
+
+  &:hover {
+  }
+}
+
+.older-posts {
+  right: 0;
+}
+
+.page-number {
+  display: inline-block;
+  padding: 2px 0;
+}
+
+.newer-posts {
+  left: 0;
+}
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+
+.sidebar {}
+
+.widgettitle {}
+
+.widget {
+
+    img {
+        max-width: 100%;
+    }
+
+    ul {
+
+        li {
+            &:first-child {}
+            &:last-child {}
+
+            a {
+                font-size: 1.2em;
+                text-decoration: none;
+            }
+        }
+
+    }
+
+} /* end .widget */
+
+/*********************
+FOOTER STYLES
+*********************/
+
+.footer {
+    height:200px;
+    border-top:1px solid #ddd;
+    padding-top:20px;
+
+    clear:both;
+}
+.copyright {
+    display:inline-block;
+    float:left;
+}
+.back-to-top {
+    display:inline-block;
+    float:right;
+
+    a {
+        @include retina-image('../images/arrow-top', 'png', 100%, 100%);
+        @include size (24px, 24px);
+        background-size:cover;
+        text-decoration:none;
+        display:block;
+        text-indent: -999em;
+        float:right; 
+        opacity:0.5;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+    
+}

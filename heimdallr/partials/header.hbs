@@ -1,0 +1,46 @@
+<a href="#" class="overlay"></a>
+<nav class="nav" role="navigation">
+    <div id="inner-nav" class="sevencol wrap clearfix">
+        <ul class="menu">
+            <li><a href="/" class="active">Index</a></li>
+            <li><a href="/rss">Rss</a></li>
+        </ul>
+
+        <ul class="social-icons">
+            <li><a href="http://www.facebook.com/NorthernFolks"><span class="symbol">roundedfacebook</span></a></li>
+            <li><a href="http://www.twitter.com/NorthernFolks"><span class="symbol">roundedtwitter</span></a></li>
+            <li><a href="#"><span class="symbol">roundedinstagram</span></a></li>
+            <li><a href="http://www.dribbble.com/NorthernFolks"><span class="symbol">roundeddribble</span></a></li>
+        </ul>
+        <a href="#" class="close onHoverPulse">Close</a>
+    </div>
+</nav>
+
+<header class="header" role="banner"  {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
+    <div id="inner-header" class="sevencol wrap clearfix">
+
+        <!-- Menu -->
+        <div class="menu-toggle">
+            <a href="#" class="menu-icon onHoverPulse">Menu</a>
+        </div>
+
+        <!-- Mail -->
+        <div id="mail">
+            <a href="{{@author.email}}" class="mail-icon onHoverSpin">Mail</a>
+        </div>
+
+        {{#if @blog.logo}}
+            <!-- Logo -->
+            <div id="logo" {{#if @body.index}}class="animate" data-anim-type="bounceIn" data-anim-delay="200"{{/if}}>
+                <a id="logo" href="/"><img src="{{@blog.logo}}" alt="Logo"></a>
+            </div>
+        {{else}}
+            <div id="site-title" class="animate h1" data-anim-type="bounceIn" data-anim-delay="200">
+                <a href="/" rel="nofollow">{{@blog.title}}</a>
+            </div>        
+        {{/if}}
+
+
+    </div> <!-- end #inner-header -->
+
+</header> <!-- end header -->

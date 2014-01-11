@@ -367,6 +367,7 @@ jQuery(document).ready(function($) {
         menuIcon.on('click', function(e) {
             e.preventDefault();
             body.toggleClass('show');
+            body.removeClass('closing');
             if(bodyClick == true) {
                 overlay.show();
             }
@@ -376,6 +377,7 @@ jQuery(document).ready(function($) {
         close.on('click', function(e) {
             e.preventDefault();
             body.removeClass('show');
+            body.addClass('closing');
         });
 
         // Body click hide menu

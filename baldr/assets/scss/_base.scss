@@ -22,7 +22,7 @@ body, html {
 body {
 	font-family: $serif;
 	font-size: 100%;
-	line-height: 2;
+	line-height: 2em;
 	color: #3f484b;
 }
 
@@ -321,8 +321,10 @@ NAVIGATION STYLES
         position:relative;
     }
 }
-#container, #nav {
+.show, .closing {
+    #container, #nav {
         @include transition(300ms);
+    }
 }
 #container {
     left: 0;
@@ -398,6 +400,7 @@ NAVIGATION STYLES
         font-size: 30px;
         color: $white;
         opacity:1;
+        padding-top:10px;
         cursor: pointer;
     }
 

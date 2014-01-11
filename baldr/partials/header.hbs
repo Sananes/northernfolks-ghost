@@ -16,7 +16,7 @@
     </div>
 </nav>
 
-<header class="header" role="banner"  {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
+<header class="header animate fadeInUp" role="banner"  {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
     <div id="inner-header" class="elevencol wrap clearfix">
 
         <!-- Menu -->
@@ -25,18 +25,18 @@
         </div>
 
         <!-- Mail -->
-        <div id="mail">
-             <a href="{{@author.email}}" class="animate"><i class="icon-email-plane  onHoverSpin"></i></a>
+        <div id="mail" class="onHoverBounce">
+             <a href="{{@author.email}}"><i class="icon-email-plane"></i></a>
         </div>
 
         {{#if @blog.logo}}
             <!-- Logo -->
-            <div id="logo" {{#if @body.index}}class="animate" data-anim-type="bounceIn" data-anim-delay="200"{{/if}}>
+            <div id="logo">
                 <a id="logo" href="/"><img src="{{@blog.logo}}" alt="Logo"></a>
 
             </div>
         {{else}}
-            <div id="site-title" class="animate h1" data-anim-type="bounceIn" data-anim-delay="200">
+            <div id="site-title" class="h1">
                 <h1><a href="/" rel="nofollow">{{@blog.title}}</a></h1>
                 <p>{{@blog.description}}</p>
             </div>        

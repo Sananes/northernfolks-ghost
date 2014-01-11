@@ -716,7 +716,7 @@ body, html {
 body {
   font-family: Cambria, Times New Roman, Times, serif;
   font-size: 100%;
-  line-height: 2;
+  line-height: 2em;
   color: #3f484b; }
 
 img {
@@ -962,7 +962,7 @@ NAVIGATION STYLES
   margin-left: 300px;
   position: relative; }
 
-#container, #nav {
+.show #container, .show #nav, .closing #container, .closing #nav {
   -webkit-transition: 300ms;
   -ms-transition: 300ms;
   -o-transition: 300ms;
@@ -1029,6 +1029,7 @@ NAVIGATION STYLES
     font-size: 30px;
     color: white;
     opacity: 1;
+    padding-top: 10px;
     cursor: pointer; }
 
 .nav {

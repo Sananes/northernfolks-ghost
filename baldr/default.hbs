@@ -83,34 +83,16 @@
      <div id="nav">
         <div class="inner-nav">
             <a href="#" class="close"><i class="icon-close"></i></a>        
-            <div data-icon="b" class="nav-toggle icon"></div>
+            <div data-icon="b" class="nav-toggle icon onHoverPulse"></div>
             <div class="articles">
                 <h3>Articles</h3>
                 <ul>
-{{#foreach posts}}
-        <li class="post-link">
-            <a href="/{{slug}}">{{title}} <span class="date">{{date published_at format="MMMM DD, YYYY"}}</span></a>
-            <hr class="divider">
-        </li>
-{{/foreach}}
-                    <li class="post-link">
-                        <a href="#">
-                            Title of first post <span class="date">1st January, 2014</span>
-                        </a>
-                        <hr class="divider">
-                    </li>
-                    <li class="post-link">
-                        <a href="#">
-                            Title of first post <span class="date">1st January, 2014</span>
-                        </a>
-                        <hr class="divider">
-                    </li>
-                    <li class="post-link">
-                        <a href="#">
-                            Title of first post <span class="date">1st January, 2014</span>
-                        </a>
-                        <hr class="divider">
-                    </li>
+                    {{#foreach posts}}
+                            <li class="post-link">
+                                <a href="/{{slug}}">{{title}} <span class="date">{{date published_at format="MMMM DD, YYYY"}}</span></a>
+                                <hr class="divider">
+                            </li>
+                    {{/foreach}}
                 </ul>
             </div>
         </div>
@@ -118,7 +100,7 @@
         {{! Output the content of the header partial template }}
         {{> header}}
 
-        <section id="content">
+        <section id="content" class="animate" data-anim-type="fadeInUp" data-anim-delay="300">
             {{! The 'inner' divs provide a nice wrapper for content to help with fluidity and responsiveness }}
             <div id="inner-content" class="elevencol wrap clearfix">
 

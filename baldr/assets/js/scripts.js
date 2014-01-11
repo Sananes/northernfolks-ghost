@@ -271,7 +271,7 @@
                     }
                 } else {
                     $(".pagination").css("display", "block");
-                    $(".pagination").html("<span class=\"button no-more\" style=\"opacity:1\">''-_-</span>");
+                    $(".pagination").html("<span class=\"button no-more\" style=\"opacity:1\">No more posts</span>");
                     $(".no-more").removeClass("animate wobble");
                     $(".no-more").addClass("animate wobble");
                 }
@@ -358,7 +358,7 @@ jQuery(document).ready(function($) {
         $('#logo').addClass('animate bounceIn')
     }
     function navToggle() {
-        var menuIcon = $('.nav-toggle'), bodyClick = false
+        var menuIcon = $('.nav-toggle'), bodyClick = true
             navHeader = $('#nav'), body = $('body'),
             close = navHeader.find('.close'),
             overlay = $('.overlay').hide();
@@ -384,7 +384,8 @@ jQuery(document).ready(function($) {
         if(bodyClick == true) {
             overlay.on('click', function(e) {
                 e.preventDefault();
-                navHeader.removeClass('show');
+                body.removeClass('show');
+                body.addClass('closing');
                 overlay.hide();
             })
         }

@@ -945,7 +945,7 @@ NAVIGATION STYLES
 /* The {{nav}} helper outputs a site-navigation div */
 .show #nav {
   width: 300px; }
-  .show #nav .articles, .show #nav .close {
+  .show #nav .articles, .show #nav .close, .show #nav .author, .show #nav .social-icons {
     display: block;
     opacity: 1;
     visibility: visible;
@@ -984,37 +984,55 @@ NAVIGATION STYLES
   height: 100%;
   text-align: center;
   overflow: hidden; }
-  #nav .articles, #nav .close {
+  #nav .articles, #nav .close, #nav .author, #nav .social-icons {
     opacity: 0;
     visibility: hidden; }
   #nav a {
     text-decoration: none;
     color: #fff; }
-  #nav .articles {
+  #nav .articles, #nav .author {
     text-align: center;
     color: #fff;
     font-family: "Exo 2", Helvetica, Arial, sans-serif; }
-    #nav .articles h3 {
+    #nav .articles h3, #nav .author h3 {
       color: #fff;
       font-size: 16px;
       text-transform: uppercase;
       padding: 40px 0;
       margin: 0; }
-    #nav .articles ul {
+    #nav .articles ul, #nav .author ul {
       margin: 0 auto;
       padding: 0; }
-    #nav .articles li {
+    #nav .articles li, #nav .author li {
       font-weight: bold;
       margin-bottom: 20px;
       padding: 0 30px;
       font-size: 16px; }
-    #nav .articles .date {
+    #nav .articles .date, #nav .author .date {
       font-size: 14px;
       font-weight: normal;
       display: block; }
-    #nav .articles .divider {
+    #nav .articles .divider, #nav .author .divider {
       width: 50%;
       margin-top: 20px; }
+  #nav .author {
+    padding: 30px; }
+    #nav .author img {
+      margin-bottom: 20px; }
+    #nav .author .author-bio {
+      text-align: center; }
+  #nav .social-icons {
+    position: absolute;
+    width: 200px;
+    bottom: 20px;
+    margin-left: -100px;
+    left: 50%; }
+    #nav .social-icons li {
+      display: inline-block;
+      font-size: 35px;
+      margin-right: 5px; }
+      #nav .social-icons li:last-child {
+        margin-right: 0px; }
   #nav .close {
     position: absolute;
     right: 20px !important;
@@ -1124,6 +1142,7 @@ NAVIGATION STYLES
 AUTHOR BIO
 *********************/
 .author {
+  display: none;
   padding: 40px 0;
   margin: 0 auto !important;
   float: none !important; }
@@ -1152,6 +1171,11 @@ POSTS & CONTENT STYLES
 *********************/
 .post-template .entry-content {
   text-align: left; }
+
+.post-template #nav .articles {
+  display: none; }
+.post-template .author {
+  display: block !important; }
 
 .featured {
   border-radius: 3px;

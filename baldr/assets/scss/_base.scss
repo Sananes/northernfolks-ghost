@@ -304,7 +304,7 @@ NAVIGATION STYLES
     #nav {
         width:300px;
      
-       .articles, .close {
+       .articles, .close, .author, .social-icons {
             display:block;
             opacity:1;
             visibility:visible;
@@ -342,7 +342,7 @@ NAVIGATION STYLES
     text-align:center;
     overflow:hidden;
 
-    .articles, .close {
+    .articles, .close, .author, .social-icons {
         opacity:0;
         visibility:hidden;
     } 
@@ -350,7 +350,7 @@ NAVIGATION STYLES
         text-decoration:none;
         color: #fff;
     }
-    .articles {
+    .articles, .author {
         text-align:center;
         color: #fff;
         font-family: $sans-serif;
@@ -382,6 +382,33 @@ NAVIGATION STYLES
             margin-top: 20px;
         }
 
+    }
+    .author {
+        padding: 30px;
+
+        img {
+            margin-bottom:20px;
+        }
+        .author-bio {
+            text-align:center;
+        }
+    }
+    .social-icons {
+        position:absolute;
+        width: 200px;
+        bottom:20px;
+        margin-left:-100px;
+        left:50%;
+
+        li {
+            display:inline-block;
+            font-size:35px;
+            margin-right:5px;
+
+            &:last-child {
+                margin-right:0px;
+            }
+        }
     }
     .close {
         position:absolute;
@@ -526,6 +553,7 @@ NAVIGATION STYLES
 AUTHOR BIO
 *********************/
 .author {
+    display:none;
     padding:40px 0;
     margin:0 auto !important;
     float:none !important;
@@ -559,6 +587,17 @@ POSTS & CONTENT STYLES
 
 .post-template .entry-content {
     text-align:left;
+}
+
+.post-template {
+    #nav {
+        .articles {
+            display:none;
+        }
+    }
+    .author {
+        display:block !important;
+    }
 }
 .featured {
     border-radius:3px;

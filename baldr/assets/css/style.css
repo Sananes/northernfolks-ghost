@@ -566,6 +566,9 @@ a.symbol:before {
 .icon-email-plane:before {
   content: "f"; }
 
+.icon-close:before {
+  content: "g"; }
+
 /******************************************************************
 Site Name:  Heimdallr
 Company:    NorthernFolks
@@ -797,6 +800,9 @@ a {
 .endless {
   margin-bottom: 40px; }
 
+#container {
+  margin-left: 0px; }
+
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
@@ -884,6 +890,7 @@ HEADER STYLES
   .header .menu-toggle {
     height: 200px;
     float: left;
+    display: block;
     opacity: 0.8; }
     .header .menu-toggle:hover {
       opacity: 1; }
@@ -936,15 +943,92 @@ NAVIGATION STYLES
   transition: opacity 0.3s ease-in-out; }
 
 /* The {{nav}} helper outputs a site-navigation div */
+.show #nav {
+  width: 300px; }
+  .show #nav .articles, .show #nav .close {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: opacity 300ms ease-in-out 200ms;
+    -ms-transition: opacity 300ms ease-in-out 200ms;
+    -o-transition: opacity 300ms ease-in-out 200ms;
+    -transition: opacity 300ms ease-in-out 200ms;
+    transition: opacity 300ms ease-in-out 200ms; }
+.show .nav-toggle {
+  opacity: 0 !important;
+  display: none; }
+.show #container {
+  margin: 0;
+  margin-left: 300px;
+  position: relative; }
+
+#container, #nav {
+  -webkit-transition: 300ms;
+  -ms-transition: 300ms;
+  -o-transition: 300ms;
+  -transition: 300ms;
+  transition: 300ms; }
+
+#container {
+  left: 0; }
+
 #nav {
-  text-align: center;
-  background: url(../images/header-image.jpg) no-repeat !important;
+  display: none;
+  position: absolute;
+  left: 0;
+  width: 60px;
+  top: 0;
+  background: #8aba56 url(../images/header-image.jpg) no-repeat;
   background-size: cover;
-  height: 60px;
-  width: 100%; }
+  position: fixed;
+  height: 100%;
+  text-align: center;
+  overflow: hidden; }
+  #nav .articles, #nav .close {
+    opacity: 0;
+    visibility: hidden; }
+  #nav a {
+    text-decoration: none;
+    color: #fff; }
+  #nav .articles {
+    text-align: center;
+    color: #fff;
+    font-family: "Exo 2", Helvetica, Arial, sans-serif; }
+    #nav .articles h3 {
+      color: #fff;
+      font-size: 16px;
+      text-transform: uppercase;
+      padding: 40px 0;
+      margin: 0; }
+    #nav .articles ul {
+      margin: 0 auto;
+      padding: 0; }
+    #nav .articles li {
+      font-weight: bold;
+      margin-bottom: 20px;
+      padding: 0 30px;
+      font-size: 16px; }
+    #nav .articles .date {
+      font-size: 14px;
+      font-weight: normal;
+      display: block; }
+    #nav .articles .divider {
+      width: 50%;
+      margin-top: 20px; }
+  #nav .close {
+    position: absolute;
+    right: 20px !important;
+    top: 15px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 22px; }
+  #nav .inner-nav {
+    height: 100%;
+    display: block; }
   #nav .nav-toggle {
     font-size: 30px;
     color: white;
+    opacity: 1;
     cursor: pointer; }
 
 .nav {
@@ -1303,6 +1387,15 @@ tweeners.
   /*********************
   NAVIGATION STYLES
   *********************/
+  #nav {
+    display: block; }
+
+  #container {
+    margin-left: 60px; }
+
+  .menu-toggle {
+    display: none !important; }
+
   /* .menu is clearfixed inside mixins.scss */
   ul {
     /* end .menu ul li */ }
@@ -1334,22 +1427,6 @@ tweeners.
       clear: both; }
 
   /* end .entry-content */
-  #nav {
-    position: absolute;
-    left: 0;
-    width: 60px;
-    bottom: 0;
-    background: #8aba56;
-    position: fixed;
-    height: 100%;
-    overflow: hidden; }
-    #nav .inner-nav {
-      height: 100%;
-      display: block; }
-
-  #container {
-    margin-left: 60px; }
-
   /*********************
   FOOTER STYLES
   *********************/

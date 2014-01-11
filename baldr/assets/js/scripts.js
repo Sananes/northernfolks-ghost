@@ -358,15 +358,15 @@ jQuery(document).ready(function($) {
         $('#logo').addClass('animate bounceIn')
     }
     function navToggle() {
-        var menuIcon = $('.menu-toggle a'), bodyClick = false
-            navHeader = $('.nav'),
+        var menuIcon = $('.nav-toggle'), bodyClick = false
+            navHeader = $('#nav'), body = $('body'),
             close = navHeader.find('.close'),
             overlay = $('.overlay').hide();
 
         // Menu icon toggle
         menuIcon.on('click', function(e) {
             e.preventDefault();
-            navHeader.toggleClass('show');
+            body.toggleClass('show');
             if(bodyClick == true) {
                 overlay.show();
             }
@@ -375,7 +375,7 @@ jQuery(document).ready(function($) {
         // Close icon toggle
         close.on('click', function(e) {
             e.preventDefault();
-            navHeader.removeClass('show');
+            body.removeClass('show');
         });
 
         // Body click hide menu

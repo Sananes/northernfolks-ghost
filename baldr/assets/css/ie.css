@@ -107,6 +107,9 @@ a.symbol:before {
 .icon-email-plane:before {
   content: "f"; }
 
+.icon-close:before {
+  content: "g"; }
+
 /* import mixins */
 /******************************************************************
 Site Name:  Heimdallr
@@ -330,6 +333,15 @@ upon your base.scss styles.
 /*********************
 NAVIGATION STYLES
 *********************/
+#nav {
+  display: block; }
+
+#container {
+  margin-left: 60px; }
+
+.menu-toggle {
+  display: none !important; }
+
 /* .menu is clearfixed inside mixins.scss */
 ul {
   /* end .menu ul li */ }
@@ -361,22 +373,6 @@ POSTS & CONTENT STYLES
     clear: both; }
 
 /* end .entry-content */
-#nav {
-  position: absolute;
-  left: 0;
-  width: 60px;
-  bottom: 0;
-  background: #8aba56;
-  position: fixed;
-  height: 100%;
-  overflow: hidden; }
-  #nav .inner-nav {
-    height: 100%;
-    display: block; }
-
-#container {
-  margin-left: 60px; }
-
 /*********************
 FOOTER STYLES
 *********************/

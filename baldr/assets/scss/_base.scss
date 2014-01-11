@@ -115,6 +115,9 @@ a {
 .endless {
     margin-bottom:40px;
 }
+#container {
+    margin-left:0px;
+}
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
@@ -224,6 +227,7 @@ HEADER STYLES
     .menu-toggle {
         height:200px;
         float:left;
+        display:block;
         opacity:0.8;
 
         &:hover {
@@ -295,18 +299,108 @@ NAVIGATION STYLES
 }
 
 /* The {{nav}} helper outputs a site-navigation div */
+
+.show {
+    #nav {
+        width:300px;
+     
+       .articles, .close {
+            display:block;
+            opacity:1;
+            visibility:visible;
+            @include transition(opacity 300ms ease-in-out 200ms);
+        } 
+    }
+    .nav-toggle {
+        opacity:0 !important;
+        display:none;
+    }
+    #container {
+        margin:0;
+        margin-left:300px;
+        position:relative;
+    }
+}
+#container, #nav {
+        @include transition(300ms);
+}
+#container {
+    left: 0;
+}
 #nav {
+    display:none;
+    position:absolute;
+    left:0;
+    width: 60px;
+    top:0;
+    background: $primary url(../images/header-image.jpg) no-repeat;
+    background-size:cover;
+    position:fixed;
+    height:100%;
     text-align:center;
-    background: url(../images/header-image.jpg) no-repeat !important;
-    background-size: cover;
-    height:60px;
-    width:100%;
-    
+    overflow:hidden;
+
+    .articles, .close {
+        opacity:0;
+        visibility:hidden;
+    } 
+    a {
+        text-decoration:none;
+        color: #fff;
+    }
+    .articles {
+        text-align:center;
+        color: #fff;
+        font-family: $sans-serif;
+
+        h3 {
+            color:#fff;
+            font-size: 16px;
+            text-transform: uppercase;
+            padding:40px 0;
+            margin:0;
+        }
+        ul {
+            margin: 0 auto;
+            padding:0;
+        }
+        li {
+            font-weight:bold;
+            margin-bottom:20px;
+            padding: 0 30px;
+            font-size:16px;
+        }
+        .date {
+            font-size: 14px;
+            font-weight:normal;
+            display:block;
+        }
+        .divider {
+            width: 50%;
+            margin-top: 20px;
+        }
+
+    }
+    .close {
+        position:absolute;
+        right: 20px !important;
+        top:15px;
+        color: #fff;
+        text-decoration:none;
+        font-size: 22px;
+    }
+    .inner-nav {
+        height:100%;
+        display:block;
+    }
+
     .nav-toggle {
         font-size: 30px;
         color: $white;
+        opacity:1;
         cursor: pointer;
     }
+
 }
 .nav {
     position:relative;

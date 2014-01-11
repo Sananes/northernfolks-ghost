@@ -77,12 +77,42 @@
 </head>
 
 
-<body class="{{body_class}} animate fadeIn">
+<body class="{{body_class}}">
 
     <div id="container">
      <div id="nav">
         <div class="inner-nav">
+            <a href="#" class="close"><i class="icon-close"></i></a>        
             <div data-icon="b" class="nav-toggle icon"></div>
+            <div class="articles">
+                <h3>Articles</h3>
+                <ul>
+{{#foreach posts}}
+        <li class="post-link">
+            <a href="/{{slug}}">{{title}} <span class="date">{{date published_at format="MMMM DD, YYYY"}}</span></a>
+            <hr class="divider">
+        </li>
+{{/foreach}}
+                    <li class="post-link">
+                        <a href="#">
+                            Title of first post <span class="date">1st January, 2014</span>
+                        </a>
+                        <hr class="divider">
+                    </li>
+                    <li class="post-link">
+                        <a href="#">
+                            Title of first post <span class="date">1st January, 2014</span>
+                        </a>
+                        <hr class="divider">
+                    </li>
+                    <li class="post-link">
+                        <a href="#">
+                            Title of first post <span class="date">1st January, 2014</span>
+                        </a>
+                        <hr class="divider">
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>       
         {{! Output the content of the header partial template }}

@@ -49,9 +49,9 @@
                         $(featured).html(img[0]);
                     } else {
                         if (img.length > 0) {
-                            $(featured).html(img[0]);
+                            $(featured).append(img[0]);
                         } else if (video.length > 0) {
-                            $(featured).html(video[0].outerHTML);
+                            $(featured).append(video[0].outerHTML);
                         }
                     }
                     $(".post").fitVids();
@@ -358,19 +358,31 @@ jQuery(document).ready(function($) {
         $('#logo').addClass('animate bounceIn')
     }
     function navToggle() {
-        var menuIcon = $('.nav-toggle'), bodyClick = true
+        var menuIcon = $('.nav-toggle'), bodyClick = false
             navHeader = $('#nav'), body = $('body'),
             close = navHeader.find('.close'),
             overlay = $('.overlay').hide();
 
+
+        // Body click hide menu
+
+        if(bodyClick == true) {
+            overlay.show();
+            overlay.on('click', function(e) {
+                e.preventDefault();
+                body.removeClass('show');
+                body.addClass('closing');
+                overlay.hide();
+            })
+        }    
+
         // Menu icon toggle
         menuIcon.on('click', function(e) {
+            bodyClick = true;
             e.preventDefault();
             body.toggleClass('show');
             body.removeClass('closing');
-            if(bodyClick == true) {
-                overlay.show();
-            }
+
         });
 
         // Close icon toggle
@@ -378,20 +390,30 @@ jQuery(document).ready(function($) {
             e.preventDefault();
             body.removeClass('show');
             body.addClass('closing');
-        });
 
-        // Body click hide menu
-        if(bodyClick == true) {
-            overlay.on('click', function(e) {
-                e.preventDefault();
-                body.removeClass('show');
-                body.addClass('closing');
-                overlay.hide();
-            })
-        }
+        });
     };
 
     navToggle();
+
+    $('.post-template .post-info').waypoint(function(direction) {
+        if(direction == "down") {
+            $(this).addClass('sticky');
+         } else {
+             $(this).removeClass('sticky');           
+         }
+    });
+    $('.article-footer').waypoint(function(direction) {
+        if(direction == "up") {
+            $('.post-template .post-info').addClass('sticky'); 
+        } else {
+            $('.post-template .post-info').removeClass('sticky'); 
+        }
+    }, { offset: '40%' });
+    // Post Sticky
+
+
+
 
     // var src = document.querySelector('.post img:first-of-type').getAttribute('src');
     // $('.post').prepend('<img src="' + src +'">');

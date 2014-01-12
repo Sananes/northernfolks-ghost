@@ -336,9 +336,6 @@ NAVIGATION STYLES
 #nav {
   display: block; }
 
-#container {
-  margin-left: 60px; }
-
 .menu-toggle {
   display: none !important; }
 
@@ -408,7 +405,7 @@ HEADER STYLES
   font-size: 2.5em; }
 
 #container {
-  margin-left: 60px; }
+  left: 0; }
 
 /*********************
 NAVIGATION STYLES

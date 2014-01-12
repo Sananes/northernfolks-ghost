@@ -801,7 +801,9 @@ a {
   margin-bottom: 40px; }
 
 #container {
-  margin-left: 0px; }
+  margin-left: 60px;
+  z-index: 8001;
+  position: relative; }
 
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES
@@ -958,22 +960,25 @@ NAVIGATION STYLES
   opacity: 0 !important;
   display: none; }
 .show #container {
-  margin: 0;
-  margin-left: 300px;
+  left: 300px;
   position: relative; }
 
-.show #container, .show #nav, .closing #container, .closing #nav {
-  -webkit-transition: 300ms;
-  -ms-transition: 300ms;
-  -o-transition: 300ms;
-  -transition: 300ms;
-  transition: 300ms; }
-
-#container {
-  left: 0; }
+.show #nav, .closing #nav {
+  -webkit-transition: width 300ms ease;
+  -ms-transition: width 300ms ease;
+  -o-transition: width 300ms ease;
+  -transition: width 300ms ease;
+  transition: width 300ms ease; }
+.show #container, .closing #container {
+  -webkit-transition: left 300ms ease;
+  -ms-transition: left 300ms ease;
+  -o-transition: left 300ms ease;
+  -transition: left 300ms ease;
+  transition: left 300ms ease; }
 
 #nav {
   display: none;
+  z-index: 8002;
   position: absolute;
   left: 0;
   width: 60px;
@@ -1141,11 +1146,16 @@ NAVIGATION STYLES
 /*********************
 AUTHOR BIO
 *********************/
+.article-footer {
+  z-index: 8003;
+  clear: both; }
+
 .author {
   display: none;
   padding: 40px 0;
   margin: 0 auto !important;
-  float: none !important; }
+  float: none !important;
+  clear: both; }
 
 .avatar {
   overflow: hidden;
@@ -1170,7 +1180,8 @@ AUTHOR BIO
 POSTS & CONTENT STYLES
 *********************/
 .post-template .entry-content {
-  text-align: left; }
+  text-align: left;
+  float: right; }
 
 .post-template #nav .articles {
   display: none; }
@@ -1181,9 +1192,17 @@ POSTS & CONTENT STYLES
   border-radius: 3px;
   overflow: hidden;
   max-height: 200px;
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  position: relative; }
   .featured .author-img {
     display: none; }
+  .featured .comments {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    color: white; }
+    .featured .comments:hover {
+      color: white; }
 
 .entry-content p, .entry-content ul, .entry-content ol {
   font-size: 18px; }
@@ -1204,6 +1223,25 @@ hr {
   text-align: left;
   float: none !important;
   margin: 0 auto !important; }
+
+.share .share-text {
+  float: left; }
+.share .share-text, .share .social-share li {
+  display: inline-block; }
+.share .social-share {
+  float: right;
+  margin: 0;
+  font-size: 30px; }
+  .share .social-share li {
+    margin-right: 7px;
+    padding: 0; }
+    .share .social-share li:last-child, .share .social-share li.last {
+      margin-right: 0px;
+      float: none; }
+  .share .social-share li a {
+    text-decoration: none; }
+  .share .social-share span {
+    border-radius: 3px; }
 
 .post-paginate ul, .post-paginate li {
   display: inline-block;
@@ -1245,6 +1283,13 @@ hr {
         font-weight: normal; }
     .hentry .post-info p {
       margin-top: 0px; }
+    .hentry .post-info.sticky {
+      position: fixed;
+      top: 0;
+      margin-top: 20px;
+      z-index: 8000;
+      padding-right: 12%;
+      opacity: 1 !important; }
 
 /* end .hentry */
 /* style by tag (i.e. tag-news) */
@@ -1415,9 +1460,6 @@ tweeners.
   #nav {
     display: block; }
 
-  #container {
-    margin-left: 60px; }
-
   .menu-toggle {
     display: none !important; }
 
@@ -1586,7 +1628,7 @@ you can add resource intensive styles.
     font-size: 2.5em; }
 
   #container {
-    margin-left: 60px; }
+    left: 0; }
 
   /*********************
   NAVIGATION STYLES

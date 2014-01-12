@@ -1,32 +1,32 @@
 {{! This template displays a post in its entirety.
     It is used to display the latest post in the index, and any single post }}
 <article class="hentry clearfix {{post_class}}" role="article">
+    <div class="post-info fivecol first">
+    <div class="inner-post-info">
+         <header class="h2 article-header post-title">
+            <a href="/{{slug}}" rel="bookmark">{{title}}</a>
+        </header>
 
-    <header class="article-header">
-
-<p class="byline vcard">
-
+        <p class="byline vcard">
             <time class="updated" datetime="2012-05-03">
-                {{date published_at format="MMMM DD, YYYY"}}
+                {{date published_at format="MMMM DD, YYYY"}} by <strong>{{author.name}}</strong>
             </time>
-            
         </p>
 
-        <h1 class="h2">
-            <!-- <a href="/{{slug}}" rel="bookmark" title="{{title}}">{{title}}</a> -->
-            {{title}}
-        </h1>
+        <hr>
 
-        {{! Featured images are not yet implemented in Ghost.
-            But when they are, this will be awesome. }}
-        {{#if image}}
-            <figure class="featured-image">
-                <img src="/content/images/{{image}}" class="attachment-post-thumbnail" alt="">
-            </figure>
-        {{/if}}
-    </header> <!-- end article header -->
+        <nav class="share">
+            <p class="share-text">Share this post</p>
+            <ul class="social-share">
+                <li><a href="http://www.facebook.com/NorthernFolks"><span class="symbol">roundedfacebook</span></a></li>
+                <li><a href="http://www.twitter.com/NorthernFolks"><span class="symbol">roundedtwitter</span></a></li>
+                <li class="last"><a href="#"><span class="symbol">roundedgoogleplus</span></a></li>
+            </ul>
+        </nav>
+    </div>
+    </div>
 
-    <section class="entry-content clearfix">
+    <section class="entry-content sevencol clearfix">
         {{content}}
     </section> <!-- end article section -->
     <hr>

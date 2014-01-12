@@ -120,7 +120,7 @@
         {{! Output the content of the header partial template }}
         {{> header}}
 
-        <section id="content" class="animate" data-anim-type="fadeInUp" data-anim-delay="500">
+        <section id="content" data-anim-type="fadeInUp" data-anim-delay="500">
             {{! The 'inner' divs provide a nice wrapper for content to help with fluidity and responsiveness }}
             <div id="inner-content" class="elevencol wrap clearfix">
 
@@ -138,8 +138,8 @@
         </section> <!-- end #content -->
 
         <footer class="footer center" role="contentinfo">
-            <div id="inner-footer" class="sevencol wrap align-center clearfix">
-                <p class="source-org copyright">Copyright © Heimdall. A Ghost theme by <a href="http://www.northenfolks.com">Northern Folks</a></p> <p class="back-to-top"><a href="#">Back to Top</a></p>
+            <div id="inner-footer" class="twelvecol wrap align-center clearfix">
+                <p class="source-org copyright">Copyright © Heimdall. A Ghost theme by <a href="http://www.northernfolks.com">Northern Folks</a></p> <p class="back-to-top"><a href="#">Back to Top</a></p>
             </div> <!-- end #inner-footer -->
         </footer> <!-- end footer -->
 
@@ -150,6 +150,7 @@
 
     <!-- Custom Scripts -->
     <script type="text/javascript" src="/assets/js/libs/animation.js"></script>
+    <script type="text/javascript" src="/assets/js/libs/jquery.waypoints.min.js"></script>
     <script type="text/javascript" src="/assets/js/scripts.js"></script>
 
 </body>

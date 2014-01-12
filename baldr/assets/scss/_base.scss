@@ -116,7 +116,10 @@ a {
     margin-bottom:40px;
 }
 #container {
-    margin-left:0px;
+    margin-left:60px;
+    //left:60px;
+    z-index:8001;
+    position:relative;
 }
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES
@@ -316,21 +319,26 @@ NAVIGATION STYLES
         display:none;
     }
     #container {
-        margin:0;
-        margin-left:300px;
+        left:300px;
         position:relative;
     }
 }
 .show, .closing {
-    #container, #nav {
-        @include transition(300ms);
+    #nav {
+        @include transition(width 300ms ease);
+    }
+    #container {
+        @include transition(left 300ms ease );
     }
 }
-#container {
-    left: 0;
+.closing {
+    #container {
+       // left: -300px;
+    }
 }
 #nav {
     display:none;
+    z-index:8002;
     position:absolute;
     left:0;
     width: 60px;
@@ -385,7 +393,6 @@ NAVIGATION STYLES
     }
     .author {
         padding: 30px;
-
         img {
             margin-bottom:20px;
         }
@@ -552,11 +559,16 @@ NAVIGATION STYLES
 /*********************
 AUTHOR BIO
 *********************/
+.article-footer {
+    z-index:8003;
+    clear:both;
+}
 .author {
     display:none;
     padding:40px 0;
     margin:0 auto !important;
     float:none !important;
+    clear:both;
 }
 .avatar {
     overflow:hidden;
@@ -587,6 +599,7 @@ POSTS & CONTENT STYLES
 
 .post-template .entry-content {
     text-align:left;
+    float:right;
 }
 
 .post-template {
@@ -598,14 +611,28 @@ POSTS & CONTENT STYLES
     .author {
         display:block !important;
     }
+
+
 }
 .featured {
     border-radius:3px;
     overflow:hidden;
     max-height:200px;
     margin-bottom:15px;
+    position:relative;
+
     .author-img {
         display:none;
+    }
+    .comments {
+        position:absolute;
+        bottom:10px;
+        left:20px;
+        color: $white;
+
+        &:hover {
+            color: $white;
+        }
     }
 }
 .entry-content {
@@ -639,7 +666,34 @@ hr {
     float:none !important;
     margin:0 auto !important;
 }
+.share {
+    .share-text {
+        float:left;
+    }
+    .share-text, .social-share li {
+        display:inline-block
+    }
+    .social-share {
+        float:right;
+        margin:0;
+        font-size: 30px;
+        li {
+            margin-right: 7px;
+            padding:0;
 
+            &:last-child, &.last {
+                margin-right:0px;
+                float:none;
+            }
+        }
+        li a {
+            text-decoration:none;
+        }
+        span {
+            border-radius:3px;
+        }
+    }
+}
 .post-paginate {
     ul,li {
         display:inline-block;
@@ -694,6 +748,15 @@ hr {
         }
         p {
             margin-top:0px;
+        }
+
+        &.sticky {
+            position:fixed;
+            top:0;
+            margin-top:20px;
+            z-index:8000;
+            padding-right:12%;
+            opacity:1 !important;
         }
     }
 

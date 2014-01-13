@@ -23,10 +23,17 @@ upon your base.scss styles.
 NAVIGATION STYLES
 *********************/
 #nav {
-  display:block;
+  display:block !important;
+  visibility:visible !important;
+
 }
 #container {
   //left:60px;
+    padding-left:60px;
+
+}
+.entry-content {
+
 }
 .menu-toggle {
   display:none !important;

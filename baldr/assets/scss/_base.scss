@@ -116,7 +116,7 @@ a {
     margin-bottom:40px;
 }
 #container {
-    margin-left:60px;
+
     //left:60px;
     z-index:8001;
     position:relative;
@@ -306,7 +306,7 @@ NAVIGATION STYLES
 .show {
     #nav {
         width:300px;
-     
+        visibility:visible;
        .articles, .close, .author, .social-icons {
             display:block;
             opacity:1;
@@ -314,12 +314,16 @@ NAVIGATION STYLES
             @include transition(opacity 300ms ease-in-out 200ms);
         } 
     }
+    .post-info.sticky {
+        margin-left:-1px;
+    }
     .nav-toggle {
         opacity:0 !important;
         display:none;
     }
     #container {
-        left:300px;
+        left:240px; // minus margin-left: 60px;
+        margin-left:0;
         position:relative;
     }
 }
@@ -329,6 +333,10 @@ NAVIGATION STYLES
     }
     #container {
         @include transition(left 300ms ease );
+      //  @include transition(margin-left 300ms ease);
+    }
+    .post-info.sticky {
+        @include transition(margin-left 300ms ease );        
     }
 }
 .closing {
@@ -337,7 +345,7 @@ NAVIGATION STYLES
     }
 }
 #nav {
-    display:none;
+    visibility:hidden;
     z-index:8002;
     position:absolute;
     left:0;
@@ -749,15 +757,6 @@ hr {
         p {
             margin-top:0px;
         }
-
-        &.sticky {
-            position:fixed;
-            top:0;
-            margin-top:20px;
-            z-index:8000;
-            padding-right:12%;
-            opacity:1 !important;
-        }
     }
 
     footer {}
@@ -780,7 +779,7 @@ hr {
 /* Article entry content */
 .entry-content {
     margin-top:-8px;
-    padding-left: 20px;
+    //padding-left: 20px;
 
     p { margin: 0 0 1.618em 0; }
 

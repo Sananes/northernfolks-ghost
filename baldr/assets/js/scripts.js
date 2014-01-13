@@ -13,37 +13,37 @@
 (function ($) {
     "use strict";
 
-    function get_feature_image() {
-        var articles_links = $(".post-title a"),
-            featured_parts = $(".featured"),
-            list_links = [];
+    function featured_image() {
+        var post_links = $(".post-title a"),
+            featured_html = $(".featured"),
+            post_list_links = [];
 
         /* -- Feature Images and Video per Post -- */
-        if (articles_links.length > 0) {
+        if (post_links.length > 0) {
 //            if ( Modernizr.localstorage ) {
 //                localStorage.clear();
 //            }
             
-            articles_links.each(function (index) {
+            post_links.each(function (index) {
                 //Process script                 
-                list_links.push(articles_links[index].href);
+                post_list_links.push(post_links[index].href);
                 /* -- Next and Prev Post -- */
                 if ( Modernizr.localstorage ) {
-                localStorage.setItem(articles_links[index].href,
-                    JSON.stringify({"prev": (articles_links[index - 1] != null ? articles_links[index - 1].href : "none"),
-                                    "next": (articles_links[index + 1] != null ? articles_links[index + 1].href : "none")}));
+                localStorage.setItem(post_links[index].href,
+                    JSON.stringify({"prev": (post_links[index - 1] != null ? post_links[index - 1].href : "none"),
+                                    "next": (post_links[index + 1] != null ? post_links[index + 1].href : "none")}));
                 }
             });
         }
 
-        if (list_links.length > 0) {
-            list_links.forEach(function (element, index, array) {
-                $.get(list_links[index], function (data) {
+        if (post_list_links.length > 0) {
+            post_list_links.forEach(function (element, index, array) {
+                $.get(post_list_links[index], function (data) {
                     var html = $(data),
                         article = html.find("article"),
                         img = article.find("img:first"),
                         video = article.find("iframe:first"),
-                        featured = featured_parts[index];
+                        featured = featured_html[index];
 
                     if (img.length > 0 && video.length > 0) {
                         $(featured).html(img[0]);
@@ -54,51 +54,13 @@
                             $(featured).append(video[0].outerHTML);
                         }
                     }
-                    $(".post").fitVids();
+                    //$(".post").fitVids();
                 });
             });
         }
     }
 
-    
 
-    //Function check menu opened
-    function move_scroll_icon() {
-        if (menu_open()) {
-            $(".scrollup").removeClass("scroll-right");
-            $(".scrollup").addClass("scroll-left");
-        } else {
-            $(".scrollup").removeClass("scroll-left");
-            $(".scrollup").addClass("scroll-right");
-        }
-    }
-
-    //Function generate background
-
-    function getbg() {
-        var d = new Date(),
-            today = parseInt(d.getDate(), 10),
-            bg = "1.png";
-
-        if (today <= 5) {
-            bg = "6.png";
-        } else if (today <= 10) {
-            bg = "5.png";
-        } else if (today <= 15) {
-            bg = "4.png";
-        } else if (today <= 20) {
-            bg = "3.png";
-        } else if (today <= 25) {
-            bg = "2.png";
-        } else {
-            bg = "1.png";
-        }
-        return bg;
-    }
-
-    function menu_open() {
-        return ($("#menu").css("right") == "0px");
-    }
 
     function detect_browser() {
         var browser = {
@@ -135,14 +97,14 @@
         }
     }
     
-    function enable_infinite() {
+    function enable_continuous_scrolling() {
         if ( Modernizr.localstorage ) {
-            if (localStorage.getItem("enable_infinite_scrolling") == null) {
-                localStorage.setItem("enable_infinite_scrolling", "true");
+            if (localStorage.getItem("enable_continuous_scrolling") == null) {
+                localStorage.setItem("enable_continuous_scrolling", "true");
                 return true;
-            } else if (localStorage.getItem("enable_infinite_scrolling") == "true") {
+            } else if (localStorage.getItem("enable_continuous_scrolling") == "true") {
                 return true;
-            } else if (localStorage.getItem("enable_infinite_scrolling") == "false") {
+            } else if (localStorage.getItem("enable_continuous_scrolling") == "false") {
                 $("#infinite_enable").removeProp("checked");
                 return false;
             }
@@ -158,7 +120,7 @@
         var browser = detect_browser(),
             logo_text = $("#flash").text() + " " + $("#light").text(),
             is_many_page = $(".pagination a.older-posts").length,
-            is_infinite = enable_infinite(),
+            is_infinite = enable_continuous_scrolling(),
             rel_links = prev_next();
         
         /* -- Fallback text logo for IE -- */
@@ -176,40 +138,14 @@
         
         /* -- Catch checkbox event -- */
         $("input#infinite_enable").change( function() {
-            localStorage.setItem("enable_infinite_scrolling", $(this).is(":checked"));
+            localStorage.setItem("enable_continuous_scrolling", $(this).is(":checked"));
             location.reload();
         });
         
         /* -- Code Highlight -- */
         $("pre").addClass("prettyprint");
 
-
-
-        /* -- Handle menu event -- */
-        $(".toggle-icon").click(function () {
-            if (menu_open()) {
-                $("#menu").css("right", "-280px");
-                $(".scrollup").removeClass("scroll-left");
-                $(".scrollup").addClass("scroll-right");
-            } else {
-                $("#menu").css("right", "0");
-                $(".scrollup").removeClass("scroll-right");
-                $(".scrollup").addClass("scroll-left");
-            }
-        });
-
-        $(document).click(function (event) {
-            if ($(event.target).parents().index($("#menu")) == -1) {
-                if (menu_open()) {
-                    $("#menu").css("right", "-280px");
-                    $(".scrollup").removeClass("scroll-left");
-                    $(".scrollup").addClass("scroll-right");
-                }
-            }
-        });
-
-        /* -- Change Background -- */
-        $("body").css("background", "url(\"/assets/imgs/bg/" + getbg() + "\")");
+       
 //        
 //        if (Modernizr.localstorage)
 //        {
@@ -227,7 +163,7 @@
                 $(".scrollup").fadeOut();
             }
             
-            if (localStorage.getItem("enable_infinite_scrolling") == "true") {
+            if (localStorage.getItem("enable_continuous_scrolling") == "true") {
                 /* -- Endless Scrolling -- */
                 var next_page = $(".pagination a.older-posts");
                 if (next_page.length > 0) {
@@ -252,7 +188,7 @@
                                     });
     
                                     //Callback when create new article
-                                    get_feature_image();
+                                    featured_image();
                                     //add_weather_emo();
     
                                     $("#main").append(endless);
@@ -278,7 +214,7 @@
             }
         });
 
-        get_feature_image();
+        featured_image();
                     
         if (rel_links != null && Modernizr.localstorage && rel_links != false) {
             $(document).keydown(function (event) {
@@ -358,7 +294,7 @@ jQuery(document).ready(function($) {
         $('#logo').addClass('animate bounceIn')
     }
     function navToggle() {
-        var menuIcon = $('.nav-toggle'), bodyClick = false
+        var menuIcon = $('.nav-toggle, .menu-toggle'), bodyClick = false
             navHeader = $('#nav'), body = $('body'),
             close = navHeader.find('.close'),
             overlay = $('.overlay').hide();
@@ -395,6 +331,12 @@ jQuery(document).ready(function($) {
     };
 
     navToggle();
+
+    // Remove animation on post template
+
+    if($('body').hasClass('post-template')) {
+        $('#content').removeClass('animate');
+    }
 
     $('.post-template .post-info').waypoint(function(direction) {
         if(direction == "down") {

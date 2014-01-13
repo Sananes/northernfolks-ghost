@@ -112,6 +112,33 @@ SIDEBARS & ASIDES
 } /* end .widget */
 
 /*********************
+POST STYLES
+*********************/
+
+.hentry {
+    margin-bottom:50px;
+    .post-info {
+        &.sticky {
+            position:fixed;
+            top:0;
+            margin-top:20px;
+            z-index:8000;
+            padding-right:11.4%;
+            opacity:1 !important;
+        }
+    }
+    footer {}
+
+} /* end .hentry */
+.post-template {
+  .entry-content {
+    min-height:300px;
+  }
+}
+.entry-content {
+    padding-left: 20px;
+}
+/*********************
 FOOTER STYLES
 *********************/
 

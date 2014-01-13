@@ -801,7 +801,6 @@ a {
   margin-bottom: 40px; }
 
 #container {
-  margin-left: 60px;
   z-index: 8001;
   position: relative; }
 
@@ -946,7 +945,8 @@ NAVIGATION STYLES
 
 /* The {{nav}} helper outputs a site-navigation div */
 .show #nav {
-  width: 300px; }
+  width: 300px;
+  visibility: visible; }
   .show #nav .articles, .show #nav .close, .show #nav .author, .show #nav .social-icons {
     display: block;
     opacity: 1;
@@ -956,11 +956,14 @@ NAVIGATION STYLES
     -o-transition: opacity 300ms ease-in-out 200ms;
     -transition: opacity 300ms ease-in-out 200ms;
     transition: opacity 300ms ease-in-out 200ms; }
+.show .post-info.sticky {
+  margin-left: -1px; }
 .show .nav-toggle {
   opacity: 0 !important;
   display: none; }
 .show #container {
-  left: 300px;
+  left: 240px;
+  margin-left: 0;
   position: relative; }
 
 .show #nav, .closing #nav {
@@ -975,9 +978,15 @@ NAVIGATION STYLES
   -o-transition: left 300ms ease;
   -transition: left 300ms ease;
   transition: left 300ms ease; }
+.show .post-info.sticky, .closing .post-info.sticky {
+  -webkit-transition: margin-left 300ms ease;
+  -ms-transition: margin-left 300ms ease;
+  -o-transition: margin-left 300ms ease;
+  -transition: margin-left 300ms ease;
+  transition: margin-left 300ms ease; }
 
 #nav {
-  display: none;
+  visibility: hidden;
   z-index: 8002;
   position: absolute;
   left: 0;
@@ -1283,13 +1292,6 @@ hr {
         font-weight: normal; }
     .hentry .post-info p {
       margin-top: 0px; }
-    .hentry .post-info.sticky {
-      position: fixed;
-      top: 0;
-      margin-top: 20px;
-      z-index: 8000;
-      padding-right: 12%;
-      opacity: 1 !important; }
 
 /* end .hentry */
 /* style by tag (i.e. tag-news) */
@@ -1301,8 +1303,7 @@ hr {
 
 /* Article entry content */
 .entry-content {
-  margin-top: -8px;
-  padding-left: 20px; }
+  margin-top: -8px; }
   .entry-content p {
     margin: 0 0 1.618em 0; }
   .entry-content ul, .entry-content ol, .entry-content table, .entry-content dl {
@@ -1458,7 +1459,11 @@ tweeners.
   NAVIGATION STYLES
   *********************/
   #nav {
-    display: block; }
+    display: block !important;
+    visibility: visible !important; }
+
+  #container {
+    padding-left: 60px; }
 
   .menu-toggle {
     display: none !important; }
@@ -1671,6 +1676,26 @@ you can add resource intensive styles.
       margin-bottom: 0.75em; }
 
   /* end .widget */
+  /*********************
+  POST STYLES
+  *********************/
+  .hentry {
+    margin-bottom: 50px; }
+    .hentry .post-info.sticky {
+      position: fixed;
+      top: 0;
+      margin-top: 20px;
+      z-index: 8000;
+      padding-right: 11.4%;
+      opacity: 1 !important; }
+
+  /* end .hentry */
+  .post-template .entry-content {
+    min-height: 300px; }
+
+  .entry-content {
+    padding-left: 20px; }
+
   /*********************
   FOOTER STYLES
   *********************/

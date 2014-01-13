@@ -334,7 +334,11 @@ upon your base.scss styles.
 NAVIGATION STYLES
 *********************/
 #nav {
-  display: block; }
+  display: block !important;
+  visibility: visible !important; }
+
+#container {
+  padding-left: 60px; }
 
 .menu-toggle {
   display: none !important; }
@@ -448,6 +452,26 @@ SIDEBARS & ASIDES
     margin-bottom: 0.75em; }
 
 /* end .widget */
+/*********************
+POST STYLES
+*********************/
+.hentry {
+  margin-bottom: 50px; }
+  .hentry .post-info.sticky {
+    position: fixed;
+    top: 0;
+    margin-top: 20px;
+    z-index: 8000;
+    padding-right: 11.4%;
+    opacity: 1 !important; }
+
+/* end .hentry */
+.post-template .entry-content {
+  min-height: 300px; }
+
+.entry-content {
+  padding-left: 20px; }
+
 /*********************
 FOOTER STYLES
 *********************/

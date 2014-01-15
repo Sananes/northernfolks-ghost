@@ -23,7 +23,7 @@
 // redirectRandomly();
     var scrollTo = function(element) {
         $('html, body').animate({
-            scrollTop: element.offset().top
+            scrollTop: element.offset().top - 50
         }, 500);
     }
     function count_articles() {

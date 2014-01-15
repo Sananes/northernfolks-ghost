@@ -24,7 +24,7 @@
     var scrollTo = function(element) {
         $('html, body').animate({
             scrollTop: element.offset().top
-        }, 100);
+        }, 500);
     }
 
 function prev_next_scrolling() {

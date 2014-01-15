@@ -214,6 +214,7 @@ function prev_next_scrolling() {
                                 if (html) {
                                     var content = $(html),
                                         posts = content.find("article.post"),
+                                        posts_title = content.find("article.post .post-title a").text(),
                                         pagination = content.find(".pagination"),
                                         endless = content.find(".endless");
                                     
@@ -222,13 +223,17 @@ function prev_next_scrolling() {
                                 
                                     $(".endless").remove();
                                     posts.each(function (index) {
-                                        $(posts[index]).appendTo("#main").addClass('animate fadeIn');
+                                        var post = $(posts[index]);
+                                        var titles = post.find('.article-header a').text();
+                                        var date = post.find('.post-info .date').text();
+                                        var href = post.find('.article-header a').attr('href');
+                                        post.appendTo("#main").addClass('animate fadeIn');
+                                        $("#nav .articles ul").append('<li><a href="' + href + '">' + titles + '<span class="date">' + date + '</span></a></li><hr class="divider" />');
                                     });
 
     
                                     //Callback when create new article
                                     featured_image();
-                                    //add_weather_emo();
                                     prev_next_scrolling();
                                     $("#main").append(endless);
                                     $("#main").append(pagination);

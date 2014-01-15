@@ -1,0 +1,47 @@
+     
+<!-- begin side nav -->
+     <div id="nav">
+        <div class="inner-nav">
+            <a href="#" class="close"><i class="icon-close"></i></a>        
+            <div data-icon="b" class="nav-toggle icon onHoverPulse"></div>
+            <div class="articles">
+                <h3>Articles</h3>
+                <ul>
+                    {{#foreach posts}}
+                            <li class="post-link">
+                                <a href="/{{slug}}">{{title}} <span class="date">{{date published_at format="MMMM DD, YYYY"}}</span></a>
+                                <hr class="divider">
+                            </li>
+                    {{/foreach}}
+                </ul>
+            </div>
+
+            {{#post}}
+                <section  class="author clearfix">
+
+                    <div class="avatar">
+                        {{#if author.image}}
+                        <img src="{{author.image}}" class="author-img" title="author pic"/>  
+                        {{/if}}       
+
+                    {{#if author.bio}}
+                    <div class="author-bio">
+                        <h4>{{author.name}}</h2>
+                        <!-- <small>{{author.location}}</small> -->
+                        <p>{{author.bio}}</p>
+                    </div>
+                    {{/if}}
+                    <a href="/" class="button">Go back</a>
+                </section>
+            {{/post}} 
+
+            <ul class="social-icons">
+                <li><a href="http://www.facebook.com/NorthernFolks"><span class="symbol">roundedfacebook</span></a></li>
+                <li><a href="http://www.twitter.com/NorthernFolks"><span class="symbol">roundedtwitter</span></a></li>
+                <li><a href="#"><span class="symbol">roundedinstagram</span></a></li>
+                <li><a href="http://www.dribbble.com/NorthernFolks"><span class="symbol">roundeddribble</span></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- end side nav -->

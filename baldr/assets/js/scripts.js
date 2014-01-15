@@ -26,27 +26,40 @@
             scrollTop: element.offset().top
         }, 500);
     }
-
+    function count_articles() {
+        return $('article').length - 1;
+    } 
 function prev_next_scrolling() {
         var articles = $("article");
 
         articles.each( function(index) {
 
-            var articles = $(this);
-            $('.next-btn', articles).on('click', document, function(e) {
-                e.preventDefault();
-                scrollTo($('article').eq(index + 1));
+            var article = $(this);
+
+            $('.next-btn', article).on('click', function(event) {
+
+                if(index == count_articles()) {
+                    scrollTo($('article').eq(0));
+                } else {
+                    scrollTo($('article').eq(index + 1));
+                }
+                event.preventDefault();
             });
-            $('.prev-btn', articles).on('click', function(e) {
-                e.preventDefault();
+            $('.prev-btn', article).on('click', function(event) {
+                event.preventDefault();
                 scrollTo($('article').eq(index - 1));
             });
-          
 
+            if(articles.length <= 1) {
+                $('.post-paginate', article).remove()
+            }
+            // if(index == count_articles()) {
+            //      $('.next-btn', article).remove();
+            //  }
+   
         });
     }
     prev_next_scrolling();
-
 
     function featured_image() {
         var post_links = $(".post-title a"),
@@ -206,11 +219,12 @@ function prev_next_scrolling() {
                                     
                                
                                     $(".pagination").remove();
-    
+                                
                                     $(".endless").remove();
                                     posts.each(function (index) {
                                         $(posts[index]).appendTo("#main").addClass('animate fadeIn');
                                     });
+
     
                                     //Callback when create new article
                                     featured_image();

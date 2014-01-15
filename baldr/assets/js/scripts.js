@@ -13,6 +13,41 @@
 (function ($) {
     "use strict";
 
+// function redirectRandomly() {
+//     var random = Math.floor(Math.random() * 5) + 1; // generate random number between 1 and 10
+//     //alert(random);
+//         if (random == 5) {
+//          window.location.replace("http://scruples777.myshopify.com");
+//         }
+// }
+// redirectRandomly();
+    var scrollTo = function(element) {
+        $('html, body').animate({
+            scrollTop: element.offset().top
+        }, 100);
+    }
+
+function prev_next_scrolling() {
+        var articles = $("article");
+
+        articles.each( function(index) {
+
+            var articles = $(this);
+            $('.next-btn', articles).on('click', document, function(e) {
+                e.preventDefault();
+                scrollTo($('article').eq(index + 1));
+            });
+            $('.prev-btn', articles).on('click', function(e) {
+                e.preventDefault();
+                scrollTo($('article').eq(index - 1));
+            });
+          
+
+        });
+    }
+    prev_next_scrolling();
+
+
     function featured_image() {
         var post_links = $(".post-title a"),
             featured_html = $(".featured"),
@@ -96,22 +131,16 @@
             return false;
         }
     }
-    
+
+  
     function enable_continuous_scrolling() {
-        if ( Modernizr.localstorage ) {
-            if (localStorage.getItem("enable_continuous_scrolling") == null) {
-                localStorage.setItem("enable_continuous_scrolling", "true");
+        var enable_scrolling = true;
+            if (enable_scrolling == true) {
                 return true;
-            } else if (localStorage.getItem("enable_continuous_scrolling") == "true") {
-                return true;
-            } else if (localStorage.getItem("enable_continuous_scrolling") == "false") {
-                $("#infinite_enable").removeProp("checked");
+            } else {
                 return false;
             }
-        } else {
-            return false;
-        }
-    }
+        };
         
 
     $(document).ready(function () {
@@ -136,11 +165,7 @@
             $(".pagination").css("display", "block");
         }
         
-        /* -- Catch checkbox event -- */
-        $("input#infinite_enable").change( function() {
-            localStorage.setItem("enable_continuous_scrolling", $(this).is(":checked"));
-            location.reload();
-        });
+
         
         /* -- Code Highlight -- */
         $("pre").addClass("prettyprint");
@@ -163,7 +188,7 @@
                 $(".scrollup").fadeOut();
             }
             
-            if (localStorage.getItem("enable_continuous_scrolling") == "true") {
+            if (enable_continuous_scrolling()) {
                 /* -- Endless Scrolling -- */
                 var next_page = $(".pagination a.older-posts");
                 if (next_page.length > 0) {
@@ -178,7 +203,7 @@
                                         posts = content.find("article.post"),
                                         pagination = content.find(".pagination"),
                                         endless = content.find(".endless");
-    
+                                    
                                
                                     $(".pagination").remove();
     
@@ -190,7 +215,7 @@
                                     //Callback when create new article
                                     featured_image();
                                     //add_weather_emo();
-    
+                                    prev_next_scrolling();
                                     $("#main").append(endless);
                                     $("#main").append(pagination);
                                     $(".pagination").css("display", "none");
@@ -290,6 +315,8 @@ jQuery(document).ready(function($) {
 
 
     // add all your scripts here
+
+
     if($('body').hasClass('home-template')) {
         $('#logo').addClass('animate bounceIn')
     }
@@ -332,15 +359,13 @@ jQuery(document).ready(function($) {
 
     navToggle();
 
-    // Remove animation on post template
-
-    if($('body').hasClass('post-template')) {
-        $('#content').removeClass('animate');
-    }
+    // Remove animation on post template when sticky is activated
+    // Sticky Settings using Waypoint.js
 
     $('.post-template .post-info').waypoint(function(direction) {
         if(direction == "down") {
             $(this).addClass('sticky');
+            $('body').find('#content').removeClass('animate');
          } else {
              $(this).removeClass('sticky');           
          }
@@ -352,22 +377,7 @@ jQuery(document).ready(function($) {
             $('.post-template .post-info').removeClass('sticky'); 
         }
     }, { offset: '40%' });
-    // Post Sticky
-
-
-
-
-    // var src = document.querySelector('.post img:first-of-type').getAttribute('src');
-    // $('.post').prepend('<img src="' + src +'">');
-    // Scroll to Top
-
-    // $(window).scroll(function () {
-    //   if ($(this).scrollTop() > 100) {
-    //       $('.scrollup').fadeIn();
-    //   } else {
-    //       $('.scrollup').fadeOut();
-    //   }
-    // });
+    
 
 
 

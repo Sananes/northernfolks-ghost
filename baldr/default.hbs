@@ -98,13 +98,19 @@
 
             {{#post}}
                 <section  class="author clearfix">
+
                     <div class="avatar">
-                        <img src="{{author.image}}" class="author-img" title="author pic"/>          
+                        {{#if author.image}}
+                        <img src="{{author.image}}" class="author-img" title="author pic"/>  
+                        {{/if}}       
+
+                    {{#if author.bio}}
                     <div class="author-bio">
                         <h4>{{author.name}}</h2>
                         <!-- <small>{{author.location}}</small> -->
                         <p>{{author.bio}}</p>
                     </div>
+                    {{/if}}
                     <a href="/" class="button">Go back</a>
                 </section>
             {{/post}} 

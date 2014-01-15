@@ -1,5 +1,5 @@
 {{! This partial will list a post excerpt using the 'excerpt' theme helper in Ghost }}
-<article class="post hentry {{post_class}} clearfix">
+<article class="hentry {{post_class}} clearfix">
     <div class="post-info fivecol first">
          <header class="h2 article-header post-title">
             <a href="/{{slug}}" rel="bookmark">{{title}}</a>
@@ -15,8 +15,8 @@
 
         <nav class="post-paginate">
             <ul>
-                <li><a href="#"><div data-icon="c" class="next-prev prev icon"></div> Previous</a></li>
-                <li><a href="#"><div data-icon="d" class="next-prev next icon"></div> Next</a></li>
+                <li><a href="#" class="prev-btn"><div data-icon="c" class="next-prev prev icon"></div> Previous</a></li>
+                <li><a href="#" class="next-btn"><div data-icon="d" class="next-prev next icon"></div> Next</a></li>
             </ul>
         </nav>
     </div>

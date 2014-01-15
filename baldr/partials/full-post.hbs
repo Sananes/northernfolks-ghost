@@ -14,13 +14,14 @@
         </p>
 
         <hr>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
         <nav class="share">
             <p class="share-text">Share this post</p>
             <ul class="social-share">
-                <li><a href="http://www.facebook.com/NorthernFolks"><span class="symbol">roundedfacebook</span></a></li>
-                <li><a href="http://www.twitter.com/NorthernFolks"><span class="symbol">roundedtwitter</span></a></li>
-                <li class="last"><a href="#"><span class="symbol">roundedgoogleplus</span></a></li>
+                <li><a onclick="window.open(this.href, 'facebook-share', 'width=550,height=350');return false;" href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]={{@blog.url}}/{{slug}}&p[images][0]={{@blog.logo}}&p[title]={{title}}&p[summary]={{excerpt}}"><span class="symbol">roundedfacebook</span></a></li>
+                <li><a onclick="window.open(this.href, 'twitter-share', 'width=550,height=350');return false;" href="http://twitter.com/home?status={{title}}%20-%20{{@blog.url}}/{{slug}}"><span class="symbol">roundedtwitter</span></a></li>
+                <li class="last"><a onclick="window.open(this.href, 'googleplus-share', 'width=550,height=350');return false;" href="https://plus.google.com/share?url={{@blog.url}}/{{slug}}"><span class="symbol">roundedgoogleplus</span></a></li>
             </ul>
         </nav>
     </div>
@@ -54,18 +55,19 @@
             </p>
             <hr>
         {{/if}}
-
+        {{#if author.image}}
         <section  class="author clearfix">
             <div class="twocol first avatar">
                 <img src="{{author.image}}" class="author-img" title="author pic"/>
             </div>
+
             <div class="tencol author-bio">
                 <h4>{{author.name}}</h2>
                 <!-- <small>{{author.location}}</small> -->
                 <p>{{author.bio}}</p>
             </div>
         </section>  
-
+        {{/if}}
     </footer> <!-- end article footer -->
     <hr>
 </article>

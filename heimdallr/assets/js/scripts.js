@@ -13,93 +13,6 @@
 (function ($) {
     "use strict";
 
-    function get_feature_image() {
-        var articles_links = $(".post-title a"),
-            featured_parts = $(".featured"),
-            list_links = [];
-
-        /* -- Feature Images and Video per Post -- */
-        if (articles_links.length > 0) {
-            
-//            if ( Modernizr.localstorage ) {
-//                localStorage.clear();
-//            }
-            
-            articles_links.each(function (index) {
-                //Process script                 
-                list_links.push(articles_links[index].href);
-                /* -- Next and Prev Post -- */
-                if ( Modernizr.localstorage ) {
-                localStorage.setItem(articles_links[index].href,
-                    JSON.stringify({"prev": (articles_links[index - 1] != null ? articles_links[index - 1].href : "none"),
-                                    "next": (articles_links[index + 1] != null ? articles_links[index + 1].href : "none")}));
-                }
-            });
-        }
-
-        if (list_links.length > 0) {
-            list_links.forEach(function (element, index, array) {
-                $.get(list_links[index], function (data) {
-                    var html = $(data),
-                        article = html.find("article"),
-                        img = article.find("img:first"),
-                        video = article.find("iframe:first"),
-                        featured = featured_parts[index];
-
-                    if (img.length > 0 && video.length > 0) {
-                        $(featured).html(img[0]);
-                    } else {
-                        if (img.length > 0) {
-                            $(featured).html(img[0]);
-                        } else if (video.length > 0) {
-                            $(featured).html(video[0].outerHTML);
-                        }
-                    }
-                    $(".post").fitVids();
-                });
-            });
-        }
-    }
-
-    
-
-    //Function check menu opened
-    function move_scroll_icon() {
-        if (menu_open()) {
-            $(".scrollup").removeClass("scroll-right");
-            $(".scrollup").addClass("scroll-left");
-        } else {
-            $(".scrollup").removeClass("scroll-left");
-            $(".scrollup").addClass("scroll-right");
-        }
-    }
-
-    //Function generate background
-
-    function getbg() {
-        var d = new Date(),
-            today = parseInt(d.getDate(), 10),
-            bg = "1.png";
-
-        if (today <= 5) {
-            bg = "6.png";
-        } else if (today <= 10) {
-            bg = "5.png";
-        } else if (today <= 15) {
-            bg = "4.png";
-        } else if (today <= 20) {
-            bg = "3.png";
-        } else if (today <= 25) {
-            bg = "2.png";
-        } else {
-            bg = "1.png";
-        }
-        return bg;
-    }
-
-    function menu_open() {
-        return ($("#menu").css("right") == "0px");
-    }
 
     function detect_browser() {
         var browser = {
@@ -181,37 +94,8 @@
             location.reload();
         });
         
-        /* -- Code Highlight -- */
-        $("pre").addClass("prettyprint");
 
 
-
-        /* -- Handle menu event -- */
-        $(".toggle-icon").click(function () {
-            if (menu_open()) {
-                $("#menu").css("right", "-280px");
-                $(".scrollup").removeClass("scroll-left");
-                $(".scrollup").addClass("scroll-right");
-            } else {
-                $("#menu").css("right", "0");
-                $(".scrollup").removeClass("scroll-right");
-                $(".scrollup").addClass("scroll-left");
-            }
-        });
-
-        $(document).click(function (event) {
-            if ($(event.target).parents().index($("#menu")) == -1) {
-                if (menu_open()) {
-                    $("#menu").css("right", "-280px");
-                    $(".scrollup").removeClass("scroll-left");
-                    $(".scrollup").addClass("scroll-right");
-                }
-            }
-        });
-
-        /* -- Change Background -- */
-        $("body").css("background", "url(\"/assets/imgs/bg/" + getbg() + "\")");
-//        
 //        if (Modernizr.localstorage)
 //        {
 //            $(".pagination").css("display", "none");
@@ -272,7 +156,7 @@
                     }
                 } else {
                     $(".pagination").css("display", "block");
-                    $(".pagination").html("<span class=\"button no-more\" style=\"opacity:1\">''-_-</span>");
+                    $(".pagination").html("<span class=\"button no-more\" style=\"opacity:1\">No more posts</span>");
                     $(".no-more").removeClass("animate wobble");
                     $(".no-more").addClass("animate wobble");
                 }

@@ -16,12 +16,12 @@
     </div>
 </nav>
 
-<header class="header" role="banner"  {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
-    <div id="inner-header" class="sevencol wrap clearfix">
+<header class="header" role="banner" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
+    <div id="inner-header" class="sevencol animate fadeInUp wrap clearfix" >
 
         <!-- Menu -->
         <div class="menu-toggle">
-            <a href="#" class="menu-icon onHoverPulse">Menu</a>
+            <a href="#" class="icon icon-align-left onHoverPulse"></a>
         </div>
 
         <!-- Mail -->
@@ -31,11 +31,11 @@
 
         {{#if @blog.logo}}
             <!-- Logo -->
-            <div id="logo" {{#if @body.index}}class="animate" data-anim-type="bounceIn" data-anim-delay="200"{{/if}}>
+            <div id="logo">
                 <a id="logo" href="/"><img src="{{@blog.logo}}" alt="Logo"></a>
             </div>
         {{else}}
-            <div id="site-title" class="animate h1" data-anim-type="bounceIn" data-anim-delay="200">
+            <div id="site-title" class="h1">
                 <a href="/" rel="nofollow">{{@blog.title}}</a>
             </div>        
         {{/if}}

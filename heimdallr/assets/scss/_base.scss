@@ -208,7 +208,13 @@ HEADER STYLES
         height:200px;
         float:left;
         opacity:0.8;
-
+        
+        a {
+            text-indent:-999em;
+            color: #fff;
+            font-size: 35px;
+            text-decoration: none;
+        }
         &:hover {
             opacity:1;
         }

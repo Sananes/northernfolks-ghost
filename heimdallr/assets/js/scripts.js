@@ -49,21 +49,14 @@
         }
     }
     
-    function enable_infinite() {
-        if ( Modernizr.localstorage ) {
-            if (localStorage.getItem("enable_infinite_scrolling") == null) {
-                localStorage.setItem("enable_infinite_scrolling", "true");
+    function enable_continuous_scrolling() {
+        var enable_scrolling = true;
+            if (enable_scrolling == true) {
                 return true;
-            } else if (localStorage.getItem("enable_infinite_scrolling") == "true") {
-                return true;
-            } else if (localStorage.getItem("enable_infinite_scrolling") == "false") {
-                $("#infinite_enable").removeProp("checked");
+            } else {
                 return false;
             }
-        } else {
-            return false;
-        }
-    }
+        };
         
 
     $(document).ready(function () {
@@ -72,7 +65,7 @@
         var browser = detect_browser(),
             logo_text = $("#flash").text() + " " + $("#light").text(),
             is_many_page = $(".pagination a.older-posts").length,
-            is_infinite = enable_infinite(),
+            is_infinite = enable_continuous_scrolling(),
             rel_links = prev_next();
         
         /* -- Fallback text logo for IE -- */
@@ -90,7 +83,7 @@
         
         /* -- Catch checkbox event -- */
         $("input#infinite_enable").change( function() {
-            localStorage.setItem("enable_infinite_scrolling", $(this).is(":checked"));
+            localStorage.setItem("enable_continuous_scrolling_scrolling", $(this).is(":checked"));
             location.reload();
         });
         
@@ -112,7 +105,7 @@
                 $(".scrollup").fadeOut();
             }
             
-            if (localStorage.getItem("enable_infinite_scrolling") == "true") {
+            if (enable_continuous_scrolling()) {
                 /* -- Endless Scrolling -- */
                 var next_page = $(".pagination a.older-posts");
                 if (next_page.length > 0) {
@@ -137,8 +130,6 @@
                                     });
     
                                     //Callback when create new article
-                                    //get_feature_image();
-                                    //add_weather_emo();
     
                                     $("#main").append(endless);
                                     $("#main").append(pagination);

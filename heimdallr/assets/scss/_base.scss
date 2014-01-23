@@ -20,7 +20,7 @@ GENERAL STYLES
 body {
 	font-family: $serif;
 	font-size: 100%;
-	line-height: 2;
+	line-height: 2em;
 	color: #565656;
 }
 
@@ -213,13 +213,14 @@ HEADER STYLES
         z-index:10;
         position:relative;
         width:100%;
+        line-height: ($header-height - 13);
         font-weight:bold;
         a:hover {
             color: rgba(255,255,255,0.8) !important;
         }
     }
     .menu-toggle {
-        height:200px;
+        height:$header-height;
         float:left;
         position:relative;
         z-index:99;
@@ -297,7 +298,7 @@ NAVIGATION STYLES
     height:100%;
 }
 
-.close, .menu-toggle, .back-to-top a, .mail-icon {
+.close, .menu-toggle, .back-to-top a, #mail a {
     @include transition(opacity .3s ease-in-out);
 }
 .show {

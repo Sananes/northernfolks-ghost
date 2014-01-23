@@ -716,7 +716,7 @@ GENERAL STYLES
 body {
   font-family: "Merriweather", Cambria, Times New Roman, Times, serif;
   font-size: 100%;
-  line-height: 2;
+  line-height: 2em;
   color: #565656; }
 
 img {
@@ -889,6 +889,7 @@ HEADER STYLES
     z-index: 10;
     position: relative;
     width: 100%;
+    line-height: 187px;
     font-weight: bold; }
     .header #site-title a:hover {
       color: rgba(255, 255, 255, 0.8) !important; }
@@ -955,7 +956,7 @@ NAVIGATION STYLES
   width: 100%;
   height: 100%; }
 
-.close, .menu-toggle, .back-to-top a, .mail-icon {
+.close, .menu-toggle, .back-to-top a, #mail a {
   -webkit-transition: opacity 0.3s ease-in-out;
   -ms-transition: opacity 0.3s ease-in-out;
   -o-transition: opacity 0.3s ease-in-out;

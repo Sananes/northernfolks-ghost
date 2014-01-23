@@ -168,7 +168,10 @@ HEADER STYLES
     }
 }
 .wrapper {
-    @include transform(translate3d(0,-$menu-height,0));
+    position:absolute;
+    top:0;
+    width:100%;
+    @include transform(translate3d(0,0,0));
 
      -webkit-transition: -webkit-transform 400ms ease;
           -os-transition: -os-transform 400ms ease;  
@@ -297,7 +300,7 @@ NAVIGATION STYLES
 }
 .show {
     .wrapper {
-        @include transform(translate3d(0,0,0));
+        @include transform(translate3d(0,$menu-height,0));
    
     }
     .nav {

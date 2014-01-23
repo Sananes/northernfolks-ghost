@@ -57,10 +57,11 @@ a.symbol:before {
   margin-right: 0.3em;
   font-size: 130%; }
 
+/* Just click to select the code */
 @font-face {
   font-family: "icons";
   src: url("../fonts/custom/icons.eot");
-  src: url("../fonts/custom/icons.eot?#iefix") format("embedded-opentype"), url("../fonts/custom/icons.woff") format("woff"), url("../fonts/custom/icons.ttf") format("truetype"), url("../fonts/custom/icons.svg#icons") format("svg");
+  src: url("../fonts/custom/icons.eot?#iefix") format("embedded-opentype"), url("../fonts/custom/icons.ttf") format("truetype"), url("../fonts/custom/icons.svg#icons") format("svg"), url("../fonts/custom/icons.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 

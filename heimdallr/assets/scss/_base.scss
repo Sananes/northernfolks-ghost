@@ -212,7 +212,7 @@ HEADER STYLES
         a {
             text-indent:-999em;
             color: #fff;
-            font-size: 35px;
+            font-size: 33px;
             text-decoration: none;
         }
         &:hover {
@@ -293,7 +293,7 @@ NAVIGATION STYLES
 
     &.show {
     display:block;
-    max-height:$menu-height;
+    //max-height:$menu-height;
     height:$menu-height;
 
     }

@@ -516,10 +516,11 @@ a.symbol:before {
   margin-right: 0.3em;
   font-size: 130%; }
 
+/* Just click to select the code */
 @font-face {
   font-family: "icons";
   src: url("../fonts/custom/icons.eot");
-  src: url("../fonts/custom/icons.eot?#iefix") format("embedded-opentype"), url("../fonts/custom/icons.woff") format("woff"), url("../fonts/custom/icons.ttf") format("truetype"), url("../fonts/custom/icons.svg#icons") format("svg");
+  src: url("../fonts/custom/icons.eot?#iefix") format("embedded-opentype"), url("../fonts/custom/icons.ttf") format("truetype"), url("../fonts/custom/icons.svg#icons") format("svg"), url("../fonts/custom/icons.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 
@@ -880,7 +881,7 @@ HEADER STYLES
     .header .menu-toggle a {
       text-indent: -999em;
       color: #fff;
-      font-size: 35px;
+      font-size: 33px;
       text-decoration: none; }
     .header .menu-toggle:hover {
       opacity: 1; }
@@ -957,7 +958,6 @@ NAVIGATION STYLES
   transition: height 0.3s ease-in-out; }
   .nav.show {
     display: block;
-    max-height: 50px;
     height: 50px; }
   .nav #inner-nav {
     margin: 0 auto;

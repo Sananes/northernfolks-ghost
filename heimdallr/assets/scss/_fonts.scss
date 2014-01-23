@@ -52,18 +52,21 @@ a.symbol:before {
     font-size: 130%;
 }
 
+/* Just click to select the code */
+ 
+@charset "UTF-8";
+ 
 @font-face {
   font-family: "icons";
   src:url("../fonts/custom/icons.eot");
   src:url("../fonts/custom/icons.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/custom/icons.woff") format("woff"),
     url("../fonts/custom/icons.ttf") format("truetype"),
-    url("../fonts/custom/icons.svg#icons") format("svg");
+    url("../fonts/custom/icons.svg#icons") format("svg"),
+    url("../fonts/custom/icons.woff") format("woff");
   font-weight: normal;
   font-style: normal;
-
 }
-
+ 
 [data-icon]:before {
   font-family: "icons" !important;
   content: attr(data-icon);
@@ -76,7 +79,7 @@ a.symbol:before {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+ 
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
   font-family: "icons" !important;
@@ -88,29 +91,36 @@ a.symbol:before {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
+} 
+ 
 .icon-menu:before {
-  content: "b";
-}
+   content: "b"; 
+} 
+ 
 .icon-up-open:before {
-  content: "c";
-}
+   content: "c"; 
+} 
+ 
 .icon-down-open:before {
-  content: "d";
-}
+   content: "d"; 
+} 
+ 
 .icon-fontawesome-webfont:before {
-  content: "e";
-}
+   content: "e"; 
+} 
+ 
 .icon-email-plane:before {
-  content: "f";
-}
+   content: "f"; 
+} 
+ 
 .icon-fontawesome-webfont-1:before {
-  content: "g";
-}
+   content: "g"; 
+} 
+ 
 .icon-align-left:before {
-  content: "a";
-}
+   content: "a"; 
+} 
+ 
 .icon-list:before {
-  content: "h";
+   content: "h"; 
 }

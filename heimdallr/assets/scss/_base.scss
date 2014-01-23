@@ -118,7 +118,7 @@ H1, H2, H3, H4, H5 STYLES
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	font-family: $sans-serif;
 	text-rendering: optimizelegibility;
-	font-weight: 800;
+	font-weight: 500;
     letter-spacing:-1px;
     text-transform:normal;
 	/*
@@ -213,6 +213,7 @@ HEADER STYLES
         z-index:10;
         position:relative;
         width:100%;
+        font-weight:bold;
         a:hover {
             color: rgba(255,255,255,0.8) !important;
         }
@@ -234,7 +235,7 @@ HEADER STYLES
             opacity:1;
         }
     }
-    .menu-icon, #mail a {
+    .menu-icon {
         text-indent:-999em;
         @include retina-image('../images/menu-icon', 'png', 100%, 100%);
         @include size (32px, 28px);
@@ -251,9 +252,10 @@ HEADER STYLES
         position:relative;
         height:200px;
         a {
-            @include retina-image('../images/mail-icon', 'png', 100%, 100%);
-            @include size (30px, 30px);
             opacity:0.8;
+            color: #fff;
+            font-size:33px;
+            text-decoration:none;
             &:hover {
                 opacity: 1;
             }
@@ -314,6 +316,7 @@ NAVIGATION STYLES
     overflow:hidden;
     max-height:$menu-height;
     height:$menu-height;
+    font-family: $sans-serif;
 
 
 
@@ -462,6 +465,36 @@ POSTS & CONTENT STYLES
 
 .post-template .entry-content {
     text-align:left;
+}
+.more-info {
+    padding: 8px 0;
+}
+.tags {
+    float:left;
+    margin:0;
+    display:inline-block;
+}
+.share {
+    float:right;
+    ul {
+        margin-left:10px !important;
+        li {
+            font-size: 22px;
+            a {
+                color: #ddd;
+            }
+        }
+    }
+    ul, li, p {
+        margin-top:0px !important;
+        line-height:normal;
+        display:inline-block;
+        margin-bottom:0 !important;
+
+        &.last {
+            float:none;
+        }
+    }
 }
 .entry-content {
 

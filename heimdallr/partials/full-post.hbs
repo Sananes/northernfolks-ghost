@@ -28,13 +28,16 @@
 
     <section class="entry-content clearfix">
         {{content}}
+
+
+        
     </section> <!-- end article section -->
     <hr>
 
-    <footer class="article-footer">
+    <footer class="article-footer clearfix">
 
   
-
+    <div class="more-info clearfix">
         {{#if tags}}
             <p class="tags">
                 <span class="tags-title">
@@ -51,9 +54,22 @@
                     {{/each}}
                 </span>
             </p>
-            <hr>
+         
         {{/if}}
 
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+        <nav class="share">
+            <p class="share-text">Share this post</p>
+            <ul class="social-share">
+                <li><a onclick="window.open(this.href, 'facebook-share', 'width=550,height=350');return false;" href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]={{@blog.url}}/{{slug}}&p[images][0]={{@blog.logo}}&p[title]={{title}}&p[summary]={{excerpt}}"><span class="symbol">roundedfacebook</span></a></li>
+                <li><a onclick="window.open(this.href, 'twitter-share', 'width=550,height=350');return false;" href="http://twitter.com/home?status={{title}}%20-%20{{@blog.url}}/{{slug}}"><span class="symbol">roundedtwitter</span></a></li>
+                <li class="last"><a onclick="window.open(this.href, 'googleplus-share', 'width=550,height=350');return false;" href="https://plus.google.com/share?url={{@blog.url}}/{{slug}}"><span class="symbol">roundedgoogleplus</span></a></li>
+            </ul>
+        </nav>
+   
+        </div>
+        <hr>
         <section  class="author clearfix">
             <div class="twocol first avatar">
                 <img src="{{author.image}}" class="author-img" title="author pic"/>

@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Exo+2:400,100,200,300,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic);
+@import url(http://fonts.googleapis.com/css?family=Exo+2:400,100,200,300,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic&Merriweather:400,700,700italic,400italic);
 /******************************************************************
 Site Name:  Heimdallr
 Author:     Aaron Sananes & Daniel Sandvik
@@ -208,7 +208,7 @@ probably best not to use it. I mean, were you going to anyway? */
 BUTTONS
 *********************/
 .button, .button:visited {
-  font-family: Cambria, Times New Roman, Times, serif;
+  font-family: "Merriweather", Cambria, Times New Roman, Times, serif;
   padding: 4px 12px;
   color: white;
   display: inline-block;

@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Exo+2:400,100,200,300,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic);
+@import url(http://fonts.googleapis.com/css?family=Exo+2:400,100,200,300,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic&Merriweather:400,700,700italic,400italic);
 /******************************************************************
 Site Name:  Heimdallr
 Company:    NorthernFolks
@@ -666,7 +666,7 @@ probably best not to use it. I mean, were you going to anyway? */
 BUTTONS
 *********************/
 .button, .button:visited {
-  font-family: Cambria, Times New Roman, Times, serif;
+  font-family: "Merriweather", Cambria, Times New Roman, Times, serif;
   padding: 4px 12px;
   color: white;
   display: inline-block;
@@ -714,7 +714,7 @@ and will be used across all viewports.
 GENERAL STYLES
 *********************/
 body {
-  font-family: Cambria, Times New Roman, Times, serif;
+  font-family: "Merriweather", Cambria, Times New Roman, Times, serif;
   font-size: 100%;
   line-height: 2;
   color: #565656; }
@@ -805,7 +805,7 @@ H1, H2, H3, H4, H5 STYLES
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   font-family: "Exo 2", Helvetica, Arial, sans-serif;
   text-rendering: optimizelegibility;
-  font-weight: 800;
+  font-weight: 500;
   letter-spacing: -1px;
   text-transform: normal;
   /*
@@ -888,7 +888,8 @@ HEADER STYLES
     display: block;
     z-index: 10;
     position: relative;
-    width: 100%; }
+    width: 100%;
+    font-weight: bold; }
     .header #site-title a:hover {
       color: rgba(255, 255, 255, 0.8) !important; }
   .header .menu-toggle {
@@ -904,7 +905,7 @@ HEADER STYLES
       text-decoration: none; }
     .header .menu-toggle:hover {
       opacity: 1; }
-  .header .menu-icon, .header #mail a {
+  .header .menu-icon {
     text-indent: -999em;
     background-image: url("../images/menu-icon.png");
     width: 32px;
@@ -913,7 +914,7 @@ HEADER STYLES
     vertical-align: middle;
     line-height: 200px; }
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 144dpi) {
-      .header .menu-icon, .header #mail a {
+      .header .menu-icon {
         background-image: url("../images/menu-icon@2x.png");
         background-size: 100% 100%; } }
   .header #mail {
@@ -923,14 +924,10 @@ HEADER STYLES
     position: relative;
     height: 200px; }
     .header #mail a {
-      background-image: url("../images/mail-icon.png");
-      width: 30px;
-      height: 30px;
-      opacity: 0.8; }
-      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 144dpi) {
-        .header #mail a {
-          background-image: url("../images/mail-icon@2x.png");
-          background-size: 100% 100%; } }
+      opacity: 0.8;
+      color: #fff;
+      font-size: 33px;
+      text-decoration: none; }
       .header #mail a:hover {
         opacity: 1; }
 
@@ -980,7 +977,8 @@ NAVIGATION STYLES
   background: #3f484b;
   overflow: hidden;
   max-height: 50px;
-  height: 50px; }
+  height: 50px;
+  font-family: "Exo 2", Helvetica, Arial, sans-serif; }
   .nav.show {
     display: block;
     -webkit-transform: translate3d(0, 0, 0); }
@@ -1089,6 +1087,30 @@ POSTS & CONTENT STYLES
 *********************/
 .post-template .entry-content {
   text-align: left; }
+
+.more-info {
+  padding: 8px 0; }
+
+.tags {
+  float: left;
+  margin: 0;
+  display: inline-block; }
+
+.share {
+  float: right; }
+  .share ul {
+    margin-left: 10px !important; }
+    .share ul li {
+      font-size: 22px; }
+      .share ul li a {
+        color: #ddd; }
+  .share ul, .share li, .share p {
+    margin-top: 0px !important;
+    line-height: normal;
+    display: inline-block;
+    margin-bottom: 0 !important; }
+    .share ul.last, .share li.last, .share p.last {
+      float: none; }
 
 .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5 {
   text-align: center; }

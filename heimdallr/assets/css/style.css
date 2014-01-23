@@ -844,6 +844,17 @@ HEADER STYLES
 .home-template #main, .archive-template #main {
   padding-bottom: 0px; }
 
+.wrapper {
+  -webkit-transform: translate3d(0, -50px, 0);
+  -moz-transform: translate3d(0, -50px, 0);
+  -ms-transform: translate3d(0, -50px, 0);
+  -o-transform: translate3d(0, -50px, 0);
+  transform: translate3d(0, -50px, 0);
+  -webkit-transition: -webkit-transform 400ms ease;
+  -os-transition: -os-transform 400ms ease;
+  -ms-transition: -ms-transform 400ms ease;
+  transition: transform 400ms ease; }
+
 .header {
   position: relative;
   clear: both;
@@ -871,12 +882,17 @@ HEADER STYLES
     float: none !important;
     margin: 0 auto; }
   .header #site-title {
-    display: inline-block; }
+    display: block;
+    z-index: 10;
+    position: relative;
+    width: 100%; }
     .header #site-title a:hover {
       color: rgba(255, 255, 255, 0.8) !important; }
   .header .menu-toggle {
     height: 200px;
     float: left;
+    position: relative;
+    z-index: 99;
     opacity: 0.8; }
     .header .menu-toggle a {
       text-indent: -999em;
@@ -900,6 +916,8 @@ HEADER STYLES
   .header #mail {
     display: inline-block;
     float: right;
+    z-index: 99;
+    position: relative;
     height: 200px; }
     .header #mail a {
       background-image: url("../images/mail-icon.png");
@@ -944,21 +962,25 @@ NAVIGATION STYLES
   -transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out; }
 
+.show .wrapper {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+.show .nav {
+  visibility: visible; }
+
 /* The {{nav}} helper outputs a site-navigation div */
 .nav {
   position: relative;
   background: #3f484b;
-  line-height: 50px;
-  height: 0;
   overflow: hidden;
-  -webkit-transition: height 0.3s ease-in-out;
-  -ms-transition: height 0.3s ease-in-out;
-  -o-transition: height 0.3s ease-in-out;
-  -transition: height 0.3s ease-in-out;
-  transition: height 0.3s ease-in-out; }
+  max-height: 50px;
+  height: 50px; }
   .nav.show {
     display: block;
-    height: 50px; }
+    -webkit-transform: translate3d(0, 0, 0); }
   .nav #inner-nav {
     margin: 0 auto;
     float: none;

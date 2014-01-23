@@ -82,6 +82,8 @@
     <div id="container">
         
         {{! Output the content of the header partial template }}
+        {{> topnav }}
+        <div class="wrapper">
         {{> header}}
 
         <section id="content" class="animate" data-anim-type="fadeInUp">
@@ -106,7 +108,7 @@
                 <p class="source-org copyright">Copyright © Heimdall. A Ghost theme by <a href="http://www.northernfolks.com">Northern Folks</a></p> <p class="back-to-top"><a href="#">Back to Top</a></p>
             </div> <!-- end #inner-footer -->
         </footer> <!-- end footer -->
-
+    </div> <!-- end .wrapper -->
     </div> <!-- end #container -->
 
     <!-- The Ghost footer helper will insert some shared javascript libraries and files required by plugins -->

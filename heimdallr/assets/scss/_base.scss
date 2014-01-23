@@ -167,6 +167,14 @@ HEADER STYLES
         padding-bottom:0px;
     }
 }
+.wrapper {
+    @include transform(translate3d(0,-$menu-height,0));
+
+     -webkit-transition: -webkit-transform 400ms ease;
+          -os-transition: -os-transform 400ms ease;  
+               -ms-transition: -ms-transform 400ms ease;  
+                    transition: transform 400ms ease;  
+}
 .header {
     position:relative;
     clear:both;
@@ -198,8 +206,10 @@ HEADER STYLES
         margin:0 auto;
     }
     #site-title {
-        display:inline-block;
-
+        display:block;
+        z-index:10;
+        position:relative;
+        width:100%;
         a:hover {
             color: rgba(255,255,255,0.8) !important;
         }
@@ -207,6 +217,8 @@ HEADER STYLES
     .menu-toggle {
         height:200px;
         float:left;
+        position:relative;
+        z-index:99;
         opacity:0.8;
         
         a {
@@ -232,6 +244,8 @@ HEADER STYLES
     #mail {
         display:inline-block;
         float:right;
+        z-index:99;
+        position:relative;
         height:200px;
         a {
             @include retina-image('../images/mail-icon', 'png', 100%, 100%);
@@ -281,21 +295,30 @@ NAVIGATION STYLES
 .close, .menu-toggle, .back-to-top a, .mail-icon {
     @include transition(opacity .3s ease-in-out);
 }
+.show {
+    .wrapper {
+        @include transform(translate3d(0,0,0));
+   
+    }
+    .nav {
+        visibility: visible;
+    }
+}
 /* The {{nav}} helper outputs a site-navigation div */
 .nav {
     position:relative;
     background: #3f484b;
-    line-height:$menu-height;
-    height:0;
     overflow:hidden;
-    @include transition(height .3s ease-in-out);
+    max-height:$menu-height;
+    height:$menu-height;
+
 
 
     &.show {
     display:block;
-    //max-height:$menu-height;
-    height:$menu-height;
 
+      -webkit-transform: translate3d(0,0,0);
+           //-webkit-transition: -webkit-transform 400ms ease;
     }
 
     #inner-nav {

@@ -680,7 +680,10 @@ hr {
         float:left;
     }
     .share-text, .social-share li {
-        display:inline-block
+        display:inline-block;
+    }
+    li a span {
+        text-decoration:none;
     }
     .social-share {
         float:right;
@@ -690,13 +693,14 @@ hr {
             margin-right: 7px;
             padding:0;
 
+
             &:last-child, &.last {
                 margin-right:0px;
                 float:none;
             }
         }
         li a {
-            text-decoration:none;
+            text-decoration:none !important;
         }
         span {
             border-radius:3px;

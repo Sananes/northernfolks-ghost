@@ -213,7 +213,7 @@ HEADER STYLES
         z-index:10;
         position:relative;
         width:100%;
-        line-height: ($header-height - 13);
+        line-height: $header-height;
         font-weight:bold;
         a:hover {
             color: rgba(255,255,255,0.8) !important;

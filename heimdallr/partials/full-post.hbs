@@ -71,10 +71,12 @@
         </div>
         <hr>
         <section  class="author clearfix">
+            {{#if author.image}}
             <div class="twocol first avatar">
                 <img src="{{author.image}}" class="author-img" title="author pic"/>
             </div>
-            <div class="tencol author-bio">
+            {{/if}}
+            <div class="{{#if author.image}}tencol{{else}}twelvecol{{/if}} author-bio">
                 <h4>{{author.name}}</h2>
                 <!-- <small>{{author.location}}</small> -->
                 <p>{{author.bio}}</p>

@@ -73,13 +73,13 @@
         <section  class="author clearfix">
             {{#if author.image}}
             <div class="twocol first avatar">
-                <img src="{{author.image}}" class="author-img" title="author pic"/>
+                <a href="{{author.website}}"><img src="{{author.image}}" class="author-img" title="author pic"/></a>
             </div>
             {{/if}}
             <div class="{{#if author.image}}tencol{{else}}twelvecol{{/if}} author-bio">
-                <h4>{{author.name}}</h2>
-                <!-- <small>{{author.location}}</small> -->
-                <p>{{author.bio}}</p>
+                {{#if author.name}}<h4><a href="{{author.website}}">{{author.name}}</a></h2>{{/if}}
+                {{#if author.location}}<small>{{author.location}}</small>{{/if}}
+                {{#if author.bio}}<p>{{author.bio}}</p>{{/if}}
             </div>
         </section>  
 

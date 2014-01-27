@@ -131,7 +131,7 @@
                                     });
     
                                     //Callback when create new article
-    
+                                    $('.tip').tipr();
                                     $("#main").append(endless);
                                     $("#main").append(pagination);
                                     $(".pagination").css("display", "none");

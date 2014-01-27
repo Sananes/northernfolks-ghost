@@ -7,7 +7,7 @@ module.exports = function(grunt) {
         },
         buildType: 'Build',
         pkg: grunt.file.readJSON('package.json'),
-        archive_name: grunt.option('name') || 'linen',
+        archive_name: grunt.option('name') || 'baldr',
 
         clean: {
             pre: ['dist/', 'build/'],
@@ -29,12 +29,12 @@ module.exports = function(grunt) {
         copy: {
             main: {
                 files: [
-                    {expand: true, src: ['css/**'], dest: 'build/'},
-                    {expand: true, src: ['fonts/**'], dest: 'build/'},
-                    {expand: true, src: ['images/**'], dest: 'build/'},
-                    {expand: true, src: ['js/**'], dest: 'build/'},
+                    {expand: true, src: ['assets/css/**'], dest: 'build/'},
+                    {expand: true, src: ['assets/fonts/**'], dest: 'build/'},
+                    {expand: true, src: ['assets/images/**'], dest: 'build/'},
+                    {expand: true, src: ['assets/js/**'], dest: 'build/'},
                     {expand: true, src: ['partials/**'], dest: 'build/'},
-                    {expand: true, src: ['scss/**'], dest: 'build/'},
+                    {expand: true, src: ['assets/scss/**'], dest: 'build/'},
                     {expand: true, src: ['*', '!.gitignore', '!.DS_Store'], dest: 'build/'},
                 ]
             },

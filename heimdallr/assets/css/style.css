@@ -728,6 +728,90 @@ img {
 /*********************
 LAYOUT & GRID STYLES
 *********************/
+.settings {
+  position: fixed;
+  left: 0;
+  top: 300px;
+  font-size: 30px;
+  color: white !important;
+  background: black !important;
+  padding: 8px;
+  z-index: 9999;
+  border-radius: 0 3px 3px 0;
+  opacity: 0.8; }
+  .settings:hover {
+    opacity: 1;
+    color: #fff !important; }
+  .settings i {
+    vertical-align: middle; }
+
+#theme-config.active .settings {
+  display: none; }
+#theme-config.active #colors {
+  -webkit-transform: translate3d(185px, 0, 0);
+  -moz-transform: translate3d(185px, 0, 0);
+  -ms-transform: translate3d(185px, 0, 0);
+  -o-transform: translate3d(185px, 0, 0);
+  transform: translate3d(185px, 0, 0); }
+
+#colors {
+  position: fixed;
+  top: 300px;
+  left: -185px;
+  -webkit-transition: -webkit-transform 400ms ease;
+  -os-transition: -os-transform 400ms ease;
+  -ms-transition: -ms-transform 400ms ease;
+  transition: transform 400ms ease;
+  border-radius: 0 3px 3px 0;
+  z-index: 999;
+  background: black;
+  color: #fff;
+  padding: 10px; }
+  #colors .close {
+    position: absolute;
+    top: -13px;
+    right: -13px !important;
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    padding: 8px;
+    text-indent: -999em;
+    border-radius: 300px;
+    background-color: red; }
+    #colors .close span {
+      background-image: url("../images/close.png");
+      width: 14px;
+      height: 14px;
+      float: left; }
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 144dpi) {
+        #colors .close span {
+          background-image: url("../images/close@2x.png");
+          background-size: 100% 100%; } }
+  #colors ul {
+    margin: 0;
+    padding: 0; }
+  #colors li.last {
+    margin-bottom: 0px !important; }
+  #colors li {
+    margin-bottom: 10px;
+    display: block;
+    line-height: 34px;
+    height: 34px; }
+  #colors li a {
+    text-indent: -999em;
+    float: left;
+    display: block;
+    width: 34px;
+    height: 34px; }
+  #colors #red {
+    background: red; }
+  #colors #orange {
+    background: orange; }
+  #colors #default {
+    background: blue; }
+  #colors #green {
+    background: green; }
+
 .wrap {
   width: 96%;
   margin: 0 auto;

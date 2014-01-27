@@ -33,7 +33,104 @@ img {
 /*********************
 LAYOUT & GRID STYLES
 *********************/
+.settings {
+    position:fixed;
+    left:0;
+    top:300px;
+    font-size: 30px;
+    color: white !important; 
+    background: black !important;
+    padding: 8px;
+    z-index:9999;
+    border-radius: 0 3px 3px 0;
+    opacity: 0.8;
 
+    &:hover {
+        opacity:1;
+        color: #fff !important;
+    }
+    i {
+        vertical-align:middle;
+    }
+}
+#theme-config {
+    &.active {
+        .settings {
+            display:none;
+        }
+        #colors {
+            @include transform(translate3d(185px,0,0));
+        }
+    }
+}
+#colors {
+    position:fixed;
+    top:300px;
+    left:-185px;
+     -webkit-transition: -webkit-transform 400ms ease;
+          -os-transition: -os-transform 400ms ease;  
+               -ms-transition: -ms-transform 400ms ease;  
+                    transition: transform 400ms ease;     
+    // width: 300px;
+    border-radius:0 3px 3px 0;
+
+    z-index:999;
+    background:black;
+    color: #fff;
+    padding: 10px;
+
+    .close {
+        position:absolute;
+        top: -13px;
+        right: -13px !important;
+        display:inline-block;
+        vertical-align:middle;
+        position:absolute;
+        padding:8px;
+        text-indent:-999em;   
+        border-radius:300px;
+        background-color: red;
+
+        span {
+             @include retina-image('../images/close', 'png', 100%, 100%);
+            @include size (14px, 14px);
+            float:left;
+        
+        }
+    }
+
+    ul {
+        margin:0;
+        padding:0;
+    }
+    li.last {
+        margin-bottom:0px !important;
+    }
+    li {
+        margin-bottom:10px;
+        display:block;
+        line-height:34px;
+        height:34px;
+    }
+    li a {
+        text-indent:-999em;
+        float:left;
+        display:block;
+        @include size(34px,34px);
+    }
+    #red {
+        background:red;
+    }
+    #orange {
+        background:orange;
+    }
+    #default {
+        background: blue;
+    }
+    #green {
+        background: green;
+    }
+}
 .wrap {
 	width: 96%;
 	margin: 0 auto;

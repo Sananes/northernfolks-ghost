@@ -8,7 +8,6 @@ Website:    http://www.northernfolks.com
   Green Color Scheme
 **************************/
 .header {
-  background-color: #5cc790 !important;
   background-image: url(../images/header-image-green.jpg) !important;
 }
 a:hover, .entry-content a {
@@ -17,10 +16,10 @@ a:hover, .entry-content a {
 .entry-content a:hover {
   color: #47af79 !important;
 }
-.button, .home-template .button, .home-template .button:hover {
+.button, .home-template .button, .home-template .button:hover, .header a {
   color: #fff !important;
 }
-.button:hover {
+.button:hover, .header {
   background: #5cc790 !important;
 }
 .menu li a:hover, .social-icons li a:hover {

@@ -33,104 +33,7 @@ img {
 /*********************
 LAYOUT & GRID STYLES
 *********************/
-.settings {
-    position:fixed;
-    left:0;
-    top:300px;
-    font-size: 30px;
-    color: white !important; 
-    background: black !important;
-    padding: 8px;
-    z-index:9999;
-    border-radius: 0 3px 3px 0;
-    opacity: 0.8;
 
-    &:hover {
-        opacity:1;
-        color: #fff !important;
-    }
-    i {
-        vertical-align:middle;
-    }
-}
-#theme-config {
-    &.active {
-        .settings {
-            display:none;
-        }
-        #colors {
-            @include transform(translate3d(185px,0,0));
-        }
-    }
-}
-#colors {
-    position:fixed;
-    top:300px;
-    left:-185px;
-     -webkit-transition: -webkit-transform 400ms ease;
-          -os-transition: -os-transform 400ms ease;  
-               -ms-transition: -ms-transform 400ms ease;  
-                    transition: transform 400ms ease;     
-    // width: 300px;
-    border-radius:0 3px 3px 0;
-
-    z-index:999;
-    background:black;
-    color: #fff;
-    padding: 10px;
-
-    .close {
-        position:absolute;
-        top: -13px;
-        right: -13px !important;
-        display:inline-block;
-        vertical-align:middle;
-        position:absolute;
-        padding:8px;
-        text-indent:-999em;   
-        border-radius:300px;
-        background-color: red;
-
-        span {
-             @include retina-image('../images/close', 'png', 100%, 100%);
-            @include size (14px, 14px);
-            float:left;
-        
-        }
-    }
-
-    ul {
-        margin:0;
-        padding:0;
-    }
-    li.last {
-        margin-bottom:0px !important;
-    }
-    li {
-        margin-bottom:10px;
-        display:block;
-        line-height:34px;
-        height:34px;
-    }
-    li a {
-        text-indent:-999em;
-        float:left;
-        display:block;
-        @include size(34px,34px);
-    }
-    #red {
-        background:red;
-    }
-    #orange {
-        background:orange;
-    }
-    #default {
-        background: blue;
-    }
-    #green {
-        background: green;
-    }
-}
 .wrap {
 	width: 96%;
 	margin: 0 auto;
@@ -270,10 +173,10 @@ HEADER STYLES
     width:100%;
     @include transform(translate3d(0,0,0));
 
-     -webkit-transition: -webkit-transform 400ms ease;
-          -os-transition: -os-transform 400ms ease;  
-               -ms-transition: -ms-transform 400ms ease;  
-                    transition: transform 400ms ease;  
+     -webkit-transition: -webkit-transform .6s ease;
+          -os-transition: -os-transform .6s ease;  
+               -ms-transition: -ms-transform .6s ease;  
+                    transition: transform .6s ease;  
 }
 .header {
     position:relative;
@@ -284,9 +187,9 @@ HEADER STYLES
     background: $primary url(../images/header-image.jpg) no-repeat top center;
     background-size:cover;
     #logo {
-        line-height:normal !important;
+        
         min-height:30px;
-        max-height:40px;
+        // max-height:40px;
         margin: 0 auto;
         display:inline-block;
         line-height: $header-height;
@@ -318,6 +221,7 @@ HEADER STYLES
     }
     .menu-toggle {
         height:$header-height;
+        line-height: $header-height + 15px;
         float:left;
         position:relative;
         z-index:99;
@@ -347,6 +251,7 @@ HEADER STYLES
         display:inline-block;
         float:right;
         z-index:99;
+        line-height: $header-height + 15px;
         position:relative;
         height:200px;
         a {
@@ -821,7 +726,7 @@ FOOTER STYLES
 *********************/
 
 .footer {
-    height:200px;
+    height:100px;
     border-top:1px solid #ddd;
     padding-top:20px;
 

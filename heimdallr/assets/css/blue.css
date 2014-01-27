@@ -14,6 +14,9 @@ a:hover, .entry-content a {
 .entry-content a:hover {
   color: #ae2323 !important;
 }
+.header a {
+  color: #fff !important;
+}
 .button:hover {
   background: #cd3434 !important;
 }

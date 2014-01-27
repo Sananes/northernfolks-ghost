@@ -8,22 +8,27 @@ Website:    http://www.northernfolks.com
   Orange Color Scheme
 **************************/
 .header {
-  background-color: #ff5730 !important;
   background-image: url(../images/header-image-orange.jpg) !important;
 }
-a:hover, .entry-content a {
+a:hover, 
+.entry-content a {
   color: #ff5730 !important;
 }
 .entry-content a:hover {
   color: #e44a26 !important;
 }
-.button, .home-template .button, .home-template .button:hover {
+.button, 
+.home-template .button, 
+.home-template .button:hover, 
+.header a {
   color: #fff !important;
 }
-.button:hover {
+.button:hover, 
+.header {
   background: #ff5730 !important;
 }
-.menu li a:hover, .social-icons li a:hover {
+.menu li a:hover, 
+.social-icons li a:hover {
   color: #fff !important;
 }
 blockquote {

@@ -1296,13 +1296,16 @@ TOOLTIP STYLES
   font: 13px/1.7 "Exo 2", Helvetica, Arial, sans-serif;
   color: #fff;
   background-color: #565859;
-  padding: 7px 14px; }
+  padding: 7px 14px;
+  border-radius: 3px !important;
+  overflow: hidden; }
 
 .tipr_container_bottom {
   display: none;
   position: absolute;
   margin-top: 13px;
-  z-index: 1000; }
+  z-index: 1000;
+  border-radius: 3px; }
 
 .tipr_container_top {
   display: none;
@@ -1311,12 +1314,11 @@ TOOLTIP STYLES
   z-index: 1000; }
 
 .tipr_point_top, .tipr_point_bottom {
-  position: relative;
-  background: #565859; }
+  position: relative; }
 
 .tipr_point_bottom {
   margin-top: 12px;
-  border-radius: 3px; }
+  border-radius: 3px !important; }
 
 .tipr_point_top:after, .tipr_point_top:before {
   position: absolute;

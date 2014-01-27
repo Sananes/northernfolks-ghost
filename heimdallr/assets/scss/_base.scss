@@ -778,6 +778,8 @@ TOOLTIP STYLES
      color: #fff; 
      background-color: #565859;
      padding: 7px 14px;
+     border-radius:3px !important;
+     overflow:hidden;
 
 }
 .tipr_container_bottom
@@ -786,6 +788,8 @@ TOOLTIP STYLES
      position: absolute;
      margin-top: 13px;
      z-index: 1000;
+     border-radius:3px;
+
 
 }
 .tipr_container_top
@@ -798,13 +802,13 @@ TOOLTIP STYLES
 .tipr_point_top, .tipr_point_bottom 
 {
      position: relative;
-    background: #565859;
-
+    //background: #565859;
     //border: 1px solid #dcdcdc;
+
 }
 .tipr_point_bottom {
     margin-top:12px;
-     border-radius:3px;
+     border-radius:3px !important;
 }
 .tipr_point_top:after, .tipr_point_top:before
 {

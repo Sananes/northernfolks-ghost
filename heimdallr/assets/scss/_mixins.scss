@@ -28,6 +28,14 @@ CLEARFIXIN'
 	&:after { clear: both; }
 }
 /*********************
+SVG
+*********************/
+@mixin svg-bg($name) {
+  background-image: url('../images/#{$name}.png'); // IE8 & below
+  background-image: url('../images/#{$name}.svg');
+}
+
+/*********************
 ANIMATION
 *********************/
 @mixin animation ($delay, $iteration, $timing, $duration, $animation) {

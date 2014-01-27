@@ -231,6 +231,10 @@ jQuery(document).ready(function($) {
 
 
     // add all your scripts here
+
+    $('.tip').tipr();
+
+    
     if($('body').hasClass('home-template')) {
         $('#logo').addClass('animate bounceIn')
     }

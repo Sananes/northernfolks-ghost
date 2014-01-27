@@ -1264,6 +1264,8 @@ FOOTER STYLES
   border-top: 1px solid #ddd;
   padding-top: 20px;
   clear: both; }
+  .footer p {
+    font-size: 13px; }
 
 .copyright {
   display: inline-block;

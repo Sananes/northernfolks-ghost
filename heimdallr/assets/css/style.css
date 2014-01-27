@@ -669,7 +669,7 @@ probably best not to use it. I mean, were you going to anyway? */
 BUTTONS
 *********************/
 .button, .button:visited {
-  font-family: "Merriweather", Cambria, Times New Roman, Times, serif;
+  font-family: "Merriweather", Cambria, "Helvetica Neue", Times New Roman, Times, serif;
   padding: 4px 12px;
   color: white;
   display: inline-block;
@@ -717,7 +717,7 @@ and will be used across all viewports.
 GENERAL STYLES
 *********************/
 body {
-  font-family: "Merriweather", Cambria, Times New Roman, Times, serif;
+  font-family: "Merriweather", Cambria, "Helvetica Neue", Times New Roman, Times, serif;
   font-size: 100%;
   line-height: 2em;
   color: #565656; }

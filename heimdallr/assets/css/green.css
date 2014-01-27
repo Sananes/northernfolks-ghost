@@ -20,7 +20,7 @@ a:hover, .entry-content a {
   color: #fff !important;
 }
 .button:hover, .header {
-  background: #5cc790 !important;
+  background-color: #5cc790 !important;
 }
 .menu li a:hover, .social-icons li a:hover {
   color: #fff !important;

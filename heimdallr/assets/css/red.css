@@ -25,7 +25,7 @@ a:hover,
 }
 .button:hover, 
 .header {
-  background: #cd3434 !important;
+  background-color: #cd3434 !important;
 }
 .menu li a:hover, 
 .social-icons li a:hover {

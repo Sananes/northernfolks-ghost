@@ -811,6 +811,7 @@ a {
   -os-transition: -os-transform .6s ease;
   -ms-transition: -ms-transform .6s ease;
   transition: transform .6s ease;
+  background: #fff;
   z-index: 8001;
   position: relative; }
 
@@ -955,7 +956,7 @@ NAVIGATION STYLES
 
 /* The {{nav}} helper outputs a site-navigation div */
 .show #nav {
-  width: 300px;
+  width: auto;
   visibility: visible; }
   .show #nav .articles, .show #nav .close, .show #nav .author, .show #nav .social-icons {
     display: block;
@@ -966,6 +967,8 @@ NAVIGATION STYLES
     -o-transition: opacity 300ms ease-in-out 200ms;
     -transition: opacity 300ms ease-in-out 200ms;
     transition: opacity 300ms ease-in-out 200ms; }
+  .show #nav .inner-nav {
+    width: 300px; }
 .show .post-info.sticky {
   margin-left: -1px; }
 .show .nav-toggle {
@@ -1006,11 +1009,11 @@ NAVIGATION STYLES
   -o-transition: width 0.3s ease-in-out;
   -transition: width 0.3s ease-in-out;
   transition: width 0.3s ease-in-out;
-  width: 60px;
   top: 0;
   background: #8aba56 url(../images/header-image.jpg) no-repeat;
   background-size: cover;
   position: fixed;
+  width: 60px;
   height: 100%;
   text-align: center;
   overflow: hidden; }

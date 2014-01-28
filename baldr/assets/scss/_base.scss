@@ -122,6 +122,7 @@ a {
       -os-transition: -os-transform .6s ease;  
            -ms-transition: -ms-transform .6s ease;  
                 transition: transform .6s ease; 
+    background: #fff;
 
     //left:60px;
     z-index:8001;
@@ -311,7 +312,7 @@ NAVIGATION STYLES
 
 .show {
     #nav {
-        width:300px;
+        width:auto;
         visibility:visible;
   
        .articles, .close, .author, .social-icons {
@@ -320,6 +321,9 @@ NAVIGATION STYLES
             visibility:visible;
             @include transition(opacity 300ms ease-in-out 200ms);
         } 
+        .inner-nav {
+            width: 300px;
+        }
     }
     .post-info.sticky {
         margin-left:-1px;
@@ -364,15 +368,14 @@ NAVIGATION STYLES
            -ms-transition: -ms-transform .6s ease;  
                 transition: transform .6s ease; 
      @include transition(width .3s ease-in-out);     
-    width: 60px;
     top:0;
     background: $primary url(../images/header-image.jpg) no-repeat;
     background-size:cover;
     position:fixed;
+    width:60px;
     height:100%;
     text-align:center;
     overflow:hidden;
-
     .articles, .close, .author, .social-icons {
         opacity:0;
         visibility:hidden;

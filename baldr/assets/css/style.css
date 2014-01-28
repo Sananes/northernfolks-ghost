@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Exo+2:400,100,200,300,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic);
 /******************************************************************
-Site Name:  Heimdallr
+Site Name:  Baldr
 Company:    NorthernFolks
 Author:     Aaron Sananes & Daniel Sandvik
 Website:    http://www.northernfolks.com
@@ -478,7 +478,7 @@ dd {
   list-style: none; }
 
 /*********************
- Site Name:  Heimdallr
+ Site Name:  Baldr
  Company:    NorthernFolks
  Author:     Aaron Sananes & Daniel Sandvik
  Website:    http://www.northernfolks.com
@@ -570,7 +570,7 @@ a.symbol:before {
   content: "g"; }
 
 /******************************************************************
-Site Name:  Heimdallr
+Site Name:  Baldr
 Company:    NorthernFolks
 Author:     Aaron Sananes & Daniel Sandvik
 Website:    http://www.northernfolks.com
@@ -694,7 +694,7 @@ you set a great foundation, you won't need to add too many styles in
 the other stylesheets. Remember, keep it light: Speed is Important.
 */
 /******************************************************************
-Site Name:  Heimdallr
+Site Name:  Baldr
 Company:    NorthernFolks
 Author:     Aaron Sananes & Daniel Sandvik
 Website:    http://www.northernfolks.com
@@ -1479,7 +1479,7 @@ tweeners.
 */
 @media only screen and (min-width: 481px) {
   /******************************************************************
-  Site Name:  Heimdallr
+  Site Name:  Baldr
   Company:    NorthernFolks
   Author:     Aaron Sananes & Daniel Sandvik
   Website:    http://www.northernfolks.com
@@ -1587,7 +1587,7 @@ you can add resource intensive styles.
     right: 0 !important; }
 
   /******************************************************************
-  Site Name:  Heimdallr
+  Site Name:  Baldr
   Company:    NorthernFolks
   Author:     Aaron Sananes & Daniel Sandvik
   Website:    http://www.northernfolks.com
@@ -1670,7 +1670,7 @@ you can add resource intensive styles.
     float: right; }
 
   /******************************************************************
-  Site Name:  Heimdallr
+  Site Name:  Baldr
   Company:    NorthernFolks
   Author:     Aaron Sananes & Daniel Sandvik
   Website:    http://www.northernfolks.com
@@ -1775,7 +1775,7 @@ you can add resource intensive styles.
 */
 @media only screen and (min-width: 1030px) {
   /******************************************************************
-  Site Name:  Heimdallr
+  Site Name:  Baldr
   Author:     Aaron Sananes & Daniel Sandvik
   Website:    http://www.northernfolks.com
   
@@ -1791,7 +1791,7 @@ This is for the larger monitors and possibly full screen viewers.
 */
 @media only screen and (min-width: 1240px) {
   /******************************************************************
-  Site Name:  Heimdallr
+  Site Name:  Baldr
   Author:     Aaron Sananes & Daniel Sandvik
   Website:    http://www.northernfolks.com
   
@@ -1809,7 +1809,7 @@ query for retina AND a certain size if you want. Go Nuts.
 */
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
   /******************************************************************
-  Site Name:  Heimdallr
+  Site Name:  Baldr
   Company:    NorthernFolks
   Author:     Aaron Sananes & Daniel Sandvik
   Website:    http://www.northernfolks.com
@@ -1862,7 +1862,7 @@ be set to display none.
 */
 @media print {
   /******************************************************************
-  Site Name:  Heimdallr
+  Site Name:  Baldr
   Company:    NorthernFolks
   Author:     Aaron Sananes & Daniel Sandvik
   Website:    http://www.northernfolks.com

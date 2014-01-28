@@ -117,6 +117,11 @@ a {
     margin-bottom:40px;
 }
 #container {
+        @include transform(translate3d(0px,0,0));
+    -webkit-transition: -webkit-transform .6s ease;
+      -os-transition: -os-transform .6s ease;  
+           -ms-transition: -ms-transform .6s ease;  
+                transition: transform .6s ease; 
 
     //left:60px;
     z-index:8001;
@@ -308,6 +313,7 @@ NAVIGATION STYLES
     #nav {
         width:300px;
         visibility:visible;
+  
        .articles, .close, .author, .social-icons {
             display:block;
             opacity:1;
@@ -323,17 +329,19 @@ NAVIGATION STYLES
         display:none;
     }
     #container {
-        left:240px; // minus margin-left: 60px;
+        //left:240px; // minus margin-left: 60px;
         margin-left:0;
         position:relative;
+        @include transform(translate3d(240px,0,0));
+
     }
 }
 .show, .closing {
     #nav {
-        @include transition(width 300ms ease);
+        //@include transition(width 300ms ease);
     }
     #container {
-        @include transition(left 300ms ease );
+        //@include transition(left 300ms ease );
       //  @include transition(margin-left 300ms ease);
     }
     .post-info.sticky {
@@ -350,6 +358,12 @@ NAVIGATION STYLES
     z-index:8002;
     position:absolute;
     left:0;
+    @include transform(translate3d(0px,0,0));
+    -webkit-transition: -webkit-transform .6s ease;
+      -os-transition: -os-transform .6s ease;  
+           -ms-transition: -ms-transform .6s ease;  
+                transition: transform .6s ease; 
+     @include transition(width .3s ease-in-out);     
     width: 60px;
     top:0;
     background: $primary url(../images/header-image.jpg) no-repeat;

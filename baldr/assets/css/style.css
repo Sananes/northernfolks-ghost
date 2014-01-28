@@ -802,6 +802,15 @@ a {
   margin-bottom: 40px; }
 
 #container {
+  -webkit-transform: translate3d(0px, 0, 0);
+  -moz-transform: translate3d(0px, 0, 0);
+  -ms-transform: translate3d(0px, 0, 0);
+  -o-transform: translate3d(0px, 0, 0);
+  transform: translate3d(0px, 0, 0);
+  -webkit-transition: -webkit-transform .6s ease;
+  -os-transition: -os-transform .6s ease;
+  -ms-transition: -ms-transform .6s ease;
+  transition: transform .6s ease;
   z-index: 8001;
   position: relative; }
 
@@ -963,22 +972,14 @@ NAVIGATION STYLES
   opacity: 0 !important;
   display: none; }
 .show #container {
-  left: 240px;
   margin-left: 0;
-  position: relative; }
+  position: relative;
+  -webkit-transform: translate3d(240px, 0, 0);
+  -moz-transform: translate3d(240px, 0, 0);
+  -ms-transform: translate3d(240px, 0, 0);
+  -o-transform: translate3d(240px, 0, 0);
+  transform: translate3d(240px, 0, 0); }
 
-.show #nav, .closing #nav {
-  -webkit-transition: width 300ms ease;
-  -ms-transition: width 300ms ease;
-  -o-transition: width 300ms ease;
-  -transition: width 300ms ease;
-  transition: width 300ms ease; }
-.show #container, .closing #container {
-  -webkit-transition: left 300ms ease;
-  -ms-transition: left 300ms ease;
-  -o-transition: left 300ms ease;
-  -transition: left 300ms ease;
-  transition: left 300ms ease; }
 .show .post-info.sticky, .closing .post-info.sticky {
   -webkit-transition: margin-left 300ms ease;
   -ms-transition: margin-left 300ms ease;
@@ -991,6 +992,20 @@ NAVIGATION STYLES
   z-index: 8002;
   position: absolute;
   left: 0;
+  -webkit-transform: translate3d(0px, 0, 0);
+  -moz-transform: translate3d(0px, 0, 0);
+  -ms-transform: translate3d(0px, 0, 0);
+  -o-transform: translate3d(0px, 0, 0);
+  transform: translate3d(0px, 0, 0);
+  -webkit-transition: -webkit-transform .6s ease;
+  -os-transition: -os-transform .6s ease;
+  -ms-transition: -ms-transform .6s ease;
+  transition: transform .6s ease;
+  -webkit-transition: width 0.3s ease-in-out;
+  -ms-transition: width 0.3s ease-in-out;
+  -o-transition: width 0.3s ease-in-out;
+  -transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
   width: 60px;
   top: 0;
   background: #8aba56 url(../images/header-image.jpg) no-repeat;
@@ -1238,6 +1253,8 @@ hr {
   float: left; }
 .share .share-text, .share .social-share li {
   display: inline-block; }
+.share li a span {
+  text-decoration: none; }
 .share .social-share {
   float: right;
   margin: 0;
@@ -1249,7 +1266,7 @@ hr {
       margin-right: 0px;
       float: none; }
   .share .social-share li a {
-    text-decoration: none; }
+    text-decoration: none !important; }
   .share .social-share span {
     border-radius: 3px; }
 

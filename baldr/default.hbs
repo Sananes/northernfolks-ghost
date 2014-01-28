@@ -67,6 +67,9 @@
     
     <!--[if lt IE 9]>
     <link rel='stylesheet' id='linen-ie-only-css'  href='/assets/css/ie.css' type='text/css' media='all' />
+    <style>
+    .animate { opacity: 1; }
+    </style>
     <![endif]-->
 
     {{! Ghost outputs important style and meta data with this tag }}
@@ -78,9 +81,9 @@
 
 
 <body class="{{body_class}}">
-
+        {{> sidenav }}  
     <div id="container" >
-        {{> sidenav }}    
+  
         {{! Output the content of the header partial template }}
         {{> header}}
 

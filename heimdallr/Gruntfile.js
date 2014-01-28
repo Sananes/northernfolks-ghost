@@ -35,7 +35,7 @@ module.exports = function(grunt) {
                     {expand: true, src: ['assets/js/**'], dest: 'build/'},
                     {expand: true, src: ['partials/**'], dest: 'build/'},
                     {expand: true, src: ['assets/scss/**'], dest: 'build/'},
-                    {expand: true, src: ['*', '!.gitignore', '!.DS_Store'], dest: 'build/'},
+                    {expand: true, src: ['*', '!.gitignore', '!.DS_Store', '!assets/images/switcher'], dest: 'build/'},
                 ]
             },
             archive: {

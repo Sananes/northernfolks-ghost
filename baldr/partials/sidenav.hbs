@@ -9,7 +9,7 @@
                 <ul>
                     {{#foreach posts}}
                             <li class="post-link">
-                                <a href="/{{slug}}">{{title}} <span class="date">{{date published_at format="MMMM DD, YYYY"}}</span></a>
+                                <a href="{{url}}">{{title}} <span class="date">{{date published_at format="MMMM DD, YYYY"}}</span></a>
                                 <hr class="divider">
                             </li>
                     {{/foreach}}
@@ -21,14 +21,14 @@
 
                     <div class="avatar">
                         {{#if author.image}}
-                        <img src="{{author.image}}" class="author-img" title="author pic"/>  
+                        <a href="{{author.website}}"><img src="{{author.image}}" class="author-img" title="author pic"/> </a>
                         {{/if}}       
 
                     {{#if author.bio}}
                     <div class="author-bio">
-                        <h4>{{author.name}}</h2>
-                        <!-- <small>{{author.location}}</small> -->
-                        <p>{{author.bio}}</p>
+                        <h4><a href="{{author.website}}">{{author.name}}</a></h4>
+                        {{#if author.location}}<small>{{author.location}}</small>{{/if}}
+                        {{#if author.bio}}<p>{{author.bio}}</p>{{/if}}
                     </div>
                     {{/if}}
                     <a href="/" class="button">Go back</a>

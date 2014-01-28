@@ -7,25 +7,32 @@ Website:    http://www.northernfolks.com
 **************************
   Red Color Scheme
 **************************/
-.header {
-  background-color: #cd3434 !important;
-  background-image: url(../images/header-image-red.jpg) !important;
+#nav {
+  background-color: #b83838 !important;
+  background-image: url(../images/header-image-blue.jpg) !important;
 }
-a:hover, .entry-content a {
-  color: #cd3434 !important;
+a.read-more {
+  color:#b83838 !important;
 }
-.entry-content a:hover {
-  color: #a62323 !important;
+a:hover,
+.entry-content a, .entry-content a:hover {
+  color: #b83838;
 }
-.button, .home-template .button, .home-template .button:hover {
+#nav .divider {
+  border-color: rgba(255,255,255,0.5);
+}
+.button:hover{
+  background: #b83838 !important;
+}
+.avatar .button:hover {
+  background-color: #000 !important;
   color: #fff !important;
 }
-.button:hover {
-  background: #cd3434 !important;
-}
-.menu li a:hover, .social-icons li a:hover {
+.menu li a:hover,
+.social-icons li a:hover, 
+{
   color: #fff !important;
 }
-blockquote {
-  border-color: #cd3434 !important;
+.hentry .post-info header, blockquote {
+  border-color: #b83838 !important;
 }

@@ -389,7 +389,7 @@ NAVIGATION STYLES
      @include transition(width .6s ease);     
     top:0;
     background: $primary url(../images/header-image.jpg) no-repeat;
-    background-size:cover;
+    //background-size:cover;
     position:fixed;
     width:60px;
     height:100%;

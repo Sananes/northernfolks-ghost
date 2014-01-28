@@ -1022,7 +1022,6 @@ NAVIGATION STYLES
   transition: width 0.6s ease;
   top: 0;
   background: #8aba56 url(../images/header-image.jpg) no-repeat;
-  background-size: cover;
   position: fixed;
   width: 60px;
   height: 100%;

@@ -31,14 +31,14 @@
         <div class="featured"><a class="comments" href="{{url}}#disqus_thread" data-disqus-identifier="{{id}}">0 Comments</a></span></div>
         {{content}}
     </section> <!-- end article section -->
-    <hr>
+
 
     <footer class="article-footer">
-
+        <hr>
   
-
+        <div class="share-tags clearfix" style="padding: 8px 0;">
         {{#if tags}}
-            <p class="tags">
+            <p class="tags" style="float:left;margin:0;">
                 <span class="tags-title">
                     Tags:
                     {{#each tags}}
@@ -53,8 +53,19 @@
                     {{/each}}
                 </span>
             </p>
-            <hr>
+ 
         {{/if}}
+
+            <nav class="share" style="float:right;">
+                <p class="share-text" style="margin:0 15px 0 0;">Share this post</p>
+                <ul class="social-share" style="margin:0;padding:0;">
+                    <li><a onclick="window.open(this.href, 'facebook-share', 'width=550,height=350');return false;" href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]={{@blog.url}}/{{slug}}&p[images][0]={{@blog.logo}}&p[title]={{title}}&p[summary]={{excerpt}}"><span class="symbol">roundedfacebook</span></a></li>
+                    <li><a onclick="window.open(this.href, 'twitter-share', 'width=550,height=350');return false;" href="http://twitter.com/home?status={{title}}%20-%20{{@blog.url}}/{{slug}}"><span class="symbol">roundedtwitter</span></a></li>
+                    <li class="last"><a onclick="window.open(this.href, 'googleplus-share', 'width=550,height=350');return false;" href="https://plus.google.com/share?url={{@blog.url}}/{{slug}}"><span class="symbol">roundedgoogleplus</span></a></li>
+                </ul>
+            </nav>
+
+            </div>
         {{#if author.image}}
         <section  class="author clearfix">
             <div class="twocol first avatar">

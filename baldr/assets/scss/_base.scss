@@ -17,8 +17,6 @@ and will be used across all viewports.
 GENERAL STYLES
 *********************/
 body, html {
-    height:100%;
-    width:100%;
 }
 body {
 	font-family: $serif;
@@ -117,7 +115,7 @@ a {
     margin-bottom:40px;
 }
 #container {
-        @include transform(translate3d(0px,0,0));
+        // @include transform(translate3d(0px,0,0));
     -webkit-transition: -webkit-transform .6s ease;
       -os-transition: -os-transform .6s ease;  
            -ms-transition: -ms-transform .6s ease;  
@@ -235,23 +233,36 @@ HEADER STYLES
         }
     }
     .menu-toggle {
-        height:200px;
-        float:left;
         display:block;
         opacity:0.8;
+        
+        a {
+            background:#ddd;
+            width:90%;
+            border-radius:3px;
+            color: white;
+            display:block;
+            line-height:30px;
+            vertical-align:middle;
+            font-size:25px;
+            margin:0 auto;
+            text-decoration:none;
+        }
+        .nav-toggle {
+            padding-top:6px;
+        }
 
         &:hover {
             opacity:1;
         }
     }
-    .menu-icon, #mail a {
+    #mail a {
         text-indent:-999em;
-
     }
 
     #mail {
-        display:inline-block;
-        float:right;
+        display:none;
+        float:left;
         line-height: 100px;
 
         a {
@@ -312,9 +323,9 @@ NAVIGATION STYLES
 
 .show {
     #nav {
-        width:300px;
+        width:100%;
         visibility:visible;
-  
+        overflow:scroll;
        .articles, .close, .author, .social-icons {
             display:block;
             opacity:1;
@@ -364,7 +375,7 @@ NAVIGATION STYLES
       -os-transition: -os-transform .6s ease;  
            -ms-transition: -ms-transform .6s ease;  
                 transition: transform .6s ease; 
-     @include transition(width .3s ease-in-out);     
+     @include transition(width .6s ease);     
     top:0;
     background: $primary url(../images/header-image.jpg) no-repeat;
     background-size:cover;
@@ -419,14 +430,13 @@ NAVIGATION STYLES
         img {
             margin-bottom:20px;
         }
-        .author-bio {
-            text-align:center;
+        .author-bio, h4  {
+            text-align:center !important;
         }
     }
     .social-icons {
-        position:absolute;
+        position:relative;
         width: 200px;
-        bottom:20px;
         margin-left:-100px;
         left:50%;
 
@@ -594,8 +604,10 @@ AUTHOR BIO
     clear:both;
 }
 .avatar {
-    overflow:hidden;
-    border-radius:300px;
+    .button {
+        background-color:#fff !important;
+        color:black !important;
+    }
 }
 .author-img {
     border-radius:300px;
@@ -608,6 +620,7 @@ AUTHOR BIO
         margin-top:0px;
         margin-bottom:0px;
     }
+
     p {
         margin-top:0px;
     }
@@ -683,6 +696,7 @@ hr {
 }
 #content {
 	margin-top: 4.2em;
+    -webkit-transform: translate3d(0);
 }
 #inner-content {
     text-align:left;

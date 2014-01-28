@@ -710,10 +710,6 @@ and will be used across all viewports.
 /*********************
 GENERAL STYLES
 *********************/
-body, html {
-  height: 100%;
-  width: 100%; }
-
 body {
   font-family: Cambria, Times New Roman, "Helvetica Neue", Helvetica, serif;
   font-size: 100%;
@@ -802,11 +798,6 @@ a {
   margin-bottom: 40px; }
 
 #container {
-  -webkit-transform: translate3d(0px, 0, 0);
-  -moz-transform: translate3d(0px, 0, 0);
-  -ms-transform: translate3d(0px, 0, 0);
-  -o-transform: translate3d(0px, 0, 0);
-  transform: translate3d(0px, 0, 0);
   -webkit-transition: -webkit-transform .6s ease;
   -os-transition: -os-transform .6s ease;
   -ms-transition: -ms-transform .6s ease;
@@ -900,17 +891,28 @@ HEADER STYLES
       color: #b5bfc3;
       font-weight: normal; }
   .header .menu-toggle {
-    height: 200px;
-    float: left;
     display: block;
     opacity: 0.8; }
+    .header .menu-toggle a {
+      background: #ddd;
+      width: 90%;
+      border-radius: 3px;
+      color: white;
+      display: block;
+      line-height: 30px;
+      vertical-align: middle;
+      font-size: 25px;
+      margin: 0 auto;
+      text-decoration: none; }
+    .header .menu-toggle .nav-toggle {
+      padding-top: 6px; }
     .header .menu-toggle:hover {
       opacity: 1; }
-  .header .menu-icon, .header #mail a {
+  .header #mail a {
     text-indent: -999em; }
   .header #mail {
-    display: inline-block;
-    float: right;
+    display: none;
+    float: left;
     line-height: 100px; }
     .header #mail a {
       border-radius: 3px;
@@ -956,8 +958,9 @@ NAVIGATION STYLES
 
 /* The {{nav}} helper outputs a site-navigation div */
 .show #nav {
-  width: 300px;
-  visibility: visible; }
+  width: 100%;
+  visibility: visible;
+  overflow: scroll; }
   .show #nav .articles, .show #nav .close, .show #nav .author, .show #nav .social-icons {
     display: block;
     opacity: 1;
@@ -1002,11 +1005,11 @@ NAVIGATION STYLES
   -os-transition: -os-transform .6s ease;
   -ms-transition: -ms-transform .6s ease;
   transition: transform .6s ease;
-  -webkit-transition: width 0.3s ease-in-out;
-  -ms-transition: width 0.3s ease-in-out;
-  -o-transition: width 0.3s ease-in-out;
-  -transition: width 0.3s ease-in-out;
-  transition: width 0.3s ease-in-out;
+  -webkit-transition: width 0.6s ease;
+  -ms-transition: width 0.6s ease;
+  -o-transition: width 0.6s ease;
+  -transition: width 0.6s ease;
+  transition: width 0.6s ease;
   top: 0;
   background: #8aba56 url(../images/header-image.jpg) no-repeat;
   background-size: cover;
@@ -1050,12 +1053,11 @@ NAVIGATION STYLES
     padding: 30px; }
     #nav .author img {
       margin-bottom: 20px; }
-    #nav .author .author-bio {
-      text-align: center; }
+    #nav .author .author-bio, #nav .author h4 {
+      text-align: center !important; }
   #nav .social-icons {
-    position: absolute;
+    position: relative;
     width: 200px;
-    bottom: 20px;
     margin-left: -100px;
     left: 50%; }
     #nav .social-icons li {
@@ -1183,9 +1185,9 @@ AUTHOR BIO
   float: none !important;
   clear: both; }
 
-.avatar {
-  overflow: hidden;
-  border-radius: 300px; }
+.avatar .button {
+  background-color: #fff !important;
+  color: black !important; }
 
 .author-img {
   border-radius: 300px; }
@@ -1243,7 +1245,8 @@ hr {
   border-bottom: 0px; }
 
 #content {
-  margin-top: 4.2em; }
+  margin-top: 4.2em;
+  -webkit-transform: translate3d(0); }
 
 #inner-content {
   text-align: left;
@@ -1477,6 +1480,24 @@ tweeners.
   /*********************
   NAVIGATION STYLES
   *********************/
+  #mail {
+    display: inline-block !important;
+    float: right !important;
+    line-height: 100px; }
+    #mail a {
+      border-radius: 3px;
+      opacity: 0.8;
+      background-color: lightgrey;
+      color: #fff;
+      font-size: 22px;
+      padding: 8px 10px 5px 8px;
+      text-decoration: none; }
+      #mail a:hover {
+        opacity: 1; }
+
+  .show #nav {
+    width: 300px !important; }
+
   #nav {
     display: block !important;
     visibility: visible !important; }
@@ -1701,12 +1722,12 @@ you can add resource intensive styles.
   .hentry {
     margin-bottom: 50px; }
     .hentry .post-info.sticky {
+      float: none;
       position: fixed;
-      top: 0;
-      margin-top: 20px;
-      z-index: 8000;
-      padding-right: 11.4%;
-      opacity: 1 !important; }
+      top: 20px;
+      padding-right: 13.1%;
+      z-index: 1;
+      left: auto; }
 
   /* end .hentry */
   .post-template .entry-content {

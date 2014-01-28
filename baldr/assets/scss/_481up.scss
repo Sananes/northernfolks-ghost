@@ -22,6 +22,30 @@ upon your base.scss styles.
 /*********************
 NAVIGATION STYLES
 *********************/
+#mail {
+    display:inline-block !important;
+    float:right !important;
+    line-height: 100px;
+
+    a {
+        border-radius: 3px;
+        opacity:0.8;
+        background-color: lightgrey;
+        color:#fff;
+        font-size:22px;
+        padding:8px 10px 5px 8px;
+        text-decoration:none;
+        
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+.show {
+  #nav {
+    width:300px !important;
+  }
+}
 #nav {
   display:block !important;
   visibility:visible !important;

@@ -16,13 +16,10 @@
     </div>
 </nav>
 
-<header class="header animate fadeInUp" role="banner"  {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
+<header class="header" role="banner"  {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
     <div id="inner-header" class="elevencol wrap clearfix">
 
-        <!-- Menu -->
-        <div class="menu-toggle">
-            <a href="#" class="menu-icon onHoverPulse">Menu</a>
-        </div>
+
 
         <!-- Mail -->
         <div id="mail" class="onHoverBounce">
@@ -41,6 +38,11 @@
                 <p>{{@blog.description}}</p>
             </div>        
         {{/if}}
+
+        <!-- Menu -->
+        <div class="menu-toggle">
+            <a href="#" class="nav-toggle"><i data-icon="b" class="icon onHoverPulse"></i></a>
+        </div>
 
 
     </div> <!-- end #inner-header -->

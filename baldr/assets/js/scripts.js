@@ -340,7 +340,7 @@ jQuery(document).ready(function($) {
         $('#logo').addClass('animate bounceIn')
     }
     function navToggle() {
-        var menuIcon = $('.nav-toggle, .menu-toggle'), bodyClick = false
+        var menuIcon = $('.nav-toggle, .menu-icon'), bodyClick = false
             navHeader = $('#nav'), body = $('body'),
             close = navHeader.find('.close'),
             overlay = $('.overlay').hide();

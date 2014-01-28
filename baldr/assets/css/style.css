@@ -967,6 +967,7 @@ NAVIGATION STYLES
 .show #nav {
   width: 100%;
   visibility: visible;
+  cursor: inherit !important;
   overflow: scroll; }
   .show #nav .articles, .show #nav .close, .show #nav .author, .show #nav .social-icons {
     display: block;
@@ -981,7 +982,8 @@ NAVIGATION STYLES
   margin-left: -1px; }
 .show .nav-toggle {
   opacity: 0 !important;
-  display: none; }
+  display: none;
+  height: auto !important; }
 .show #container {
   margin-left: 0;
   position: relative;
@@ -1003,6 +1005,7 @@ NAVIGATION STYLES
   z-index: 8002;
   position: absolute;
   left: 0;
+  cursor: pointer;
   -webkit-transform: translate3d(0px, 0, 0);
   -moz-transform: translate3d(0px, 0, 0);
   -ms-transform: translate3d(0px, 0, 0);
@@ -1076,7 +1079,9 @@ NAVIGATION STYLES
   #nav .close {
     position: absolute;
     right: 20px !important;
-    top: 15px;
+    top: 20px;
+    width: 25px;
+    height: 25px;
     color: #fff;
     text-decoration: none;
     font-size: 22px; }
@@ -1087,8 +1092,16 @@ NAVIGATION STYLES
     font-size: 30px;
     color: white;
     opacity: 1;
-    padding-top: 10px;
-    cursor: pointer; }
+    height: 100%;
+    outline: none;
+    padding: 10px;
+    padding-top: 20px;
+    display: block;
+    text-align: center; }
+    #nav .nav-toggle img {
+      width: auto !important;
+      margin: 0 auto;
+      height: auto !important; }
 
 .nav {
   position: relative;

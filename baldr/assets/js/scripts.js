@@ -366,14 +366,15 @@ jQuery(document).ready(function($) {
             body.removeClass('closing');
 
         });
-
         // Close icon toggle
         close.on('click', function(e) {
-            e.preventDefault();
             body.removeClass('show');
             body.addClass('closing');
+    
+
 
         });
+
     };
 
     navToggle();

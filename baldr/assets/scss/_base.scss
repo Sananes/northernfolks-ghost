@@ -333,6 +333,7 @@ NAVIGATION STYLES
     #nav {
         width:100%;
         visibility:visible;
+        cursor: inherit !important;
         overflow:scroll;
        .articles, .close, .author, .social-icons {
             display:block;
@@ -347,6 +348,7 @@ NAVIGATION STYLES
     .nav-toggle {
         opacity:0 !important;
         display:none;
+        height: auto !important;
     }
     #container {
         //left:240px; // minus margin-left: 60px;
@@ -378,6 +380,7 @@ NAVIGATION STYLES
     z-index:8002;
     position:absolute;
     left:0;
+    cursor:pointer;
     @include transform(translate3d(0px,0,0));
     -webkit-transition: -webkit-transform .6s ease;
       -os-transition: -os-transform .6s ease;  
@@ -461,10 +464,13 @@ NAVIGATION STYLES
     .close {
         position:absolute;
         right: 20px !important;
-        top:15px;
+        top:20px;
+        width:25px;
+        height:25px;
         color: #fff;
         text-decoration:none;
         font-size: 22px;
+
     }
     .inner-nav {
         height:100%;
@@ -475,8 +481,18 @@ NAVIGATION STYLES
         font-size: 30px;
         color: $white;
         opacity:1;
-        padding-top:10px;
-        cursor: pointer;
+        height:100%;
+        outline: none;
+        padding:10px;
+        padding-top:20px;
+        display:block;
+        text-align:center;
+
+        img {
+            width:auto !important;
+            margin: 0 auto;
+            height: auto !important;
+        }
     }
 
 }

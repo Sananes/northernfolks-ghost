@@ -17,7 +17,17 @@ upon your base.scss styles.
 
 ******************************************************************/
 
-
+.header {
+    #inner-header {
+        line-height: $header-height !important;
+        height: $header-height;
+        padding:0px !important;
+    }
+    #logo {
+        padding:0px !important;
+        margin-top: 0px !important
+    }
+}
 	
 /*********************
 NAVIGATION STYLES

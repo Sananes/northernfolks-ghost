@@ -856,30 +856,37 @@ HEADER STYLES
   z-index: 100;
   background-size: cover; }
   .header #logo {
-    line-height: normal !important;
-    min-height: 30px;
-    max-height: 40px;
-    margin: 0 auto;
+    margin: 20px auto 0 auto;
+    padding-bottom: 20px;
     display: inline-block;
+    line-height: normal;
     vertical-align: middle; }
+    .header #logo a {
+      display: inline-block; }
     .header #logo img {
       width: auto !important;
-      height: 100px;
-      max-width: auto !important; }
+      max-width: auto !important;
+      vertical-align: middle;
+      height: normal !important; }
+    .header #logo p {
+      margin: 8px 0 0 0; }
   .header #inner-header {
     position: relative;
     z-index: 100;
     text-align: center;
     float: none !important;
     margin: 0 auto;
-    padding: 30px 0 !important;
+    padding-bottom: 20px;
     border-bottom: 1px solid #ddd; }
   .header #site-title {
     display: inline-block;
-    line-height: normal !important; }
+    line-height: 150px !important;
+    margin-top: 20px; }
     .header #site-title h1 {
       font-size: 52px;
       margin: 0; }
+    .header #site-title p {
+      line-height: normal; }
     .header #site-title a {
       color: #000 !important; }
     .header #site-title a:hover {
@@ -913,7 +920,7 @@ HEADER STYLES
   .header #mail {
     display: none;
     float: left;
-    line-height: 100px; }
+    line-height: 150px; }
     .header #mail a {
       border-radius: 3px;
       opacity: 0.8;
@@ -928,7 +935,7 @@ HEADER STYLES
 #site-title {
   font-size: 1.8em;
   text-align: center;
-  line-height: 200px;
+  line-height: 150px;
   position: relative;
   z-index: 999; }
   #site-title a {
@@ -1477,6 +1484,14 @@ tweeners.
   upon your base.scss styles.
   
   ******************************************************************/
+  .header #inner-header {
+    line-height: 150px !important;
+    height: 150px;
+    padding: 0px !important; }
+  .header #logo {
+    padding: 0px !important;
+    margin-top: 0px !important; }
+
   /*********************
   NAVIGATION STYLES
   *********************/

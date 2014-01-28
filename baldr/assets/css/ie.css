@@ -330,6 +330,14 @@ so you still want to keep it pretty light and simply expand
 upon your base.scss styles.
 
 ******************************************************************/
+.header #inner-header {
+  line-height: 200px !important;
+  height: 200px;
+  padding: 0px !important; }
+.header #logo {
+  padding: 0px !important;
+  margin-top: 0px !important; }
+
 /*********************
 NAVIGATION STYLES
 *********************/

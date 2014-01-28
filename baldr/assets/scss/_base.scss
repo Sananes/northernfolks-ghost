@@ -13,6 +13,8 @@ and will be used across all viewports.
 
 ******************************************************************/
 
+
+$header-height: 150px;
 /*********************
 GENERAL STYLES
 *********************/
@@ -188,17 +190,22 @@ HEADER STYLES
     background-size:cover;
 
     #logo {
-        line-height:normal !important;
-        min-height:30px;
-        max-height:40px;
-        margin: 0 auto;
+        margin: 20px auto 0 auto;
+        padding-bottom:20px;
         display:inline-block;
+        line-height:normal;
         vertical-align:middle;
-
+        a {
+            display:inline-block;
+        }
         img {
             width:auto !important;
-            height:100px;
             max-width: auto !important;
+            vertical-align:middle;
+            height:normal !important;
+        }
+        p {
+            margin:8px 0 0 0;
         }
     }
     #inner-header {
@@ -207,17 +214,18 @@ HEADER STYLES
         text-align:center;
         float:none !important;
         margin:0 auto;
-        padding:30px 0 !important;
+        padding-bottom:20px;
         border-bottom: 1px solid #ddd;
     }
     #site-title {
         display:inline-block;
-        line-height: normal !important;
-
+        line-height: $header-height !important;
+        margin-top:20px;
         h1 {
             font-size: 52px;
             margin:0;
         }
+        p { line-height:normal;}
         a {
             color: #000 !important;
         }
@@ -263,7 +271,7 @@ HEADER STYLES
     #mail {
         display:none;
         float:left;
-        line-height: 100px;
+        line-height: $header-height;
 
         a {
             border-radius: 3px;

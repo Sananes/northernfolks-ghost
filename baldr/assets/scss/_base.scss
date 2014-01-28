@@ -312,7 +312,7 @@ NAVIGATION STYLES
 
 .show {
     #nav {
-        width:auto;
+        width:300px;
         visibility:visible;
   
        .articles, .close, .author, .social-icons {
@@ -321,9 +321,6 @@ NAVIGATION STYLES
             visibility:visible;
             @include transition(opacity 300ms ease-in-out 200ms);
         } 
-        .inner-nav {
-            width: 300px;
-        }
     }
     .post-info.sticky {
         margin-left:-1px;

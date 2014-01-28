@@ -205,7 +205,7 @@ probably best not to use it. I mean, were you going to anyway? */
 BUTTONS
 *********************/
 .button, .button:visited {
-  font-family: Cambria, Times New Roman, Times, serif;
+  font-family: Cambria, Times New Roman, "Helvetica Neue", Helvetica, serif;
   padding: 4px 12px;
   color: white;
   display: inline-block;

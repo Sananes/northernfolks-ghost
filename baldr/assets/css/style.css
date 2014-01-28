@@ -663,7 +663,7 @@ probably best not to use it. I mean, were you going to anyway? */
 BUTTONS
 *********************/
 .button, .button:visited {
-  font-family: Cambria, Times New Roman, Times, serif;
+  font-family: Cambria, Times New Roman, "Helvetica Neue", Helvetica, serif;
   padding: 4px 12px;
   color: white;
   display: inline-block;
@@ -715,7 +715,7 @@ body, html {
   width: 100%; }
 
 body {
-  font-family: Cambria, Times New Roman, Times, serif;
+  font-family: Cambria, Times New Roman, "Helvetica Neue", Helvetica, serif;
   font-size: 100%;
   line-height: 2em;
   color: #3f484b; }
@@ -774,7 +774,7 @@ a {
   padding-top: 20px;
   font-weight: bold; }
   .read-more a {
-    font-family: "Exo 2", Helvetica, Arial, sans-serif !important;
+    font-family: "Exo 2", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     text-transform: normal;
     color: #8aba56 !important; }
 
@@ -819,7 +819,7 @@ a {
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-  font-family: "Exo 2", Helvetica, Arial, sans-serif;
+  font-family: "Exo 2", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-rendering: optimizelegibility;
   font-weight: normal;
   text-transform: normal;
@@ -956,7 +956,7 @@ NAVIGATION STYLES
 
 /* The {{nav}} helper outputs a site-navigation div */
 .show #nav {
-  width: auto;
+  width: 300px;
   visibility: visible; }
   .show #nav .articles, .show #nav .close, .show #nav .author, .show #nav .social-icons {
     display: block;
@@ -967,8 +967,6 @@ NAVIGATION STYLES
     -o-transition: opacity 300ms ease-in-out 200ms;
     -transition: opacity 300ms ease-in-out 200ms;
     transition: opacity 300ms ease-in-out 200ms; }
-  .show #nav .inner-nav {
-    width: 300px; }
 .show .post-info.sticky {
   margin-left: -1px; }
 .show .nav-toggle {
@@ -1026,7 +1024,7 @@ NAVIGATION STYLES
   #nav .articles, #nav .author {
     text-align: center;
     color: #fff;
-    font-family: "Exo 2", Helvetica, Arial, sans-serif; }
+    font-family: "Exo 2", "Helvetica Neue", Helvetica, Arial, sans-serif; }
     #nav .articles h3, #nav .author h3 {
       color: #fff;
       font-size: 16px;
@@ -1276,7 +1274,7 @@ hr {
 .post-paginate ul, .post-paginate li {
   display: inline-block;
   margin-top: 5px;
-  font-family: "Exo 2", Helvetica, Arial, sans-serif;
+  font-family: "Exo 2", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold; }
 .post-paginate .next-prev {
   float: left;
@@ -1303,7 +1301,7 @@ hr {
 .hentry {
   margin-bottom: 50px; }
   .hentry .post-info {
-    font-family: "Exo 2", Helvetica, Arial, sans-serif; }
+    font-family: "Exo 2", "Helvetica Neue", Helvetica, Arial, sans-serif; }
     .hentry .post-info header {
       border-top: 5px solid #8aba56;
       margin-bottom: 10px;

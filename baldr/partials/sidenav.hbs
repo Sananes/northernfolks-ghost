@@ -1,6 +1,6 @@
      
 <!-- begin side nav -->
-     <div id="nav">
+     <div id="nav" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
         <div class="inner-nav">
             <a href="#" class="close"><img src="../assets/images/close.svg"></a>        
             <a href="#" class="nav-toggle"><img src="../assets/images/menu.svg"></a>

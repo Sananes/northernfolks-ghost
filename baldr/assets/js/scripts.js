@@ -335,6 +335,13 @@ jQuery(document).ready(function($) {
 
     // add all your scripts here
 
+    // Sidebar sticky resize correctly
+    
+    $(window).resize( function() {
+      var new_width = $('#sidebar').width();
+        $('.hentry .post-info').width(new_width);       
+    })
+
 
     if($('body').hasClass('home-template')) {
         $('#logo').addClass('animate bounceIn')

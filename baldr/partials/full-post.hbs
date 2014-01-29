@@ -1,7 +1,8 @@
 {{! This template displays a post in its entirety.
     It is used to display the latest post in the index, and any single post }}
 <article class="hentry clearfix {{post_class}}" role="article">
-    <div class="post-info fivecol first">
+    <div id="sidebar" class="fivecol first">
+    <div class="post-info clearfix">
     <div class="inner-post-info">
          <header class="h2 article-header post-title">
             <a href="/{{slug}}" rel="bookmark">{{title}}</a>
@@ -24,6 +25,7 @@
                 <li class="last"><a onclick="window.open(this.href, 'googleplus-share', 'width=550,height=350');return false;" href="https://plus.google.com/share?url={{@blog.url}}/{{slug}}"><span class="symbol">roundedgoogleplus</span></a></li>
             </ul>
         </nav>
+    </div>
     </div>
     </div>
 

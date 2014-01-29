@@ -9,7 +9,7 @@ Website:    http://www.northernfolks.com
 **************************/
 #nav {
   background-color: #9d56ba !important;
-  background-image: url(../images/header-image-blue.jpg) !important;
+  background-image: url(../images/header-image-purple.jpg) !important;
 }
 a.read-more {
   color:#9d56ba !important;
@@ -25,8 +25,8 @@ a:hover,
   background: #9d56ba !important;
 }
 .avatar .button:hover {
-  background-color: #000 !important;
-  color: #fff !important;
+  background-color: #fff !important;
+  color: #000 !important;
 }
 .menu li a:hover,
 .social-icons li a:hover, 

@@ -7,10 +7,10 @@
 
 TYPOGRAPHY
 *********************/
-@import url(http://fonts.googleapis.com/css?family=Exo+2:400,100,200,300,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic);
+@import url('http://fonts.googleapis.com/css?family=Exo+2:400,100,200,300,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic');
 
 $sans-serif:        "Exo 2", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$serif:             Cambria, Times New Roman, "Helvetica Neue", Helvetica, serif;
+$serif:             Cambria, "Helvetica Neue", Helvetica, Times New Roman, serif;
 
 /*
  * MONO SOCIAL ICONS FONT

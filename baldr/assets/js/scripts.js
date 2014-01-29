@@ -64,6 +64,7 @@ function prev_next_scrolling() {
     function featured_image() {
         var post_links = $(".post-title a"),
             featured_html = $(".featured"),
+            featured_link = featured_html.find('a.featured-image-link'),
             post_list_links = [];
 
         /* -- Feature Images and Video per Post -- */
@@ -95,18 +96,23 @@ function prev_next_scrolling() {
                     if($('body').hasClass('post-template')) {
                         if(img.length > 0) {
                             $(featured).append(img[0]);
+                            $(featured).find('.featured-image-link').remove();
                             $('article .content').find('img:first').remove();
                         } else {
                             $('article .content').find('iframe:first').remove();
 
                         }
                     }
+                    if(img.length == "" && video.length == "") {
+                        $(featured).remove();
+                    }
                     if (img.length > 0 && video.length > 0) {
                         $(featured).html(img[0]);
                     } else {
                         if (img.length > 0) {
-                            $(featured).append(img[0]);
+                            $(featured).find('a.featured-image-link').append(img[0]);
                         } else if (video.length > 0) {
+                            $(featured).find('.featured-image-link').remove();
                             $(featured).append(video[0].outerHTML).addClass('video');
                         }
                     }

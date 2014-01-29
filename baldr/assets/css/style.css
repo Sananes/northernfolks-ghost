@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Exo+2:400,100,200,300,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic);
+@import url("http://fonts.googleapis.com/css?family=Exo+2:400,100,200,300,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic");
 /******************************************************************
 Site Name:  Baldr
 Company:    NorthernFolks
@@ -663,7 +663,7 @@ probably best not to use it. I mean, were you going to anyway? */
 BUTTONS
 *********************/
 .button, .button:visited {
-  font-family: Cambria, Times New Roman, "Helvetica Neue", Helvetica, serif;
+  font-family: Cambria, "Helvetica Neue", Helvetica, Times New Roman, serif;
   padding: 4px 12px;
   color: white;
   display: inline-block;
@@ -711,7 +711,7 @@ and will be used across all viewports.
 GENERAL STYLES
 *********************/
 body {
-  font-family: Cambria, Times New Roman, "Helvetica Neue", Helvetica, serif;
+  font-family: Cambria, "Helvetica Neue", Helvetica, Times New Roman, serif;
   font-size: 100%;
   line-height: 2em;
   color: #3f484b; }

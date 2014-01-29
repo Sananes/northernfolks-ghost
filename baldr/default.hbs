@@ -58,12 +58,10 @@
     <!-- Include the main stylesheet-->
     <link rel="stylesheet" id="linen-stylesheet-css" href="/assets/css/style.css" type="text/css" media="all">
     <link rel="stylesheet" id="linen-stylesheet-css" href="/assets/css/animate.css" type="text/css" media="all">
-
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="/assets/css/switcher.css" rel="stylesheet">
     <!-- Include color schemes -->
-    <!-- <link rel="stylesheet" id="linen-stylesheet-css" href="/assets/css/blue.css" type="text/css" media="all"> -->
-    <!-- <link rel="stylesheet" id="linen-stylesheet-css" href="/assets/css/red.css" type="text/css" media="all"> -->
-    <!-- <link rel="stylesheet" id="linen-stylesheet-css" href="/assets/css/orange.css" type="text/css" media="all"> -->
-    <link rel="stylesheet" id="linen-stylesheet-css" href="/assets/css/purple.css" type="text/css" media="all">
+    <link rel="stylesheet" id="linen-stylesheet-css" href="/assets/css/default.css" type="text/css" media="all">
     
     <!--[if lt IE 9]>
     <link rel='stylesheet' id='linen-ie-only-css'  href='/assets/css/ie.css' type='text/css' media='all' />
@@ -81,13 +79,36 @@
 
 
 <body class="{{body_class}}">
+
+
+    <!-- ADD Switcher -->
+            <div class="demo_changer">
+                <div class="demo-icon"><i class="fa fa-cog"></i></div>
+                <div class="form_holder">
+                    <p>CHOOSE YOUR STYLE</p>
+                    
+                    <p>Please choose a style</p>     
+
+                    <div class="predefined_styles">
+                        <a href="" rel="?default=true" class="styleswitch"><img src="/assets/images/switcher/green.jpg" alt=""></a>    
+                        <a href="" rel="/assets/css/orange.css" class="styleswitch"><img src="/assets/images/switcher/orange.jpg" alt=""></a>
+                        <a href="" rel="/assets/css/red.css" class="styleswitch"><img src="/assets/images/switcher/red.jpg" alt=""></a>
+                        <a href="" rel="/assets/css/blue.css" class="styleswitch"><img src="/assets/images/switcher/blue.jpg" alt=""></a>
+                        <a href="" rel="/assets/css/grey.css" class="styleswitch"><img src="/assets/images/switcher/grey.jpg" alt=""></a>
+                        <a href="" rel="/assets/css/purple.css" class="styleswitch"><img src="/assets/images/switcher/purple.jpg" alt=""></a>
+                    </div>
+                    <span><a rel="stylesheet" class="styleswitch reset-btn" href="?default=true">RESET STYLE</a></span>                 
+                </div>
+            </div>
+    <!-- END Switcher -->
+
         {{> sidenav }}  
-    <div id="container" >
+    <div id="container">
   
         {{! Output the content of the header partial template }}
         {{> header}}
 
-        <section id="content">
+        <section id="content" class="animate fadeInUp">
             {{! The 'inner' divs provide a nice wrapper for content to help with fluidity and responsiveness }}
             <div id="inner-content" class="elevencol wrap clearfix">
 
@@ -116,6 +137,8 @@
     {{ghost_foot}}
 
     <!-- Custom Scripts -->
+    <script type="text/javascript" src="/assets/js/libs/cookie.js"></script>
+    <script type="text/javascript" src="/assets/js/libs/fswit.js"></script>
     <script type="text/javascript" src="/assets/js/libs/sticky.js"></script>
     <script type="text/javascript" src="/assets/js/libs/fitvids.js"></script>
     <script type="text/javascript" src="/assets/js/libs/animation.js"></script>

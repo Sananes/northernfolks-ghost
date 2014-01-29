@@ -30,7 +30,7 @@
     </div>
 
     <section class="entry-content sevencol clearfix">
-        <div class="featured"><a class="comments" href="{{url}}#disqus_thread" data-disqus-identifier="{{id}}">0 Comments</a></span></div>
+        <div class="featured"><a class="featured-image-link" href="{{url}}"></a><a class="comments" href="{{url}}#disqus_thread" data-disqus-identifier="{{id}}">0 Comments</a></span></div>
         <div class="content">{{content}}</div>
     </section> <!-- end article section -->
 
@@ -68,19 +68,22 @@
             </nav>
 
             </div>
-        {{#if author.image}}
+        
         <section  class="author clearfix">
-            <div class="twocol first avatar">
-                <img src="{{author.image}}" class="author-img" title="author pic"/>
-            </div>
-
-            <div class="tencol author-bio">
-                <h4>{{author.name}}</h2>
-                <!-- <small>{{author.location}}</small> -->
-                <p>{{author.bio}}</p>
-            </div>
+            {{#if author.image}}
+                <div class="twocol first avatar">
+                    <a href="{{author.website}}"><img src="{{author.image}}" class="author-img" title="author pic"/></a>
+                </div>
+            {{/if}}
+            {{#if author.name}}
+                <div class="{{#if author.image}}tencol{{else}}twelvecol{{/if}} author-bio">
+                    <h4><a href="{{author.website}}">{{author.name}}</a></h2>
+                    {{#if author.location}}<small>{{author.location}}</small>{{/if}}
+                    {{#if author.bio}}<p>{{author.bio}}</p>{{/if}}
+                </div>
+            {{/if}}
         </section>  
-        {{/if}}
+       
     </footer> <!-- end article footer -->
     <hr>
 </article>

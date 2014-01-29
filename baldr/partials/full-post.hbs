@@ -5,7 +5,7 @@
     <div class="post-info clearfix">
     <div class="inner-post-info">
          <header class="h2 article-header post-title">
-            <a href="/{{slug}}" rel="bookmark">{{title}}</a>
+            <a href="/{{url}}" rel="bookmark">{{title}}</a>
         </header>
 
         <p class="byline vcard">
@@ -20,9 +20,9 @@
         <nav class="share">
             <p class="share-text">Share this post</p>
             <ul class="social-share">
-                <li><a onclick="window.open(this.href, 'facebook-share', 'width=550,height=350');return false;" href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]={{@blog.url}}/{{slug}}&p[images][0]={{@blog.logo}}&p[title]={{title}}&p[summary]={{excerpt}}"><span class="symbol">roundedfacebook</span></a></li>
-                <li><a onclick="window.open(this.href, 'twitter-share', 'width=550,height=350');return false;" href="http://twitter.com/home?status={{title}}%20-%20{{@blog.url}}/{{slug}}"><span class="symbol">roundedtwitter</span></a></li>
-                <li class="last"><a onclick="window.open(this.href, 'googleplus-share', 'width=550,height=350');return false;" href="https://plus.google.com/share?url={{@blog.url}}/{{slug}}"><span class="symbol">roundedgoogleplus</span></a></li>
+                <li><a onclick="window.open(this.href, 'facebook-share', 'width=550,height=350');return false;" href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]={{url}}&p[images][0]={{@blog.logo}}&p[title]={{title}}&p[summary]={{excerpt}}"><span class="symbol">roundedfacebook</span></a></li>
+                <li><a onclick="window.open(this.href, 'twitter-share', 'width=550,height=350');return false;" href="http://twitter.com/home?status={{title}}%20-%20{{url}}"><span class="symbol">roundedtwitter</span></a></li>
+                <li class="last"><a onclick="window.open(this.href, 'googleplus-share', 'width=550,height=350');return false;" href="https://plus.google.com/share?url={{url}}"><span class="symbol">roundedgoogleplus</span></a></li>
             </ul>
         </nav>
     </div>
@@ -61,9 +61,9 @@
             <nav class="share" style="float:right;">
                 <p class="share-text" style="margin:0 15px 0 0;">Share this post</p>
                 <ul class="social-share" style="margin:0;padding:0;">
-                    <li><a onclick="window.open(this.href, 'facebook-share', 'width=550,height=350');return false;" href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]={{@blog.url}}/{{slug}}&p[images][0]={{@blog.logo}}&p[title]={{title}}&p[summary]={{excerpt}}"><span class="symbol">roundedfacebook</span></a></li>
-                    <li><a onclick="window.open(this.href, 'twitter-share', 'width=550,height=350');return false;" href="http://twitter.com/home?status={{title}}%20-%20{{@blog.url}}/{{slug}}"><span class="symbol">roundedtwitter</span></a></li>
-                    <li class="last"><a onclick="window.open(this.href, 'googleplus-share', 'width=550,height=350');return false;" href="https://plus.google.com/share?url={{@blog.url}}/{{slug}}"><span class="symbol">roundedgoogleplus</span></a></li>
+                    <li><a onclick="window.open(this.href, 'facebook-share', 'width=550,height=350');return false;" href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]={{url}}&p[images][0]={{@blog.logo}}&p[title]={{title}}&p[summary]={{excerpt}}"><span class="symbol">roundedfacebook</span></a></li>
+                    <li><a onclick="window.open(this.href, 'twitter-share', 'width=550,height=350');return false;" href="http://twitter.com/home?status={{title}}%20-%20{{url}}"><span class="symbol">roundedtwitter</span></a></li>
+                    <li class="last"><a onclick="window.open(this.href, 'googleplus-share', 'width=550,height=350');return false;" href="https://plus.google.com/share?url={{url}}"><span class="symbol">roundedgoogleplus</span></a></li>
                 </ul>
             </nav>
 

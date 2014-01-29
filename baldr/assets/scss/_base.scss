@@ -87,13 +87,14 @@ a {
 
 }
 .read-more {
-    padding-top:20px;
+    padding-top:30px;
     font-weight:bold;
+    display:block;
+    font-family: $sans-serif !important;
+    font-size: 16px;
 
     a {
-        font-family: $sans-serif !important;
-        text-transform: normal;
-        color: $primary !important;
+
 
     }
 }

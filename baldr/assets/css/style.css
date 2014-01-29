@@ -767,12 +767,11 @@ a {
   margin: 0; }
 
 .read-more {
-  padding-top: 20px;
-  font-weight: bold; }
-  .read-more a {
-    font-family: "Exo 2", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-    text-transform: normal;
-    color: #8aba56 !important; }
+  padding-top: 30px;
+  font-weight: bold;
+  display: block;
+  font-family: "Exo 2", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-size: 16px; }
 
 #loading {
   width: 100%;

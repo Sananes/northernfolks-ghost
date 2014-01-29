@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Exo+2:400,100,200,300,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic+Merriweather:400,700,700italic,400italic);
 /******************************************************************
-Site Name:  Baldr
+Site Name:  Heimdallr
 Author:     Aaron Sananes & Daniel Sandvik
 Website:    http://www.northernfolks.com
 
@@ -19,7 +19,7 @@ understand (what's inside the media queries). We also need to
 import the mixins file so SASS can understand the variables.
 */
 /*********************
- Site Name:  Baldr
+ Site Name:  Heimdallr
  Company:    NorthernFolks
  Author:     Aaron Sananes & Daniel Sandvik
  Website:    http://www.northernfolks.com
@@ -115,7 +115,7 @@ a.symbol:before {
 
 /* import mixins */
 /******************************************************************
-Site Name:  Baldr
+Site Name:  Heimdallr
 Company:    NorthernFolks
 Author:     Aaron Sananes & Daniel Sandvik
 Website:    http://www.northernfolks.com
@@ -236,7 +236,7 @@ BUTTONS
     background: #378eff; }
 
 /******************************************************************
-Site Name:  Baldr
+Site Name:  Heimdallr
 Company:    NorthernFolks
 Author:     Aaron Sananes & Daniel Sandvik
 Website:    http://www.northernfolks.com
@@ -319,7 +319,7 @@ values are commented out on each line.
   float: right; }
 
 /******************************************************************
-Site Name:  Baldr
+Site Name:  Heimdallr
 Company:    NorthernFolks
 Author:     Aaron Sananes & Daniel Sandvik
 Website:    http://www.northernfolks.com
@@ -375,7 +375,7 @@ FOOTER STYLES
 *********************/
 /* end .footer */
 /******************************************************************
-Site Name:  Baldr
+Site Name:  Heimdallr
 Company:    NorthernFolks
 Author:     Aaron Sananes & Daniel Sandvik
 Website:    http://www.northernfolks.com
@@ -450,7 +450,7 @@ FOOTER STYLES
 *********************/
 /* end .footer */
 /******************************************************************
-Site Name:  Baldr
+Site Name:  Heimdallr
 Author:     Aaron Sananes & Daniel Sandvik
 Website:    http://www.northernfolks.com
 

@@ -88,18 +88,26 @@ function prev_next_scrolling() {
             post_list_links.forEach(function (element, index, array) {
                 $.get(post_list_links[index], function (data) {
                     var html = $(data),
-                        article = html.find("article"),
+                        article = html.find("article .content"),
                         img = article.find("img:first"),
                         video = article.find("iframe:first"),
                         featured = featured_html[index];
+                    if($('body').hasClass('post-template')) {
+                        if(img.length > 0) {
+                            $(featured).append(img[0]);
+                            $('article .content').find('img:first').remove();
+                        } else {
+                            $('article .content').find('iframe:first').remove();
 
+                        }
+                    }
                     if (img.length > 0 && video.length > 0) {
                         $(featured).html(img[0]);
                     } else {
                         if (img.length > 0) {
                             $(featured).append(img[0]);
                         } else if (video.length > 0) {
-                            $(featured).append(video[0].outerHTML);
+                            $(featured).append(video[0].outerHTML).addClass('video');
                         }
                     }
                     //$(".post").fitVids();
@@ -336,11 +344,15 @@ jQuery(document).ready(function($) {
     // add all your scripts here
 
     // Sidebar sticky resize correctly
+
+   var new_width = $('#sidebar').width();
+    $('.hentry .post-info').width(new_width); 
     
+
     $(window).resize( function() {
       var new_width = $('#sidebar').width();
         $('.hentry .post-info').width(new_width);       
-    })
+    });
 
 
     if($('body').hasClass('home-template')) {

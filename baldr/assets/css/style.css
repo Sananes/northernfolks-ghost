@@ -1243,6 +1243,10 @@ POSTS & CONTENT STYLES
   position: relative; }
   .featured .author-img {
     display: none; }
+  .featured.video {
+    max-height: none !important; }
+    .featured.video .comments {
+      display: none; }
   .featured .comments {
     position: absolute;
     bottom: 10px;

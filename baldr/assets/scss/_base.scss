@@ -684,6 +684,12 @@ POSTS & CONTENT STYLES
     .author-img {
         display:none;
     }
+    &.video {
+        max-height:none !important;
+        .comments {
+            display:none;
+        }
+    }
     .comments {
         position:absolute;
         bottom:10px;

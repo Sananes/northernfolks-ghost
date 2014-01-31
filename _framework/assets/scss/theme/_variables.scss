@@ -1,0 +1,24 @@
+//*-----------------------------------------
+//* Main Color
+//*-----------------------------------------
+$primary_color: 					#3D3D5B;
+$base_text_color: 				#000;
+$base_background_color: 	#fff;
+
+//*-----------------------------------------
+//* Sections Color
+//*-----------------------------------------
+$header_text_color: 				#fff;
+$header_background_color: 	$primary_color;
+$logo_text_color: 					#fff;
+$menu_text_color: 					#fff;
+$showcase_text_color: 				#fff;
+$showcase_background_color: 		$primary_color;
+$footer_text_color: 				#fff;
+$footer_background_color: 			darken($primary_color, 15%);
+
+//*-----------------------------------------
+//* Font
+//*-----------------------------------------
+$base_font_size: 					16px;
+$base_line_height: 					1.6;

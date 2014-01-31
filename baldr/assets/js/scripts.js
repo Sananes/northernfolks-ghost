@@ -161,7 +161,7 @@ function prev_next_scrolling() {
 
   
     function enable_continuous_scrolling() {
-        var enable_scrolling = true;
+        var enable_scrolling = false;
             if (enable_scrolling == true) {
                 return true;
             } else {

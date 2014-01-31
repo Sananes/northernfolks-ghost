@@ -1,0 +1,33 @@
+
+<header class="header animate fadeInUp" role="banner"  {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
+    <div id="inner-header" class="elevencol wrap clearfix">
+
+
+
+        <!-- Mail -->
+        <div id="mail" class="onHoverBounce">
+             <a href="{{@author.email}}"><i class="icon-email-plane"></i></a>
+        </div>
+
+        {{#if @blog.logo}}
+            <!-- Logo -->
+            <div id="logo">
+                <a href="/"><img src="{{@blog.logo}}" alt="Logo"></a>
+                <p>{{@blog.description}}</p>
+            </div>
+        {{else}}
+            <div id="site-title" class="h1">
+                <h1><a href="/" rel="nofollow">{{@blog.title}}</a></h1>
+                <p>{{@blog.description}}</p>
+            </div>        
+        {{/if}}
+
+        <!-- Menu -->
+        <div class="menu-toggle">
+            <a href="#" class="nav-toggle"><i data-icon="b" class="icon onHoverPulse"></i></a>
+        </div>
+
+
+    </div> <!-- end #inner-header -->
+
+</header> <!-- end header -->

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{! JavaScript & CSS Files }}
+    <link rel="stylesheet" href="{{asset "css/main.css"}}" />
+    <script type="text/javascript" src="{{asset "bower_components/modernizr/modernizr.js"}}"></script>
+    <script src="http://localhost:35729/livereload.js"></script>
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+    <div id="at_page_surround" class="off-canvas-wrap">
+        <div class="inner-wrap">
+            {{! Off-Canvas section }}
+            {{> off_canvas }}
+
+            {{! The main sections of Ghostion theme }}
+            {{> header }}
+            {{{ body }}}
+            {{> footer }}
+
+            {{! Close the off-canvas menu when opened }}
+            <a class="exit-off-canvas"></a>
+        </div>
+    </div>
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+
+    {{! The main JavaScript file for Ghostion }}
+    <script type="text/javascript" src="{{asset "bower_components/foundation/js/foundation.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/main.js"}}"></script>
+</body>
+</html>

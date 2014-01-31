@@ -1,0 +1,31 @@
+{{! Showcase block for frontpage }}
+
+<div id="mainbody" class="frontpage" role="main">
+    <div class="row">
+        <div class="large-12 columns">
+            {{! Each post will be output using this markup }}
+            {{#foreach posts}}
+            <div class="block">
+                <article class="{{post_class}}">
+                    <div class="post_header">
+                        <h2 class="post_title"><a href="{{url}}">{{{title}}}<span></span></a></h2>
+                    </div>
+                    <div class="post_meta">
+                        <span class="post_author"><span class="fa fa-user"></span> {{author}}</span>
+                        <time class="post_time" datetime="{{date format='YYYY-MM-DD'}}"><span class="fa fa-calendar"></span> {{date format="DD MMM YYYY"}}</time>
+                        <span class="post_tags">{{#if tags}}<span class="fa fa-tags"></span>{{/if}} {{tags}}</span>
+                    </div>
+                    <div class="post_excerpt">
+                        <p><a href="{{url}}">{{content words="0"}}</a></p>
+                        <p>{{excerpt characters="350"}}&hellip;</p>
+                        <a href="{{url}}" class="button tiny radius">Read More</a>
+                    </div>
+                </article>
+            </div>
+            {{/foreach}}
+        </div>
+    </div>
+</div>
+
+{{!! After all the posts, we have the previous/next pagination links }}
+{{pagination}}

@@ -1,0 +1,47 @@
+     
+<!-- begin side nav -->
+     <div id="nav" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
+        <div class="inner-nav">
+            <a href="#" class="close"><img src="/assets/images/close.svg"></a>        
+            <a href="#" class="nav-toggle"><img src="/assets/images/menu.svg"></a>
+            <div class="articles">
+                <h3>Articles</h3>
+                <ul>
+                    {{#foreach posts}}
+                            <li class="post-link">
+                                <a href="{{url}}">{{title}} <span class="date">{{date published_at format="MMMM DD, YYYY"}}</span></a>
+                                <hr class="divider">
+                            </li>
+                    {{/foreach}}
+                </ul>
+            </div>
+
+            {{#post}}
+                <section  class="author clearfix">
+
+                    <div class="avatar">
+                        {{#if author.image}}
+                        <a href="{{author.website}}"><img src="{{author.image}}" class="author-img" title="author pic"/> </a>
+                        {{/if}}       
+
+                    {{#if author.bio}}
+                    <div class="author-bio">
+                        <h4><a href="{{author.website}}">{{author.name}}</a></h4>
+                        {{#if author.location}}<small>{{author.location}}</small>{{/if}}
+                        {{#if author.bio}}<p>{{author.bio}}</p>{{/if}}
+                    </div>
+                    {{/if}}
+                    <a href="/" class="button">Go back</a>
+                </section>
+            {{/post}} 
+
+            <ul class="social-icons">
+                <li><a href="http://www.facebook.com/NorthernFolks"><span class="symbol">roundedfacebook</span></a></li>
+                <li><a href="http://www.twitter.com/NorthernFolks"><span class="symbol">roundedtwitter</span></a></li>
+                <li><a href="#"><span class="symbol">roundedinstagram</span></a></li>
+                <li><a href="http://www.dribbble.com/NorthernFolks"><span class="symbol">roundeddribble</span></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- end side nav -->

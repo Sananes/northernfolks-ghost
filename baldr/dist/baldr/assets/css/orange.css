@@ -1,0 +1,38 @@
+/*************************
+Site Name:  Baldr
+Company:    NorthernFolks
+Author:     Aaron Sananes & Daniel Sandvik
+Website:    http://www.northernfolks.com
+
+**************************
+  Orange Color Scheme
+**************************/
+#nav {
+  background-color: #dc4f18 !important;
+  background-image: url(../images/header-image-orange.jpg) !important;
+}
+a.read-more {
+  color:#dc4f18 !important;
+}
+a:hover,
+.entry-content a, .entry-content a:hover {
+  color: #dc4f18;
+}
+#nav .divider {
+  border-color: rgba(255,255,255,0.5);
+}
+.button:hover{
+  background: #dc4f18 !important;
+}
+.avatar .button:hover {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+.menu li a:hover,
+.social-icons li a:hover, 
+{
+  color: #fff !important;
+}
+.hentry .post-info header, blockquote {
+  border-color: #dc4f18 !important;
+}

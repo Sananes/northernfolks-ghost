@@ -1,0 +1,89 @@
+{{! This template displays a post in its entirety.
+    It is used to display the latest post in the index, and any single post }}
+<article class="hentry clearfix {{post_class}}" role="article">
+    <div id="sidebar" class="fivecol first">
+    <div class="post-info clearfix">
+    <div class="inner-post-info">
+         <header class="h2 article-header post-title">
+            <a href="{{url}}" rel="bookmark">{{title}}</a>
+        </header>
+
+        <p class="byline vcard">
+            <time class="updated" datetime="2012-05-03">
+                {{date published_at format="MMMM DD, YYYY"}} by <strong>{{author.name}}</strong>
+            </time>
+        </p>
+
+        <hr>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+        <nav class="share">
+            <p class="share-text">Share this post</p>
+            <ul class="social-share">
+                <li><a onclick="window.open(this.href, 'facebook-share', 'width=550,height=350');return false;" href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]={{url}}&p[images][0]={{@blog.logo}}&p[title]={{title}}&p[summary]={{excerpt}}"><span class="symbol">roundedfacebook</span></a></li>
+                <li><a onclick="window.open(this.href, 'twitter-share', 'width=550,height=350');return false;" href="http://twitter.com/home?status={{title}}%20-%20{{url}}"><span class="symbol">roundedtwitter</span></a></li>
+                <li class="last"><a onclick="window.open(this.href, 'googleplus-share', 'width=550,height=350');return false;" href="https://plus.google.com/share?url={{url}}"><span class="symbol">roundedgoogleplus</span></a></li>
+            </ul>
+        </nav>
+    </div>
+    </div>
+    </div>
+
+    <section class="entry-content sevencol clearfix">
+        <div class="featured"><a class="featured-image-link" href="{{url}}"></a><a class="comments" href="{{url}}#disqus_thread" data-disqus-identifier="{{id}}">0 Comments</a></span></div>
+        <div class="content">{{content}}</div>
+    </section> <!-- end article section -->
+
+
+    <footer class="article-footer">
+        <hr>
+  
+        <div class="share-tags clearfix" style="padding: 8px 0;">
+        {{#if tags}}
+            <p class="tags" style="float:left;margin:0;">
+                <span class="tags-title">
+                    Tags:
+                    {{#each tags}}
+                        <!-- Tag Links are not quite ready yet.
+                           <a href="/tags/{{this.name}}"
+                           class="tag-label"
+                           title="View all posts in {{this.name}}"
+                           rel="category">{{this.name}}</a>
+                           -->
+                        {{! Use the span below to display tags as plain text until tag links are ready }}
+                        <span class="tag-label">{{this.name}}</span>
+                    {{/each}}
+                </span>
+            </p>
+ 
+        {{/if}}
+
+            <nav class="share" style="float:right;">
+                <p class="share-text" style="margin:0 15px 0 0;">Share this post</p>
+                <ul class="social-share" style="margin:0;padding:0;">
+                    <li><a onclick="window.open(this.href, 'facebook-share', 'width=550,height=350');return false;" href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]={{url}}&p[images][0]={{@blog.logo}}&p[title]={{title}}&p[summary]={{excerpt}}"><span class="symbol">roundedfacebook</span></a></li>
+                    <li><a onclick="window.open(this.href, 'twitter-share', 'width=550,height=350');return false;" href="http://twitter.com/home?status={{title}}%20-%20{{url}}"><span class="symbol">roundedtwitter</span></a></li>
+                    <li class="last"><a onclick="window.open(this.href, 'googleplus-share', 'width=550,height=350');return false;" href="https://plus.google.com/share?url={{url}}"><span class="symbol">roundedgoogleplus</span></a></li>
+                </ul>
+            </nav>
+
+            </div>
+        
+        <section  class="author clearfix">
+            {{#if author.image}}
+                <div class="twocol first avatar">
+                    <a href="{{author.website}}"><img src="{{author.image}}" class="author-img" title="author pic"/></a>
+                </div>
+            {{/if}}
+            {{#if author.name}}
+                <div class="{{#if author.image}}tencol{{else}}twelvecol{{/if}} author-bio">
+                    <h4><a href="{{author.website}}">{{author.name}}</a></h2>
+                    {{#if author.location}}<small>{{author.location}}</small>{{/if}}
+                    {{#if author.bio}}<p>{{author.bio}}</p>{{/if}}
+                </div>
+            {{/if}}
+        </section>  
+       
+    </footer> <!-- end article footer -->
+    <hr>
+</article>

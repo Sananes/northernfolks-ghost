@@ -8,34 +8,35 @@
 
 <div id="mainbody" class="post" role="main">
     <div class="row">
-        <div class="large-12 columns">
             {{#post}}
-            <div class="block">
-                <article class="{{post_class}}">
-                    <div class="post_content">
-                        {{content}}
-                    </div>
-                    <h3>About Author</h3>
-                    <div class="author">
-                        <div class="row">
-                            <div class="medium-2 columns show-for-medium-up">
-                                <div class="author_image">
-                                    <img src="{{author.image}}" alt="{{author.name}}">
-                                </div>
-                            </div>
-                            <div class="medium-10 columns">
-                                <div class="author_name">
-                                    <h3>{{author.name}}</h3>
-                                </div>
-                                <div class="author_bio">
-                                    <p>{{author.bio}}</p>
-                                </div>
-                            </div>
+
+                <article class="{{post_class}} large-9 large-push-3 columns">
+                    <div class="inner">
+                        <div class="post_content">
+                            {{content}}
                         </div>
                     </div>
                 </article>
-            </div>
+
+           <aside class="author-details large-3 large-pull-9 columns">
+                 <div class="inner">
+                      <div class="show-for-medium-up">
+                            <div class="author_image large-8 columns">
+                                <img src="{{author.image}}" alt="{{author.name}}">
+                            </div>
+                        </div>
+                        <div class="large-12 columns">
+                            <div class="author_name">
+                                <h3>{{author.name}}</h3>
+                            </div>
+                            <div class="author_bio">
+                                <p>{{author.bio}}</p>
+                            </div>
+                        </div>                
+                </div>
+            
+
+            </aside>
             {{/post}}
-        </div>
     </div>
 </div>

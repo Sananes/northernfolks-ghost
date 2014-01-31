@@ -1,22 +1,22 @@
 <div id="showcase">
 	<div class="blog_cover" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
-	    <div class="showcase_overlay {{#if @blog.cover}}at_with_blog_cover{{/if}}">
 			<div class="row">
-				<div class="medium-8 medium-centered columns">
-					<div class="block">
+				<div class="large-12 columns">
 						<div class="text-center">
 				            {{#post}}
-				            <div class="block">
-				                <article class="{{post_class}}">
+				                <article class="headline">
+				                    <div class="post_meta">
+				                        <time class="post_time " datetime="{{date format='MMMM DD, YYYY'}}">{{date format='MMMM DD, YYYY'}}</time>
+				                    </div>
 				                    <div class="post_header">
 				                        <h2 class="post_title">{{{title}}}</h2>
 				                    </div>
-				                    <div class="post_meta">
+<!-- 				                    <div class="post_meta">
 				                        <span class="post_author"><span class="fa fa-user"></span> {{author}}</span>
 				                        <time class="post_time" datetime="{{date format='YYYY-MM-DD'}}"><span class="fa fa-calendar"></span> {{date format="DD MMM YYYY"}}</time>
 				                        <span class="post_tags">{{#if tags}}<span class="fa fa-tags"></span>{{/if}} {{tags}}</span>
-				                    </div>
-					                <div class="post_share">
+				                    </div> -->
+<!-- 					                <div class="post_share">
 					                    <h6 class="post_share_title">Share this post</h6>
 					                    <a class="post_share_icon" href="http://twitter.com/share?text={{encode title}}&url={{url absolute="true"}}"
 					                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
@@ -30,14 +30,11 @@
 					                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
 					                        <span class="fa fa-google-plus-square"></span>
 					                    </a>
-					                </div>
+					                </div> -->
 				                </article>
-				            </div>
 				            {{/post}}
 						</div>
-					</div>
 				</div>
 			</div>
 	    </div>
-	</div>
 </div>

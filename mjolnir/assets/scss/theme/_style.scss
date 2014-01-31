@@ -28,7 +28,8 @@ a {
 
 
 }
-.post {
+
+.article-post {
 		position:relative;
 		color: #fff;
 		max-height: 310px;
@@ -36,6 +37,11 @@ a {
 			&:before {
 				opacity:0;
 			}
+		}
+		.title, .subtitle, .version,
+		.post_title, .post_share_title, .post_meta, .post_time {
+			color: #fff;
+			text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.3);
 		}
 		&:before {
 			    content : "";
@@ -126,8 +132,8 @@ a {
 		font-size: $base_font_size - 2;
 		@include transition(all 0.2s ease-in-out);
 		&:hover {
-			color: lighten($primary_color, 25%);
-			background-color: rgba(255, 255, 255, 0.15);
+			color: #fff;
+			//background-color: rgba(255, 255, 255, 0.15);
 		}
 	}
 }
@@ -165,7 +171,7 @@ a {
 		}
 	}
 	.title, .subtitle, .version,
-	.post_title, .post_share_title {
+	.post_title, .post_share_title, .post_meta, .post_time {
 		color: #fff;
 		text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.3);
 	}
@@ -182,12 +188,18 @@ a {
 }
 .blog_cover {
 	background-size: cover;
+	background-position:center  center;
+	//max-height: 310px;
+	padding: 80px 0 50px 0;
+	.headline {
+		text-align:left;
+	}
 }
 .showcase_overlay {
-	background-image: url(../images/showcase_pattern.png);
-	background-repeat: repeat;
-	background-color: $showcase_background_color;
-	color: $showcase_text_color;
+	// background-image: url(../images/showcase_pattern.png);
+	// background-repeat: repeat;
+	// background-color: $showcase_background_color;
+	// color: $showcase_text_color;
 	&.with_blog_cover {
 		background-image: none;
 		background-color: fade-out($showcase_background_color, 0.25);
@@ -223,7 +235,38 @@ a {
 // 		width: 100%;
 // 	}
 // }
+.post-template {
+	.post:before {
+		background-color:transparent;
+		opacity:1;
+	}
+	blockquote {
+		color: $primary_color;
+		padding-top:0px;
+		border-width:5px;
+		border-color: $primary_color;
+		font-style:italic;
+		p {
+			font-size:1rem !important;
+			color: $primary_color;
+		}
+	}
+	#mainbody {
+		padding-top:60px;
+	}
+}
 .post {
+	p, ul, ol, blockquote {
+		font-size: .9rem;
+	}
+}
+.post_content {
+	p:first-child {
+		font-size:1.2rem;
+		font-weight:bold;
+	}
+}
+.article-post {
 	&:before {
 		@include transition (all .5s linear);
 	}
@@ -271,11 +314,11 @@ a {
 
 }
 .post_meta {
-	color: lighten($base_text_color, 35%);
+	//color: lighten($base_text_color, 35%);
 	font-size: $base_font_size - 2;
 	margin-bottom: 1rem;
 	.post-template & {
-		color: fade-out($showcase_text_color, 0.5)
+		color: #fff;
 	}
 }
 .post_title {
@@ -321,15 +364,21 @@ a {
     margin: 1rem auto;
 }
 .author_name h3 {
-	color: tint($primary_color, 30%);
+	color: black;
 	font-weight: 500;
+	font-size: 1rem;
+	padding-bottom:.8rem;
 }
 .author_image {
+	margin-bottom:1.1rem;
 	img {
-		background: tint($primary_color, 50%);
-		border: 1px solid tint($primary_color, 40%);
-		padding: 5px;
-		border-radius: 100%;
+		border-radius: 3px;
+	}
+}
+.author_bio {
+	border-bottom: 1px dotted #ddd;
+	p {
+		font-size:.7rem;
 	}
 }
 

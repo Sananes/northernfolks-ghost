@@ -5,8 +5,8 @@ $(document).foundation();
 
 
     $(document).ready(function(){
-        $('#purple-background').addClass('visible');        
-        $('#articles').addClass('hidden');
+        $('#purple-background').addClass('visible').removeClass('hidden');        
+        $('#articles').addClass('hidden').removeClass('visible');
 
 
         var config = {
@@ -191,8 +191,8 @@ $(document).foundation();
     });
 
     $(window).load( function() {
-      $('#purple-background').addClass('hidden');
-      $('#articles').addClass('visible');
+      $('#purple-background').addClass('hidden').removeClass('visible');
+      $('#articles').addClass('visible').removeClass('hidden');
     });
 
 }(jQuery));

@@ -5,8 +5,9 @@ $(document).foundation();
 
 
     $(document).ready(function(){
-        
+        $('#purple-background').addClass('visible');        
         $('#articles').addClass('hidden');
+
 
         var config = {
           'infinite_scrolling': true,         // Infinite Scrolling (Enable or Disable)
@@ -190,7 +191,7 @@ $(document).foundation();
     });
 
     $(window).load( function() {
-      $('#purple-background').hide();
+      $('#purple-background').addClass('hidden');
       $('#articles').addClass('visible');
     });
 

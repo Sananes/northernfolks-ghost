@@ -3,10 +3,6 @@ $(document).foundation();
 (function ($) {
     "use strict";
 
-    $(window).load( function() {
-      $('#purple-background').hide();
-      $('#articles').addClass('visible');
-    });
 
     $(document).ready(function(){
         
@@ -191,6 +187,11 @@ $(document).foundation();
         // Specific images
 
 
+    });
+
+    $(window).load( function() {
+      $('#purple-background').hide();
+      $('#articles').addClass('visible');
     });
 
 }(jQuery));

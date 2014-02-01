@@ -28,7 +28,15 @@ a {
 
 
 }
-
+.visible {
+	opacity: 1 !important;
+	visibility:visible !important;	
+	@include transition(opacity 1s ease);
+}
+.hidden {
+	opacity:0;
+	visibility:hidden;
+}
 .article-post {
 		position:relative;
 		color: #fff;
@@ -57,6 +65,12 @@ a {
 		&.cover {
 			background-size:cover;
 			background-position:center center;
+		}
+		&.no-feature {
+			&:before {
+				opacity:1;
+				background:#8a8a9b;
+			}
 		}
 		.inner-wrapper {
 			padding: 100px 0;
@@ -189,6 +203,7 @@ a {
 .blog_cover {
 	background-size: cover;
 	background-position:center  center;
+	background-color: #8a8a9b;
 	//max-height: 310px;
 	padding: 80px 0 50px 0;
 	.headline {
@@ -210,6 +225,7 @@ a {
 //* Pagination
 //*-----------------------------------------
 #pagination {
+//display:none;
 	font-weight: 300;
 }
 
@@ -354,6 +370,9 @@ a {
 	&:hover {
 		opacity: 1;
 	}
+}
+.author-details {
+	position:relative;
 }
 .author {
 	color: tint($primary_color, 40%);

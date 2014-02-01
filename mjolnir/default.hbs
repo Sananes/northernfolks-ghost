@@ -15,8 +15,7 @@
 
     {{! JavaScript & CSS Files }}
     <link rel="stylesheet" href="{{asset "css/main.css"}}" />
-    <script type="text/javascript" src="{{asset "bower_components/modernizr/modernizr.js"}}"></script>
-    <script src="http://localhost:35729/livereload.js"></script>
+    <script type="text/javascript" src="{{asset "vendor/modernizr/modernizr.js"}}"></script>
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
 </head>
@@ -26,7 +25,7 @@
             {{! Off-Canvas section }}
             {{> off_canvas }}
 
-            {{! The main sections of Ghostion theme }}
+            {{! The main sections of Mjolnir theme }}
             {{> header }}
             {{{ body }}}
             {{> footer }}
@@ -39,12 +38,16 @@
     {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}
 
-    {{! The main JavaScript file for Ghostion }}
-    <script type="text/javascript" src="{{asset "bower_components/foundation/js/foundation.min.js"}}"></script>
+    {{! The main JavaScript file for Mjolnir }}
+    <!-- build:js /assets/js/main.js -->
+    <script type="text/javascript" src="{{asset "vendor/foundation/js/foundation.min.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/lazyload.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/sticky.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/bgcheck.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/main.js"}}"></script>
+    <!-- endbuild -->
 
 </body>
 </html>

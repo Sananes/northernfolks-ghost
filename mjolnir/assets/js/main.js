@@ -11,7 +11,6 @@ $(document).foundation();
 
     if($('body').hasClass('home-template')) {
         show_loader();
-        $('#articles').addClass('hidden').removeClass('visible');
     }
 
 
@@ -211,8 +210,9 @@ $(document).foundation();
 
 
     $(window).load( function() {
-      hide_loader();
-      $('#articles').addClass('visible').removeClass('hidden');
+      if($('body').hasClass('home-template')) {
+        hide_loader();
+      }
     });
 
 

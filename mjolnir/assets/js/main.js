@@ -9,9 +9,11 @@ $(document).foundation();
 //  #Responsive Videos
 //  ==================================================
 
-
-        $('#purple-background').addClass('visible').removeClass('hidden');        
+    if($('body').hasClass('home-template')) {
+        show_loader();
         $('#articles').addClass('hidden').removeClass('visible');
+    }
+
 
 
 //  #Configurations
@@ -28,6 +30,22 @@ $(document).foundation();
         $(".at_block").fitVids();
 
 
+
+        function show_loader () {
+            var loader = $('#loader');
+            var windowHeight = $(window).height();
+
+            if(loader) {
+                $(loader).addClass('visible').removeClass('hidden').css('height', windowHeight);
+            }
+        }
+        function hide_loader() {
+            var loader = $('#loader');
+
+            if(loader) {
+                $(loader).addClass('hidden').removeClass('visible');
+            }
+        }
 //  #Infiniate Scrolling
 //  ==================================================
 
@@ -45,16 +63,20 @@ $(document).foundation();
                     if ($(window).scrollTop() == ($(document).height() - $(window).height())) {
                         $(".endless").show();
 
+                        show_loader();
+
                         $.ajax({
                             url: next_page,
+                            timeout: 6000,
                             success: function (html) {
+
                                 if (html) {
                                     var content = $(html),
                                         posts = content.find(".article-post"),
                                         pagination = content.find("#pagination"),
                                         endless = content.find(".endless");
 
-                               
+
                                     $("#pagination").remove();
 
                                     $(".endless").remove();
@@ -64,6 +86,8 @@ $(document).foundation();
 
                                     //Callback when create new article
                                     featured_image();
+                                    hide_loader();
+
                                     $("#mainbody").append(endless);
                                     $("#mainbody").append(pagination);
                                     $("#pagination").css("display", "none");
@@ -77,12 +101,14 @@ $(document).foundation();
                             $(".no-more").addClass("animate wobble");
                         }
 
+
                     }
                 } else {
                     $("#pagination").css("display", "none");
                     // $("#pagination").html("<span class=\"button no-more\" style=\"opacity:1\">No more posts</span>");
                     $(".no-more").removeClass("animate wobble");
                     $(".no-more").addClass("animate wobble");
+
                 }
             } else {
                 $("#pagination").css("display", "block");
@@ -102,9 +128,9 @@ $(document).foundation();
                 post_list_links = [];
 
             if (post_links.length > 0) {
-                
+
                 post_links.each(function (index) {
-                    //Process script                 
+                    //Process script
                     post_list_links.push(post_links[index].href);
                     /* -- Next and Prev Post -- */
                 });
@@ -119,7 +145,7 @@ $(document).foundation();
                             video = article.find("iframe:first"),
                             blog_cover = html.find(".blog_cover"),
                             featured = featured_html[index];
-                            
+
                             // Check if there is an image; this works with lazyload
                             if(img) {
                               $(featured).attr('data-original', img).css('background-image', 'url(' + img + ')');
@@ -149,14 +175,14 @@ $(document).foundation();
         $('.article-post, .post_content img').lazyload({
             effect : "fadeIn"
         });
-      
-      
+
+
 //  #Post page Scripts
-//  ================================================== 
+//  ==================================================
 
         if($('body').hasClass('post-template')) {
 
-            $(".post-template article.post, .author-details .inner").stick_in_parent();
+            //$(".post-template article.post, .author-details .inner").stick_in_parent();
 
             var disqus_shortname = config.disqus_shortname;
 
@@ -185,9 +211,52 @@ $(document).foundation();
 
 
     $(window).load( function() {
-      $('#purple-background').addClass('hidden').removeClass('visible');
+      hide_loader();
       $('#articles').addClass('visible').removeClass('hidden');
     });
+
+
+// as the page loads, call these scripts
+jQuery(document).ready(function($) {
+
+    /*
+     Responsive jQuery is a tricky thing.
+     There's a bunch of different ways to handle
+     it, so be sure to research and find the one
+     that works for you best.
+     */
+
+    /* getting viewport width */
+    var responsive_viewport = $(window).width();
+
+    /* if is below 481px */
+    if (responsive_viewport < 481) {
+
+    } /* end smallest screen */
+
+    /* if is larger than 481px */
+    if (responsive_viewport > 481) {
+
+    } /* end larger than 481px */
+
+    /* if is above or equal to 768px */
+    if (responsive_viewport >= 768) {
+
+        /* load gravatars */
+        $('.comment img[data-gravatar]').each(function(){
+            $(this).attr('src',$(this).attr('data-gravatar'));
+        });
+        if($('body').hasClass('post-template')) {
+            $(".post-template article.post, .author-details .inner").stick_in_parent();
+        }
+    }
+
+    /* off the bat large screen actions */
+    if (responsive_viewport > 1030) {
+
+    }
+
+});
 
 }(jQuery));
 

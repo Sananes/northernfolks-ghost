@@ -30,7 +30,7 @@ a {
 }
 .visible {
 	opacity: 1 !important;
-	visibility:visible !important;	
+	visibility:visible !important;
 	@include transition(opacity 1s ease);
 }
 .hidden {
@@ -139,7 +139,7 @@ a {
 	background: $header_background_color;
 	line-height: $topbar-height;
 
-	.top-bar, 
+	.top-bar,
 	.top-bar-section ul {
 		background: transparent;
 	}
@@ -172,15 +172,25 @@ a {
 	}
 }
 .left-off-canvas-toggle {
-	color: $header_background_color;
-	background: $header_text_color;
+	color: darken($header_background_color, 15%);
+	background: lighten($offcanvas_background, 15%);
 	line-height: 30px !important;
     position: absolute;
     top: 33px;
     padding: 0 8px;
     border-radius: 3px;
-}
 
+    &:hover {
+    	color: $header_background_color;
+    }
+}
+.left-off-canvas-menu {
+	background: darken($primary_color, 15%);
+}
+ul.off-canvas-list li label {
+	background: darken($primary_color, 20%);
+	color: #fff;
+}
 //*-----------------------------------------
 //* Showcase
 //*-----------------------------------------
@@ -316,7 +326,7 @@ a {
 	bottom:0;
 	height:100%;
 	width:100%;
-	
+
 	&.show {
 		display:block;
 	}

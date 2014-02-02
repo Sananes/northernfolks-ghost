@@ -1,6 +1,6 @@
 /* Loader #1 by Sam Lillicrap
    http://www.samueljwebdesign.co.uk
-   http://codepen.io/samueljweb/pen/LbGxi 
+   http://codepen.io/samueljweb/pen/LbGxi
 */
 
 //Variables to customise the stick loader!
@@ -14,10 +14,11 @@ $stick_distance: -8px; //Changes distance between sticks (will need editing afte
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,700);
 
 
-#purple-background {
+#loader {
   background: #464666;
   position: absolute;
   width:100%;
+  overflow: hidden;
   height:100%;
   display:block;
   height:100%;
@@ -25,7 +26,7 @@ $stick_distance: -8px; //Changes distance between sticks (will need editing afte
 }
 
 h1 {
-  
+
  font-family: 'Lato';
  color:$text_color;
  text-transform: uppercase;
@@ -39,8 +40,8 @@ h1 {
 
 }
 
-#container {
-  position:absolute;
+#loader_container {
+  position: absolute;
   width:$stick_length*6;
   margin:0 auto;
   vertical-align: middle;
@@ -50,16 +51,16 @@ h1 {
 }
 
 .stick {
-  
+
  width: $stick_length;
  height:3px;
  background:$stick_color;
  display:inline-block;
  margin-left:$stick_distance;
-  
+
 }
 
-.stick:nth-child(n) {  
+.stick:nth-child(n) {
   transform:rotate(30deg);
   -ms-transform:rotate(30deg); /* IE 9 */
   -webkit-transform:rotate(30deg); /* Safari and Chrome */
@@ -68,7 +69,7 @@ h1 {
    -moz-animation: fall 2s infinite;
 
 }
-.stick:nth-child(2n) {  
+.stick:nth-child(2n) {
    transform:rotate(-30deg);
   -ms-transform:rotate(-30deg); /* IE 9 */
   -webkit-transform:rotate(-30deg); /* Safari and Chrome */
@@ -82,27 +83,27 @@ h1 {
   50% { transform:rotate(30deg);
   -ms-transform:rotate(30deg); /* IE 9 */
   -webkit-transform:rotate(30deg);
-  -moz-transform:rotate(30deg); 
+  -moz-transform:rotate(30deg);
     ;}
 }
 @-moz-keyframes rise {
  50% { transform:rotate(30deg);
   -ms-transform:rotate(30deg); /* IE 9 */
   -webkit-transform:rotate(30deg);
-   -moz-transform:rotate(30deg); 
+   -moz-transform:rotate(30deg);
 }
 }
 @-o-keyframes rise {
   50% { transform:rotate(30deg);
   -ms-transform:rotate(30deg); /* IE 9 */
   -webkit-transform:rotate(30deg);
-  -moz-transform:rotate(30deg); 
+  -moz-transform:rotate(30deg);
 }
 @keyframes rise {
   50% { transform:rotate(30deg);
   -ms-transform:rotate(30deg); /* IE 9 */
   -webkit-transform:rotate(30deg);
-  -moz-transform:rotate(30deg); 
+  -moz-transform:rotate(30deg);
 }
 }}
 
@@ -110,29 +111,29 @@ h1 {
   50% { transform:rotate(-30deg);
   -ms-transform:rotate(-30deg); /* IE 9 */
   -webkit-transform:rotate(-30deg);
-  -moz-transform:rotate(30deg); 
+  -moz-transform:rotate(30deg);
 }
 }
 @-moz-keyframes fall {
  50% { transform:rotate(-30deg);
   -ms-transform:rotate(-30deg); /* IE 9 */
   -webkit-transform:rotate(-30deg);
-  -moz-transform:rotate(-30deg); 
- 
+  -moz-transform:rotate(-30deg);
+
  }
 }
 @-o-keyframes fall {
   50% { transform:rotate(-30deg);
   -ms-transform:rotate(-30deg); /* IE 9 */
   -webkit-transform:rotate(-30deg);
-   -moz-transform:rotate(30deg); 
+   -moz-transform:rotate(30deg);
 
   }
 @keyframes fall {
   50% { transform:rotate(-30deg);
   -ms-transform:rotate(-30deg); /* IE 9 */
   -webkit-transform:rotate(-30deg);
-  -moz-transform:rotate(30deg); 
+  -moz-transform:rotate(30deg);
 
   }
 }}

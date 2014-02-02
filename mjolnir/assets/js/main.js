@@ -3,28 +3,21 @@ $(document).foundation();
 (function ($) {
     "use strict";
 
-
-    // $(document).ready(function(){
-
-//  #Responsive Videos
+//  #Configuration
 //  ==================================================
 
+    var config = {
+      'infinite_scrolling': true,         // Infinite Scrolling (Enable or Disable)
+      'disqus_shortname': 'vikingtheme',  // Disqus name
+      'analytics_id' : "",                // Google Analytics Id
+      'analytics_url': "",                // Google Analytics URL
+      'backgroundCheck': true,             // Background Check
+      'loading': true
+    }
 
 
-
-
-//  #Configurations
+//  #Loader
 //  ==================================================
-
-        var config = {
-          'infinite_scrolling': true,         // Infinite Scrolling (Enable or Disable)
-          'disqus_shortname': 'vikingtheme',  // Disqus name
-          'analytics_id' : "",                // Google Analytics Id
-          'analytics_url': "",                // Google Analytics URL
-          'backgroundCheck': true,             // Background Check
-          'loading': true
-        }
-
 
         if($('body').hasClass('home-template')) {
             show_loader();
@@ -56,6 +49,13 @@ $(document).foundation();
                     return false;
                 }
             }
+
+
+    $(window).load( function() {
+      if($('body').hasClass('home-template')) {
+        hide_loader();
+      }
+    });
 
 //  #Infiniate Scrolling
 //  ==================================================
@@ -221,11 +221,7 @@ $(document).foundation();
 //  ==================================================
 
 
-    $(window).load( function() {
-      if($('body').hasClass('home-template')) {
-        hide_loader();
-      }
-    });
+
 
 
 // as the page loads, call these scripts

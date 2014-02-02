@@ -62,6 +62,15 @@ a {
 			    height:100%;
 			    opacity:0.4;
 			    background:#627176;
+
+			    @media #{$small-only} {
+			    	opacity:1;
+			    	background: transparent;
+			    }
+			    @media #{$medium-only} {
+			    	opacity:1;
+			    	background: transparent;
+			    }
 		}
 		&.cover {
 			background-size:cover;

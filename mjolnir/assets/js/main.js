@@ -4,10 +4,18 @@ $(document).foundation();
     "use strict";
 
 
-    $(document).ready(function(){
+    // $(document).ready(function(){
+
+//  #Responsive Videos
+//  ==================================================
+
+
         $('#purple-background').addClass('visible').removeClass('hidden');        
         $('#articles').addClass('hidden').removeClass('visible');
 
+
+//  #Configurations
+//  ==================================================
 
         var config = {
           'infinite_scrolling': true,         // Infinite Scrolling (Enable or Disable)
@@ -18,6 +26,10 @@ $(document).foundation();
         }
 
         $(".at_block").fitVids();
+
+
+//  #Infiniate Scrolling
+//  ==================================================
 
         $(window).scroll(function () {
 
@@ -78,21 +90,8 @@ $(document).foundation();
         });
 
 
-        // Featured Homepage posts images
-
-        // function featured_image() {
-
-        //   var article = $('.home-template article.post');
-
-        //   article.each( function() {
-        //     var  img = $(this).find('img[alt="featureimage"]').remove(),
-        //          get_image = img.attr('src');
-        //     //alert(get_image);
-        //     $(this).addClass('cover').css('background-image', 'url(' + get_image + ')');
-        //   }); 
-          
-        // }
-        //  featured_image();
+//  #Featured Image
+//  ==================================================
 
 
         function featured_image() {
@@ -103,9 +102,6 @@ $(document).foundation();
                 post_list_links = [];
 
             if (post_links.length > 0) {
-    //            if ( Modernizr.localstorage ) {
-    //                localStorage.clear();
-    //            }
                 
                 post_links.each(function (index) {
                     //Process script                 
@@ -136,7 +132,8 @@ $(document).foundation();
         }
 
 
-        //Featured Post page image
+//  #Featured Post Image
+//  ==================================================
 
         function post_featured_image() {
           var post = $('.post-template article'),
@@ -149,21 +146,13 @@ $(document).foundation();
        featured_image();
        post_featured_image();
 
-
- 
-
-
-
-
-
-
-
         $('.article-post, .post_content img').lazyload({
             effect : "fadeIn"
         });
       
-        // 
- 
+      
+//  #Post page Scripts
+//  ================================================== 
 
         if($('body').hasClass('post-template')) {
 
@@ -188,7 +177,12 @@ $(document).foundation();
         // Specific images
 
 
-    });
+    // });
+
+
+//  #Loading Scripts
+//  ==================================================
+
 
     $(window).load( function() {
       $('#purple-background').addClass('hidden').removeClass('visible');

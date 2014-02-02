@@ -32,6 +32,7 @@ a {
 	opacity: 1 !important;
 	visibility:visible !important;
 	@include transition(opacity 1s ease);
+	display:block !important;
 }
 .hidden {
 	opacity:0;
@@ -42,8 +43,9 @@ a {
 		position:relative;
 		color: #fff;
 		max-height: 310px;
+		background-color: darken($primary_color, 5%);
 		&:hover {
-			&:before {
+			&.cover:before {
 				opacity:0;
 			}
 		}
@@ -52,29 +54,34 @@ a {
 			color: #fff;
 			text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.3);
 		}
-		&:before {
-			    content : "";
-			    display: block;
-			    position: absolute;
-			    top: 0;
-			    left: 0;
-			    width:100%;
-			    height:100%;
-			    opacity:0.4;
-			    background:#627176;
-
-			    @media #{$small-only} {
-			    	opacity:1;
-			    	background: transparent;
-			    }
-			    @media #{$medium-only} {
-			    	opacity:1;
-			    	background: transparent;
-			    }
+		&:nth-child(2) {
+			background: darken($primary_color, 3%);
 		}
+
 		&.cover {
 			background-size:cover;
 			background-position:center center;
+
+			&:before {
+				    content : "";
+				    display: block;
+				    position: absolute;
+				    top: 0;
+				    left: 0;
+				    width:100%;
+				    height:100%;
+				    opacity:0.4;
+				    background:#627176;
+
+				    @media #{$small-only} {
+				    	opacity:1;
+				    	background: transparent;
+				    }
+				    @media #{$medium-only} {
+				    	opacity:1;
+				    	background: transparent;
+				    }
+			}
 		}
 		&.no-feature {
 			&:before {
@@ -306,8 +313,10 @@ ul.off-canvas-list li label {
 	}
 }
 .article-post {
-	&:before {
-		@include transition (all .5s linear);
+	&.cover {
+		&:before {
+			@include transition (all .5s linear);
+		}
 	}
 	.readmore {
 		@include transition (opacity .5s ease);

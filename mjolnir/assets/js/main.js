@@ -1,8 +1,5 @@
 $(document).foundation();
 
-(function ($) {
-    "use strict";
-
 //  #Configuration
 //  ==================================================
 
@@ -13,7 +10,15 @@ $(document).foundation();
       'analytics_url': "",                // Google Analytics URL
       'backgroundCheck': true,             // Background Check
       'loading': true
-    }
+    };
+
+
+
+(function ($) {
+    "use strict";
+
+
+
 
 
 //  #Loader
@@ -21,6 +26,7 @@ $(document).foundation();
 
         if($('body').hasClass('home-template')) {
             show_loader();
+            $('.article-post').addClass('cover');
         }
         $(".at_block").fitVids();
 
@@ -74,8 +80,6 @@ $(document).foundation();
                     if ($(window).scrollTop() == ($(document).height() - $(window).height())) {
                         $(".endless").show();
 
-                        show_loader();
-
                         $.ajax({
                             url: next_page,
                             timeout: 6000,
@@ -83,7 +87,7 @@ $(document).foundation();
 
                                 if (html) {
                                     var content = $(html),
-                                        posts = content.find(".article-post"),
+                                        posts = content.find(".article-post").addClass('cover'),
                                         pagination = content.find("#pagination"),
                                         endless = content.find(".endless");
 
@@ -97,7 +101,6 @@ $(document).foundation();
 
                                     //Callback when create new article
                                     featured_image();
-                                    hide_loader();
 
                                     $("#mainbody").append(endless);
                                     $("#mainbody").append(pagination);

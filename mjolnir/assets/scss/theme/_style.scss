@@ -393,6 +393,10 @@ ul.off-canvas-list li label {
 }
 .author-details {
 	position:relative;
+
+	&.fixto-fixed {
+		margin-top:20px;
+	}
 }
 .author {
 	color: tint($primary_color, 40%);

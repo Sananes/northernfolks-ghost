@@ -9,9 +9,7 @@ $(document).foundation();
 //  #Responsive Videos
 //  ==================================================
 
-    if($('body').hasClass('home-template')) {
-        show_loader();
-    }
+
 
 
 
@@ -23,28 +21,42 @@ $(document).foundation();
           'disqus_shortname': 'vikingtheme',  // Disqus name
           'analytics_id' : "",                // Google Analytics Id
           'analytics_url': "",                // Google Analytics URL
-          'backgroundCheck': true             // Background Check
+          'backgroundCheck': true,             // Background Check
+          'loading': true
         }
 
+
+        if($('body').hasClass('home-template')) {
+            show_loader();
+        }
         $(".at_block").fitVids();
 
 
-
-        function show_loader () {
-            var loader = $('#loader');
-            var windowHeight = $(window).height();
-
-            if(loader) {
-                $(loader).addClass('visible').removeClass('hidden').css('height', windowHeight);
+            function show_loader () {
+                var loader = $('#loader');
+                var windowHeight = $(window).height();
+                if(config.loading == true) {
+                    if(loader) {
+                        $(loader).addClass('visible').removeClass('hidden').css('height', windowHeight);
+                    }
+                } else {
+                    loader.remove();
+                    return false;
+                }
             }
-        }
-        function hide_loader() {
-            var loader = $('#loader');
 
-            if(loader) {
-                $(loader).addClass('hidden').removeClass('visible');
+            function hide_loader() {
+                var loader = $('#loader');
+                if(config.loading == true) {
+                    if(loader) {
+                        $(loader).addClass('hidden').removeClass('visible');
+                    }
+                } else {
+                    loader.remove();
+                    return false;
+                }
             }
-        }
+
 //  #Infiniate Scrolling
 //  ==================================================
 
@@ -247,7 +259,7 @@ jQuery(document).ready(function($) {
             $(this).attr('src',$(this).attr('data-gravatar'));
         });
         if($('body').hasClass('post-template')) {
-            $(".post-template article.post, .author-details .inner").stick_in_parent();
+            $(".author-details").fixTo('#mainbody');
         }
     }
 

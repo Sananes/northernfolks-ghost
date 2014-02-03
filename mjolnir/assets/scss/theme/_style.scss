@@ -43,8 +43,9 @@ a {
 .article-post {
 		position:relative;
 		color: #fff;
-		max-height: 310px;
+		// max-height: 310px;
 		background-color: darken($primary_color, 5%);
+		text-align:center;
 		&:hover {
 			&.cover:before {
 				opacity:0;
@@ -233,9 +234,9 @@ ul.off-canvas-list li label {
 	background-position:center  center;
 	background-color: #8a8a9b;
 	//max-height: 310px;
-	padding: 80px 0 50px 0;
+	padding: 80px 0;
 	.headline {
-		text-align:left;
+		text-align:center;
 	}
 }
 .showcase_overlay {

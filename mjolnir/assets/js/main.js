@@ -13,7 +13,6 @@ $(document).foundation();
     };
 
 
-
 (function ($) {
     "use strict";
 
@@ -27,7 +26,9 @@ $(document).foundation();
         if($('body').hasClass('home-template')) {
             show_loader();
             $('.article-post').addClass('cover');
+
         }
+
         $(".at_block").fitVids();
 
 
@@ -195,8 +196,7 @@ $(document).foundation();
 //  ==================================================
 
         if($('body').hasClass('post-template')) {
-
-            //$(".post-template article.post, .author-details .inner").stick_in_parent();
+            hljs.initHighlightingOnLoad();
 
             var disqus_shortname = config.disqus_shortname;
 

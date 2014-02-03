@@ -1088,8 +1088,8 @@ $body-font-family: $serif;
 // $header-font-style: normal;
 // $header-font-color: #222;
 // $header-line-height: 1.4;
-// $header-top-margin: .2rem;
-// $header-bottom-margin: .5rem;
+$header-top-margin: rem-calc(30);
+$header-bottom-margin: rem-calc(30);
 // $header-text-rendering: optimizeLegibility;
 
 // We use these to control header font sizes
@@ -1117,6 +1117,7 @@ $body-font-family: $serif;
 // $paragraph-font-size: 1rem;
 //$paragraph-line-height: 2;
 $paragraph-margin-bottom: rem-calc(30);
+$paragraph-margin-top: rem-calc(30);
 // $paragraph-aside-font-size: rem-calc(14);
 // $paragraph-aside-line-height: 1.35;
 // $paragraph-aside-font-style: italic;
@@ -1136,7 +1137,7 @@ $paragraph-margin-bottom: rem-calc(30);
 // $hr-border-width: 1px;
 // $hr-border-style: solid;
 // $hr-border-color: #ddd;
-// $hr-margin: rem-calc(20);
+$hr-margin: rem-calc(0);
 
 // We use these to style lists
 // $list-style-position: outside;

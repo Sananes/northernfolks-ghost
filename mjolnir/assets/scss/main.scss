@@ -26,7 +26,8 @@ $serif:             "Merriweather", Cambria, "Helvetica Neue", Times New Roman, 
 //*-----------------------------------------
 //* Theme Styling
 //*-----------------------------------------
-@import "theme/prism";
+// @import "theme/prism";
+@import "theme/highlight";
 @import "theme/style";
 @import "theme/loader";
 
@@ -35,7 +36,7 @@ $serif:             "Merriweather", Cambria, "Helvetica Neue", Times New Roman, 
 //*-----------------------------------------
 
 body {
-  
+
 }
 
 #at_navigation .at_menu_item,

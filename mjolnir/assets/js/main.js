@@ -1,3 +1,12 @@
+/*************************
+Site Name:  Mjolnir
+Company:    NorthernFolks
+Author:     Aaron Sananes & Daniel Sandvik
+Website:    http://www.northernfolks.com
+
+**************************/
+
+
 $(document).foundation();
 
 //  #Configuration
@@ -6,8 +15,8 @@ $(document).foundation();
     var config = {
       'infinite_scrolling': true,         // Infinite Scrolling (Enable or Disable)
       'disqus_shortname': 'vikingtheme',  // Disqus name
-      'analytics_id' : "",                // Google Analytics Id
-      'analytics_url': "",                // Google Analytics URL
+      'analytics_id' : '',                // Google Analytics Id
+      'analytics_url': '',                // Google Analytics URL
       'backgroundCheck': true,             // Background Check
       'loading': true
     };
@@ -26,7 +35,6 @@ $(document).foundation();
         if($('body').hasClass('home-template')) {
             show_loader();
             $('.article-post').addClass('cover');
-
         }
 
         $(".at_block").fitVids();

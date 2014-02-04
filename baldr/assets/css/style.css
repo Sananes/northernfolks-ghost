@@ -1234,24 +1234,34 @@ POSTS & CONTENT STYLES
 .post-template .author {
   display: block !important; }
 
-.featured {
+.featured .entry-content:before {
+  width: 34px;
+  height: 57px;
+  top: 0px;
+  right: 10px;
+  z-index: 9999;
+  position: absolute;
+  background: url(../images/featured.svg) no-repeat;
+  background-size: cover; }
+
+.featured-image {
   border-radius: 3px;
   overflow: hidden;
   max-height: 200px;
   margin-bottom: 15px;
   position: relative; }
-  .featured .author-img {
+  .featured-image .author-img {
     display: none; }
-  .featured.video {
+  .featured-image.video {
     max-height: none !important; }
-    .featured.video .comments {
+    .featured-image.video .comments {
       display: none; }
-  .featured .comments {
+  .featured-image .comments {
     position: absolute;
     bottom: 10px;
     left: 20px;
     color: white; }
-    .featured .comments:hover {
+    .featured-image .comments:hover {
       color: white; }
 
 .entry-content p, .entry-content ul, .entry-content ol {
@@ -1346,37 +1356,35 @@ hr {
     color: #3f484b; }
 
 /* Article entry content */
-.entry-content {
-  margin-top: -8px; }
-  .entry-content p {
-    margin: 0 0 1.618em 0; }
-  .entry-content ul, .entry-content ol, .entry-content table, .entry-content dl {
-    list-style: disc;
-    vertical-align: baseline; }
-  .entry-content ul, .entry-content ol {
-    margin: 0 0 1.618em 1.618em; }
-  .entry-content blockquote {
-    border-left: 8px solid #8aba56;
-    padding-left: 20px;
-    margin-left: 0;
-    font-style: italic;
-    font-weight: bold; }
-  .entry-content dd {
-    margin-left: 0;
-    font-size: 0.9em;
-    color: #787878;
-    margin-bottom: 1.5em; }
-  .entry-content img {
-    margin: 0 0 1.5em 0;
-    max-width: 100%;
-    height: auto; }
-  .entry-content video, .entry-content object {
-    max-width: 100%;
-    height: auto; }
-  .entry-content pre {
-    background: #eee;
-    border: 1px solid #cecece;
-    padding: 10px; }
+.entry-content p {
+  margin: 0 0 1.618em 0; }
+.entry-content ul, .entry-content ol, .entry-content table, .entry-content dl {
+  list-style: disc;
+  vertical-align: baseline; }
+.entry-content ul, .entry-content ol {
+  margin: 0 0 1.618em 1.618em; }
+.entry-content blockquote {
+  border-left: 8px solid #8aba56;
+  padding-left: 20px;
+  margin-left: 0;
+  font-style: italic;
+  font-weight: bold; }
+.entry-content dd {
+  margin-left: 0;
+  font-size: 0.9em;
+  color: #787878;
+  margin-bottom: 1.5em; }
+.entry-content img {
+  margin: 0 0 1.5em 0;
+  max-width: 100%;
+  height: auto; }
+.entry-content video, .entry-content object {
+  max-width: 100%;
+  height: auto; }
+.entry-content pre {
+  background: #eee;
+  border: 1px solid #cecece;
+  padding: 10px; }
 
 /* end .entry-content */
 .img-caption {

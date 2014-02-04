@@ -63,7 +63,7 @@ function prev_next_scrolling() {
 
     function featured_image() {
         var post_links = $(".post-title a"),
-            featured_html = $(".featured"),
+            featured_html = $(".featured-image"),
             featured_link = featured_html.find('a.featured-image-link'),
             post_list_links = [];
 

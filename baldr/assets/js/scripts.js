@@ -10,6 +10,7 @@
 
  */
 
+
 (function ($) {
     "use strict";
 
@@ -112,11 +113,10 @@ function prev_next_scrolling() {
                         if (img.length > 0) {
                             $(featured).find('a.featured-image-link').append(img[0]);
                         } else if (video.length > 0) {
-                            $(featured).find('.featured-image-link').remove();
                             $(featured).append(video[0].outerHTML).addClass('video');
                         }
                     }
-                    //$(".post").fitVids();
+                    $(".post").fitVids();
                 });
             });
         }
@@ -161,7 +161,7 @@ function prev_next_scrolling() {
 
 
     function enable_continuous_scrolling() {
-        var enable_scrolling = false;
+        var enable_scrolling = true;
             if (enable_scrolling == true) {
                 return true;
             } else {

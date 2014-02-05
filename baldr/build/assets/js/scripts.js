@@ -10,6 +10,7 @@
 
  */
 
+
 (function ($) {
     "use strict";
 
@@ -28,7 +29,7 @@
     }
     function count_articles() {
         return $('article').length - 1;
-    } 
+    }
 function prev_next_scrolling() {
         var articles = $("article");
 
@@ -56,14 +57,14 @@ function prev_next_scrolling() {
             // if(index == count_articles()) {
             //      $('.next-btn', article).remove();
             //  }
-   
+
         });
     }
     prev_next_scrolling();
 
     function featured_image() {
         var post_links = $(".post-title a"),
-            featured_html = $(".featured"),
+            featured_html = $(".featured-image"),
             featured_link = featured_html.find('a.featured-image-link'),
             post_list_links = [];
 
@@ -72,9 +73,9 @@ function prev_next_scrolling() {
 //            if ( Modernizr.localstorage ) {
 //                localStorage.clear();
 //            }
-            
+
             post_links.each(function (index) {
-                //Process script                 
+                //Process script
                 post_list_links.push(post_links[index].href);
                 /* -- Next and Prev Post -- */
                 if ( Modernizr.localstorage ) {
@@ -112,11 +113,10 @@ function prev_next_scrolling() {
                         if (img.length > 0) {
                             $(featured).find('a.featured-image-link').append(img[0]);
                         } else if (video.length > 0) {
-                            $(featured).find('.featured-image-link').remove();
                             $(featured).append(video[0].outerHTML).addClass('video');
                         }
                     }
-                    //$(".post").fitVids();
+                    $(".post").fitVids();
                 });
             });
         }
@@ -159,53 +159,53 @@ function prev_next_scrolling() {
         }
     }
 
-  
+
     function enable_continuous_scrolling() {
-        var enable_scrolling = true;
+        var enable_scrolling = false;
             if (enable_scrolling == true) {
                 return true;
             } else {
                 return false;
             }
         };
-        
+
 
     $(document).ready(function () {
-        
+
         /* -- Detect IE -- */
         var browser = detect_browser(),
             logo_text = $("#flash").text() + " " + $("#light").text(),
             is_many_page = $(".pagination a.older-posts").length,
             is_infinite = enable_continuous_scrolling(),
             rel_links = prev_next();
-        
+
         /* -- Fallback text logo for IE -- */
         if (browser.msie == true) {
             $("#box").html(logo_text);
         }
-        
-        /* -- Hide pagination for infinite scrolling  -- */        
+
+        /* -- Hide pagination for infinite scrolling  -- */
         if (is_infinite || is_many_page == 0)
         {
             $(".pagination").css("display", "none" );
         } else {
             $(".pagination").css("display", "block");
         }
-        
 
-        
+
+
         /* -- Code Highlight -- */
         $("pre").addClass("prettyprint");
 
-       
-//        
+
+//
 //        if (Modernizr.localstorage)
 //        {
 //            $(".pagination").css("display", "none");
 //        } else {
 //            //Using jQuery Cookie
 //        }
-//        
+//
         $(window).scroll(function () {
             /* -- Scroll to Top -- */
             if ($(this).scrollTop() > 100) {
@@ -214,7 +214,7 @@ function prev_next_scrolling() {
             } else {
                 $(".scrollup").fadeOut();
             }
-            
+
             if (enable_continuous_scrolling()) {
                 /* -- Endless Scrolling -- */
                 var next_page = $(".pagination a.older-posts");
@@ -231,10 +231,10 @@ function prev_next_scrolling() {
                                         posts_title = content.find("article.post .post-title a").text(),
                                         pagination = content.find(".pagination"),
                                         endless = content.find(".endless");
-                                    
-                               
+
+
                                     $(".pagination").remove();
-                                
+
                                     $(".endless").remove();
                                     posts.each(function (index) {
                                         var post = $(posts[index]);
@@ -245,7 +245,7 @@ function prev_next_scrolling() {
                                         $("#nav .articles ul").append('<li><a href="' + href + '">' + titles + '<span class="date">' + date + '</span></a></li><hr class="divider" />');
                                     });
 
-    
+
                                     //Callback when create new article
                                     featured_image();
                                     prev_next_scrolling();
@@ -261,7 +261,7 @@ function prev_next_scrolling() {
                             $(".no-more").removeClass("animate wobble");
                             $(".no-more").addClass("animate wobble");
                         }
-        
+
                     }
                 } else {
                     $(".pagination").css("display", "block");
@@ -273,7 +273,7 @@ function prev_next_scrolling() {
         });
 
         featured_image();
-                    
+
         if (rel_links != null && Modernizr.localstorage && rel_links != false) {
             $(document).keydown(function (event) {
                 if (event.which == 37 && rel_links.prev != "none") {
@@ -352,12 +352,12 @@ jQuery(document).ready(function($) {
     // Sidebar sticky resize correctly
 
    var new_width = $('#sidebar').width();
-    $('.hentry .post-info').width(new_width); 
-    
+    $('.hentry .post-info').width(new_width);
+
 
     $(window).resize( function() {
       var new_width = $('#sidebar').width();
-        $('.hentry .post-info').width(new_width);       
+        $('.hentry .post-info').width(new_width);
     });
 
 
@@ -381,7 +381,7 @@ jQuery(document).ready(function($) {
                 body.addClass('closing');
                 overlay.hide();
             })
-        }    
+        }
 
         // Menu icon toggle
         menuIcon.on('click', function(e) {
@@ -395,7 +395,7 @@ jQuery(document).ready(function($) {
         close.on('click', function(e) {
             body.removeClass('show');
             body.addClass('closing');
-    
+
 
 
         });
@@ -412,17 +412,17 @@ jQuery(document).ready(function($) {
             $(this).addClass('sticky');
             $('body').find('#content').removeClass('animate');
          } else {
-             $(this).removeClass('sticky');           
+             $(this).removeClass('sticky');
          }
     });
     $('.article-footer').waypoint(function(direction) {
         if(direction == "up") {
-            $('.post-template .post-info').addClass('sticky'); 
+            $('.post-template .post-info').addClass('sticky');
         } else {
-            $('.post-template .post-info').removeClass('sticky'); 
+            $('.post-template .post-info').removeClass('sticky');
         }
     }, { offset: '40%' });
-    
+
 
 
 
@@ -436,7 +436,7 @@ jQuery(document).ready(function($) {
 
 
 }); /* end of as page load scripts */
-    
+
 
 /*! A fix for the iOS orientationchange zoom bug.
  Script by @scottjehl, rebound by @wilto.

@@ -107,9 +107,9 @@ a {
     display:inline-block;
     span {
         @include retina-image('../images/loading-icon', png, 100%, 100%);
-        @include size(24px, 24px); 
+        @include size(24px, 24px);
         vertical-align:middle;
-        text-indent:-999em;     
+        text-indent:-999em;
         display:inline-block;
         opacity:1;
     }
@@ -120,9 +120,9 @@ a {
 #container {
         // @include transform(translate3d(0px,0,0));
     -webkit-transition: -webkit-transform .6s ease;
-      -os-transition: -os-transform .6s ease;  
-           -ms-transition: -ms-transform .6s ease;  
-                transition: transform .6s ease; 
+      -os-transition: -os-transform .6s ease;
+           -ms-transition: -ms-transform .6s ease;
+                transition: transform .6s ease;
     background: #fff;
 
     //left:60px;
@@ -142,7 +142,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
 	*/
-    
+
 	/* removing text decoration from all headline links */
 	a {
     	text-decoration: none;
@@ -244,7 +244,7 @@ HEADER STYLES
     .menu-toggle {
         display:block;
         opacity:0.8;
-        
+
         a {
             background:#ddd;
             width:90%;
@@ -282,7 +282,7 @@ HEADER STYLES
             font-size:22px;
             padding:8px 10px 5px 8px;
             text-decoration:none;
-            
+
             &:hover {
                 opacity: 1;
             }
@@ -302,7 +302,7 @@ HEADER STYLES
     line-height: $header-height;
     position:relative;
     z-index:999;
-    
+
     a {
         color: $white;
         text-transform:uppercase;
@@ -341,7 +341,7 @@ NAVIGATION STYLES
             opacity:1;
             visibility:visible;
             @include transition(opacity 300ms ease-in-out 200ms);
-        } 
+        }
     }
     .post-info.sticky {
         margin-left:-1px;
@@ -368,7 +368,7 @@ NAVIGATION STYLES
       //  @include transition(margin-left 300ms ease);
     }
     .post-info.sticky {
-        @include transition(margin-left 300ms ease );        
+        @include transition(margin-left 300ms ease );
     }
 }
 .closing {
@@ -384,10 +384,10 @@ NAVIGATION STYLES
     cursor:pointer;
     @include transform(translate3d(0px,0,0));
     -webkit-transition: -webkit-transform .6s ease;
-      -os-transition: -os-transform .6s ease;  
-           -ms-transition: -ms-transform .6s ease;  
-                transition: transform .6s ease; 
-     @include transition(width .6s ease);     
+      -os-transition: -os-transform .6s ease;
+           -ms-transition: -ms-transform .6s ease;
+                transition: transform .6s ease;
+     @include transition(width .6s ease);
     top:0;
     background: $primary url(../images/header-image.jpg) no-repeat;
     //background-size:cover;
@@ -399,7 +399,7 @@ NAVIGATION STYLES
     .articles, .close, .author, .social-icons {
         opacity:0;
         visibility:hidden;
-    } 
+    }
     a {
         text-decoration:none;
         color: #fff;
@@ -676,6 +676,18 @@ POSTS & CONTENT STYLES
 
 }
 .featured {
+    .entry-content:before {
+        width:34px;
+        height:57px;
+        top:0px;
+        right:10px;
+        z-index:9999;
+        position:absolute;
+        background: url(../images/featured.svg) no-repeat;
+        background-size:cover;
+    }
+}
+.featured-image {
     border-radius:3px;
     overflow:hidden;
     max-height:200px;
@@ -716,7 +728,7 @@ POSTS & CONTENT STYLES
         &:hover {
             color: darken($primary, 20%);
         }
-    }    
+    }
 }
 
 
@@ -842,9 +854,16 @@ hr {
 }
 /* Article entry content */
 .entry-content {
-    margin-top:-8px;
+    position:relative;
+    //margin-top:-8px;
     //padding-left: 20px;
-
+    .content {
+        h1, h2, h3, h4, h5 {
+            &:first-child {
+                margin-top:0px;
+            }
+        }
+    }
     p { margin: 0 0 1.618em 0; }
 
     ul, ol, table, dl {
@@ -1028,12 +1047,12 @@ FOOTER STYLES
         text-decoration:none;
         display:block;
         text-indent: -999em;
-        float:right; 
+        float:right;
         opacity:0.5;
 
         &:hover {
             opacity: 1;
         }
     }
-    
+
 }

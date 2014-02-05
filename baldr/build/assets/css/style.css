@@ -1234,24 +1234,34 @@ POSTS & CONTENT STYLES
 .post-template .author {
   display: block !important; }
 
-.featured {
+.featured .entry-content:before {
+  width: 34px;
+  height: 57px;
+  top: 0px;
+  right: 10px;
+  z-index: 9999;
+  position: absolute;
+  background: url(../images/featured.svg) no-repeat;
+  background-size: cover; }
+
+.featured-image {
   border-radius: 3px;
   overflow: hidden;
   max-height: 200px;
   margin-bottom: 15px;
   position: relative; }
-  .featured .author-img {
+  .featured-image .author-img {
     display: none; }
-  .featured.video {
+  .featured-image.video {
     max-height: none !important; }
-    .featured.video .comments {
+    .featured-image.video .comments {
       display: none; }
-  .featured .comments {
+  .featured-image .comments {
     position: absolute;
     bottom: 10px;
     left: 20px;
     color: white; }
-    .featured .comments:hover {
+    .featured-image .comments:hover {
       color: white; }
 
 .entry-content p, .entry-content ul, .entry-content ol {
@@ -1347,7 +1357,9 @@ hr {
 
 /* Article entry content */
 .entry-content {
-  margin-top: -8px; }
+  position: relative; }
+  .entry-content .content h1:first-child, .entry-content .content h2:first-child, .entry-content .content h3:first-child, .entry-content .content h4:first-child, .entry-content .content h5:first-child {
+    margin-top: 0px; }
   .entry-content p {
     margin: 0 0 1.618em 0; }
   .entry-content ul, .entry-content ol, .entry-content table, .entry-content dl {

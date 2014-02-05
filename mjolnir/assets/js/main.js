@@ -26,18 +26,21 @@ $(document).foundation();
     "use strict";
 
 
+    var template = $('body');
+
 
 
 
 //  #Loader
 //  ==================================================
 
-        if($('body').hasClass('home-template')) {
+        if(template.hasClass('home-template')) {
             show_loader();
             $('.article-post').addClass('cover');
         }
 
-        $(".at_block").fitVids();
+
+        $(".post-template .post_content").fitVids();
 
 
             function show_loader () {
@@ -67,7 +70,7 @@ $(document).foundation();
 
 
     $(window).load( function() {
-      if($('body').hasClass('home-template')) {
+      if(template.hasClass('home-template')) {
         hide_loader();
       }
     });
@@ -105,7 +108,7 @@ $(document).foundation();
 
                                     $(".endless").remove();
                                     posts.each(function (index) {
-                                        $(posts[index]).appendTo("#mainbody").addClass('animate fadeIn');
+                                        $(posts[index]).appendTo("#mainbody").addClass('animated fadeIn');
                                     });
 
                                     //Callback when create new article
@@ -186,8 +189,9 @@ $(document).foundation();
 
         function post_featured_image() {
           var post = $('.post-template article'),
-              img = post.find('img[alt="featureimage"]').remove(),
+              img = post.find('img[alt="featureimage"]'),
                get_image = img.attr('src');
+
 
           $('.blog_cover').attr('data-original', img).css('background-image', 'url(' + get_image + ')');
         }
@@ -203,8 +207,9 @@ $(document).foundation();
 //  #Post page Scripts
 //  ==================================================
 
-        if($('body').hasClass('post-template')) {
+        if(template.hasClass('post-template') && !template.hasClass('page')) {
             hljs.initHighlightingOnLoad();
+
 
             var disqus_shortname = config.disqus_shortname;
 
@@ -215,24 +220,33 @@ $(document).foundation();
             })();
         }
 
+        if(template.hasClass('post-template')) {
+            template.addClass('animated fadeIn');
+        }
+
+//  #Back to top
+//  ==================================================
+
         $('.back-to-top').click(function () {
           $("html, body").animate({
               scrollTop: 0
           }, 600);
           return false;
         });
-        // Background check on
-        // Specific images
 
 
-    // });
+//  #Page template scripts
+//  ==================================================
 
+        if(template.hasClass('page')) {
+            var featureimage = template.find('.post_content img[alt="featureimage"]').parent();
+            if(featureimage) {
+                featureimage.remove();
+             }
+        }
 
 //  #Loading Scripts
 //  ==================================================
-
-
-
 
 
 // as the page loads, call these scripts
@@ -265,7 +279,7 @@ jQuery(document).ready(function($) {
         $('.comment img[data-gravatar]').each(function(){
             $(this).attr('src',$(this).attr('data-gravatar'));
         });
-        if($('body').hasClass('post-template')) {
+        if(template.hasClass('post-template')) {
             $(".author-details").fixTo('#mainbody');
         }
     }

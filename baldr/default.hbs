@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- 
+<!--
     Theme Name:  Heimdallr
     Copyright:   NorthernFolks, Copyright 2013, NorhernFolks, http://www.northernfolks.com
     Authors:     Aaron Sananes & Daniel Sandvik
@@ -20,7 +20,7 @@
     <title>{{settings.title}}</title>
 
     <meta name="description" content="{{@blog.description}}">
-    
+
     <!-- mobile meta -->
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -45,7 +45,7 @@
     {{#if @blog.logo}}
     <meta name="twitter:image:src" content="{{@blog.logo}}">
     {{/if}}
-    
+
     <!-- Announce the rss feed -->
     <link rel="alternate" type="application/rss+xml" title="{{@blog.title}} » Feed" href="/rss">
     <link href="/images/favicon.png" rel="icon" type="image/png" />
@@ -56,14 +56,14 @@
 
 
     <!-- Include the main stylesheet-->
-    <link rel="stylesheet" id="linen-stylesheet-css" href="/assets/css/style.css" type="text/css" media="all">
-    <link rel="stylesheet" id="linen-stylesheet-css" href="/assets/css/animate.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/assets/css/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/assets/css/animate.css" type="text/css" media="all">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link href="/assets/css/switcher.css" rel="stylesheet">
 
     <!-- Include color scheme -->
-    <link rel="stylesheet" id="linen-stylesheet-css" href="/assets/css/default.css" type="text/css" media="all">
-    
+    <link rel="stylesheet" href="/assets/css/default.css" type="text/css" media="all">
+
     <!--[if lt IE 9]>
     <link rel='stylesheet' id='linen-ie-only-css'  href='/assets/css/ie.css' type='text/css' media='all' />
     <style>
@@ -87,25 +87,25 @@
                 <div class="demo-icon"><i class="fa fa-cog"></i></div>
                 <div class="form_holder">
                     <p>CHOOSE YOUR STYLE</p>
-                    
-                    <p>Please choose a style</p>     
+
+                    <p>Please choose a style</p>
 
                     <div class="predefined_styles">
-                        <a href="" rel="?default=true" class="styleswitch"><img src="/assets/images/switcher/green.jpg" alt=""></a>    
+                        <a href="" rel="?default=true" class="styleswitch"><img src="/assets/images/switcher/green.jpg" alt=""></a>
                         <a href="" rel="/assets/css/orange.css" class="styleswitch"><img src="/assets/images/switcher/orange.jpg" alt=""></a>
                         <a href="" rel="/assets/css/red.css" class="styleswitch"><img src="/assets/images/switcher/red.jpg" alt=""></a>
                         <a href="" rel="/assets/css/blue.css" class="styleswitch"><img src="/assets/images/switcher/blue.jpg" alt=""></a>
                         <a href="" rel="/assets/css/grey.css" class="styleswitch"><img src="/assets/images/switcher/grey.jpg" alt=""></a>
                         <a href="" rel="/assets/css/purple.css" class="styleswitch"><img src="/assets/images/switcher/purple.jpg" alt=""></a>
                     </div>
-                    <span><a rel="stylesheet" class="styleswitch reset-btn" href="?default=true">RESET STYLE</a></span>                 
+                    <span><a rel="stylesheet" class="styleswitch reset-btn" href="?default=true">RESET STYLE</a></span>
                 </div>
             </div>
     <!-- END Switcher -->
 
-        {{> sidenav }}  
+        {{> sidenav }}
     <div id="container">
-  
+
         {{! Output the content of the header partial template }}
         {{> header}}
 
@@ -120,7 +120,7 @@
                 </main> <!-- end #main -->
 
                 {{! The sidebar fills in the remaining four columns }}
-            
+
 
             </div> <!-- end #inner-content -->
 

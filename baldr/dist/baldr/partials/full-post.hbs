@@ -30,14 +30,14 @@
     </div>
 
     <section class="entry-content sevencol clearfix">
-        <div class="featured"><a class="featured-image-link" href="{{url}}"></a><a class="comments" href="{{url}}#disqus_thread" data-disqus-identifier="{{id}}">0 Comments</a></span></div>
+        <div class="featured-image"><a class="featured-image-link" href="{{url}}"></a><a class="comments" href="{{url}}#disqus_thread" data-disqus-identifier="{{id}}">0 Comments</a></span></div>
         <div class="content">{{content}}</div>
     </section> <!-- end article section -->
 
 
     <footer class="article-footer">
         <hr>
-  
+
         <div class="share-tags clearfix" style="padding: 8px 0;">
         {{#if tags}}
             <p class="tags" style="float:left;margin:0;">
@@ -55,7 +55,7 @@
                     {{/each}}
                 </span>
             </p>
- 
+
         {{/if}}
 
             <nav class="share" style="float:right;">
@@ -68,7 +68,7 @@
             </nav>
 
             </div>
-        
+
         <section  class="author clearfix">
             {{#if author.image}}
                 <div class="twocol first avatar">
@@ -82,8 +82,8 @@
                     {{#if author.bio}}<p>{{author.bio}}</p>{{/if}}
                 </div>
             {{/if}}
-        </section>  
-       
+        </section>
+
     </footer> <!-- end article footer -->
     <hr>
 </article>

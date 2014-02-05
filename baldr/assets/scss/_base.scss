@@ -688,7 +688,7 @@ POSTS & CONTENT STYLES
     }
 }
 .featured-image {
-    border-radius:3px;
+    border-radius:s3px;
     overflow:hidden;
     max-height:200px;
     margin-bottom:15px;
@@ -854,9 +854,16 @@ hr {
 }
 /* Article entry content */
 .entry-content {
+    position:relative;
     //margin-top:-8px;
     //padding-left: 20px;
-
+    .content {
+        h1, h2, h3, h4, h5 {
+            &:first-child {
+                margin-top:0px;
+            }
+        }
+    }
     p { margin: 0 0 1.618em 0; }
 
     ul, ol, table, dl {

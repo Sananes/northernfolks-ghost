@@ -198,7 +198,8 @@ a {
 }
 ul.off-canvas-list li label {
 	background: darken($primary_color, 20%);
-	color: #fff;
+	color: $off-canvas-label-color;
+	border-top:0px;
 }
 //*-----------------------------------------
 //* Showcase
@@ -271,6 +272,14 @@ ul.off-canvas-list li label {
 	}
 }
 
+//*-----------------------------------------
+//* Page
+//*-----------------------------------------
+.post-template.page {
+	.post_content {
+		padding-bottom:50px;
+	}
+}
 //*-----------------------------------------
 //* Post
 //*-----------------------------------------

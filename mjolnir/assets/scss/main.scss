@@ -33,6 +33,7 @@ $serif:             "Merriweather", Cambria, "Helvetica Neue", Times New Roman, 
 //* Theme Styling
 //*-----------------------------------------
 // @import "theme/prism";
+@import "theme/animate";
 @import "theme/highlight";
 @import "theme/style";
 @import "theme/loader";
@@ -45,14 +46,19 @@ body {
 
 }
 
-#at_navigation .at_menu_item,
-.off-canvas-list .at_menu_item {
+#navigation .menu_item,
+.off-canvas-list .menu_item {
+    border:0px;
   &:hover {
     background:none;
     color: #fff;
   }
 }
-
+.off-canvas-list .menu_item {
+    &:hover {
+        background: $primary_color;
+    }
+}
 .top-bar-section li:not(.has-form) a:not(.button) {
   padding: 0 13px;
 }

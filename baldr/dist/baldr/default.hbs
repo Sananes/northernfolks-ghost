@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- 
+<!--
     Theme Name:  Heimdallr
     Copyright:   NorthernFolks, Copyright 2013, NorhernFolks, http://www.northernfolks.com
     Authors:     Aaron Sananes & Daniel Sandvik
@@ -20,7 +20,7 @@
     <title>{{settings.title}}</title>
 
     <meta name="description" content="{{@blog.description}}">
-    
+
     <!-- mobile meta -->
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -45,7 +45,7 @@
     {{#if @blog.logo}}
     <meta name="twitter:image:src" content="{{@blog.logo}}">
     {{/if}}
-    
+
     <!-- Announce the rss feed -->
     <link rel="alternate" type="application/rss+xml" title="{{@blog.title}} » Feed" href="/rss">
     <link href="/images/favicon.png" rel="icon" type="image/png" />
@@ -56,12 +56,12 @@
 
 
     <!-- Include the main stylesheet-->
-    <link rel="stylesheet" id="linen-stylesheet-css" href="/assets/css/style.css" type="text/css" media="all">
-    <link rel="stylesheet" id="linen-stylesheet-css" href="/assets/css/animate.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/assets/css/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/assets/css/animate.css" type="text/css" media="all">
 
     <!-- Include color scheme -->
-    <link rel="stylesheet" id="linen-stylesheet-css" href="/assets/css/default.css" type="text/css" media="all">
-    
+    <link rel="stylesheet" href="/assets/css/default.css" type="text/css" media="all">
+
     <!--[if lt IE 9]>
     <link rel='stylesheet' id='linen-ie-only-css'  href='/assets/css/ie.css' type='text/css' media='all' />
     <style>
@@ -79,10 +79,9 @@
 
 <body class="{{body_class}}">
 
-
-        {{> sidenav }}  
+        {{> sidenav }}
     <div id="container">
-  
+
         {{! Output the content of the header partial template }}
         {{> header}}
 
@@ -97,7 +96,7 @@
                 </main> <!-- end #main -->
 
                 {{! The sidebar fills in the remaining four columns }}
-            
+
 
             </div> <!-- end #inner-content -->
 
@@ -116,6 +115,7 @@
 
     <!-- Custom Scripts -->
     <script type="text/javascript" src="/assets/js/libs/sticky.js"></script>
+    <script type="text/javascript" src="/assets/js/libs/fitvids.js"></script>
     <script type="text/javascript" src="/assets/js/libs/animation.js"></script>
     <script type="text/javascript" src="/assets/js/libs/jquery.waypoints.min.js"></script>
     <script type="text/javascript" src="/assets/js/scripts.js"></script>

@@ -288,10 +288,10 @@ jQuery(document).ready(function($) {
     }
 
 });
-var template = $('body');
-if(template.hasClass('post-template')) {
-    template.addClass('animated fadeIn');
-}
+// var template = $('body');
+// if(template.hasClass('post-template')) {
+//     template.addClass('animated fadeIn');
+// }
 
 }(jQuery));
 

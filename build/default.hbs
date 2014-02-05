@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{! JavaScript & CSS Files }}
+    <link rel="stylesheet" href="{{asset "css/main.css"}}" />
+<!--     <link rel="stylesheet" id="theme_stylesheet" href="{{asset "css/green.css"}}" /> -->
+    <link rel="stylesheet" href="{{asset "css/custom.css"}}" />
+
+    <script type="text/javascript" src="{{asset "vendor/modernizr/modernizr.js"}}"></script>
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+
+</head>
+<body class="{{body_class}}">
+    <div id="page_surround" class="off-canvas-wrap">
+        <div class="inner-wrap">
+            {{! Off-Canvas section }}
+            {{> off_canvas }}
+
+            {{! The main sections of Mjolnir theme }}
+            {{> header }}
+            {{{ body }}}
+            {{> footer }}
+
+            {{! Close the off-canvas menu when opened }}
+            <a class="exit-off-canvas"></a>
+        </div>
+    </div>
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+
+    {{! The main JavaScript file for Mjolnir }}
+    <!-- build:js /assets/js/main.js -->
+    <script type="text/javascript" src="{{asset "vendor/foundation/js/foundation.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/main.js"}}"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

@@ -220,9 +220,7 @@ $(document).foundation();
             })();
         }
 
-        if(template.hasClass('post-template')) {
-            template.addClass('animated fadeIn');
-        }
+
 
 //  #Back to top
 //  ==================================================
@@ -290,6 +288,10 @@ jQuery(document).ready(function($) {
     }
 
 });
+var template = $('body');
+if(template.hasClass('post-template')) {
+    template.addClass('animated fadeIn');
+}
 
 }(jQuery));
 

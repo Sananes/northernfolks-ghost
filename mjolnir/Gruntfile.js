@@ -2,7 +2,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     archive_name: grunt.option('name') || 'mjolnir',
-    
+
     sass: {
       options: {
         includePaths: ['assets/vendor/foundation/scss']
@@ -23,7 +23,7 @@ module.exports = function(grunt) {
               {expand: false, src: ['assets/vendor/**'], dest: 'build/'},
               {expand: false, src: ['assets/fonts/**'], dest: 'build/'},
               {expand: false, src: ['assets/images/**'], dest: 'build/'},
-              {expand: false, src: ['!assets/js/**'], dest: 'build/'},
+              {expand: false, src: ['assets/js/**'], dest: 'build/'},
               {expand: false, src: ['partials/**'], dest: 'build/'},
               {expand: false, src: ['assets/scss/**'], dest: 'build/'},
               {expand: false, src: ['*', '!.gitignore','!node_modules', '!.DS_Store'], dest: 'build/'},
@@ -54,7 +54,7 @@ module.exports = function(grunt) {
         files: [{
             expand: false,
             src: ['assets/js/*.js'],
-            dest: 'build/assets/js/main.js'
+            dest: 'build/assets/js/scripts.js'
         }]
       }
     },

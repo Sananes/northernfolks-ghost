@@ -18,7 +18,8 @@ $(document).foundation();
       'analytics_id' : '',                // Google Analytics Id
       'analytics_url': '',                // Google Analytics URL
       'backgroundCheck': true,             // Background Check
-      'loading': true
+      'loading': true,
+      'display_excerpt_homepage': false
     };
 
 
@@ -38,7 +39,14 @@ $(document).foundation();
             show_loader();
             $('.article-post').addClass('cover');
         }
+        var show_excerpt = function () {
+            if(config.display_excerpt_homepage === true) {
+                $('.article-post').find('.post_excerpt').show();
 
+            }
+        }
+
+        show_excerpt();
 
         $(".post-template .post_content").fitVids();
 
@@ -90,7 +98,7 @@ $(document).foundation();
                 if (next_page.length > 0) {
                     next_page = next_page.attr("href");
                     if ($(window).scrollTop() == ($(document).height() - $(window).height())) {
-                        $(".endless").show();
+                        $(".endless").hide();
 
                         $.ajax({
                             url: next_page,
@@ -112,9 +120,10 @@ $(document).foundation();
                                     });
 
                                     //Callback when create new article
+                                    show_excerpt();
                                     featured_image();
 
-                                    $("#mainbody").append(endless);
+
                                     $("#mainbody").append(pagination);
                                     $("#pagination").css("display", "none");
                                     $(".endless").hide(300);

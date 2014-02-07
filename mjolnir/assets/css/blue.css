@@ -5,7 +5,7 @@ Author:     Aaron Sananes & Daniel Sandvik
 Website:    http://www.northernfolks.com
 
 **************************
-  Green Color Scheme
+  Blue Color Scheme
 **************************/
 
 /*-----------------------------------------
@@ -15,37 +15,37 @@ Website:    http://www.northernfolks.com
 #header,
 #footer,
 .article-post{
-    background-color: #59796d !important;
+    background-color: #4c6e85 !important;
 }
 a {
-    color: #59796d;
+    color: #4c6e85;
 }
 a:hover {
-    color:#405f53;
+    color:#3b5b71;
 }
 
 /*-----------------------------------------
 * Off Canvas Menu
 *-----------------------------------------*/
 .left-off-canvas-menu {
-    background: #59796d !important;
+    background: #4c6e85 !important;
 }
 ul.off-canvas-list li label {
     color: #fff;
 }
 ul.off-canvas-list li label,
 .left-off-canvas-toggle {
-    background: #719587 !important;
+    background: #688aa1 !important;
 }
  .left-off-canvas-toggle {
-    color:#3b5b4f !important;
+    color:#fff !important;
  }
  #navigation .menu_item,
 .off-canvas-list .menu_item {
-    color: #cdfae9;
+    color: #c8e9ff;
 }
 .off-canvas-list .menu_item:hover {
-    background-color:#4b6a5e;
+    background-color:#426379;
 }
 /*-----------------------------------------
 * Blog, Loader, Article
@@ -53,20 +53,20 @@ ul.off-canvas-list li label,
  .blog_cover,
  #loader,
  .article-post.no-feature:before {
-    background-color: #719587 !important;
+    background-color: #5d8098 !important;
  }
 .readmore span {
-    border-bottom-color: #59796d;
+    border-bottom-color: #4c6e85;
 }
 .post_share a, blockquote, blockquote p {
-    color: #59796d !important;
-    border-color: #59796d !important;
+    color: #4c6e85 !important;
+    border-color: #4c6e85 !important;
 }
 .post_share a:hover {
     color:#fff !important;
 }
 .post_share a:hover {
-    background-color: #59796d;
+    background-color: #4c6e85;
 }
 
 /*-----------------------------------------
@@ -74,7 +74,7 @@ ul.off-canvas-list li label,
 *-----------------------------------------*/
 
 #footer a, #footer {
-    color: #cdfae9;
+    color: #c8e9ff;
 }
 #footer a:hover {
     color: #fff;

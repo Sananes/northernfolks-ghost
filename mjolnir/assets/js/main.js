@@ -13,8 +13,8 @@ $(document).foundation();
 //  ==================================================
 
     var config = {
-      'infinite_scrolling': true,        // Infinite Scrolling
-      'disqus_shortname': 'vikingtheme',  // Disqus Short Name
+      'infinite_scrolling': true,         // Infinite Scrolling
+      'disqus_shortname': 'shortname',    // Disqus Short Name
       'analytics_id' : 'UA-46397399-1',   // Google Analytics Id
       'analytics_url': 'yoursite.com',    // Google Analytics URL
       'loading': true,                    // Show loading
@@ -201,6 +201,9 @@ $(document).foundation();
               img = post.find('img[alt="featureimage"]'),
                get_image = img.attr('src');
 
+               if(post.find('p:contains(\"img[alt=\"featureimage\"]\")')) {
+                    img.parent('p').remove();
+                }
 
           $('.blog_cover').attr('data-original', img).css('background-image', 'url(' + get_image + ')');
         }

@@ -1,0 +1,83 @@
+/*************************
+Site Name:  Mjolnir
+Company:    NorthernFolks
+Author:     Aaron Sananes & Daniel Sandvik
+Website:    http://www.northernfolks.com
+
+**************************
+  Green Color Scheme
+**************************/
+
+/*-----------------------------------------
+* Theme Styling
+*-----------------------------------------*/
+
+#header,
+#footer,
+.article-post{
+    background-color: #59796d !important;
+}
+a {
+    color: #59796d;
+}
+a:hover {
+    color:#405f53;
+}
+
+/*-----------------------------------------
+* Off Canvas Menu
+*-----------------------------------------*/
+.left-off-canvas-menu {
+    background: #59796d !important;
+}
+ul.off-canvas-list li label {
+    color: #fff;
+}
+ul.off-canvas-list li label,
+.left-off-canvas-toggle,
+#pagination, .featured:after {
+    background-color: #719587 !important;
+}
+ .left-off-canvas-toggle {
+    color:#3b5b4f !important;
+ }
+ #navigation .menu_item,
+.off-canvas-list .menu_item,
+#pagination a {
+    color: #cdfae9;
+}
+.off-canvas-list .menu_item:hover {
+    background-color:#4b6a5e;
+}
+/*-----------------------------------------
+* Blog, Loader, Article
+*-----------------------------------------*/
+ .blog_cover,
+ #loader,
+ .article-post.no-feature:before {
+    background-color: #719587 !important;
+ }
+.readmore span {
+    border-bottom-color: #59796d;
+}
+.post_share a, blockquote, blockquote p {
+    color: #59796d !important;
+    border-color: #59796d !important;
+}
+.post_share a:hover {
+    color:#fff !important;
+}
+.post_share a:hover {
+    background-color: #59796d;
+}
+
+/*-----------------------------------------
+* Footer
+*-----------------------------------------*/
+
+#footer a, #footer {
+    color: #cdfae9;
+}
+#footer a:hover {
+    color: #fff;
+}

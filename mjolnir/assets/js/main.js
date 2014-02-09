@@ -13,7 +13,7 @@ $(document).foundation();
 //  ==================================================
 
     var config = {
-      'infinite_scrolling': false,         // Infinite Scrolling
+      'infinite_scrolling': true,        // Infinite Scrolling
       'disqus_shortname': 'vikingtheme',  // Disqus Short Name
       'analytics_id' : 'UA-46397399-1',   // Google Analytics Id
       'analytics_url': 'yoursite.com',    // Google Analytics URL
@@ -34,7 +34,7 @@ $(document).foundation();
 //  #Loader
 //  ==================================================
 
-        if(template.hasClass('home-template')) {
+        if(template.hasClass('home-template') || template.hasClass('archive-template')) {
             show_loader();
             $('.article-post').addClass('cover');
         }
@@ -77,7 +77,7 @@ $(document).foundation();
 
 
     $(window).load( function() {
-      if(template.hasClass('home-template')) {
+      if(template.hasClass('home-template') || template.hasClass('archive-template')) {
         hide_loader();
       }
     });

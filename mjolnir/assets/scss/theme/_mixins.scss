@@ -1,0 +1,4 @@
+@mixin svg-bg($name) {
+  background-image: url('/assets/images/#{$name}.png'); // IE8 & below
+  background-image: url('/assets/images/#{$name}.svg');
+}

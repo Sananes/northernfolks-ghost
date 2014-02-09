@@ -13,13 +13,12 @@ $(document).foundation();
 //  ==================================================
 
     var config = {
-      'infinite_scrolling': true,         // Infinite Scrolling (Enable or Disable)
-      'disqus_shortname': 'vikingtheme',  // Disqus name
-      'analytics_id' : '',                // Google Analytics Id
-      'analytics_url': '',                // Google Analytics URL
-      'backgroundCheck': true,             // Background Check
-      'loading': true,
-      'display_excerpt_homepage': false
+      'infinite_scrolling': false,         // Infinite Scrolling
+      'disqus_shortname': 'vikingtheme',  // Disqus Short Name
+      'analytics_id' : 'UA-46397399-1',   // Google Analytics Id
+      'analytics_url': 'yoursite.com',    // Google Analytics URL
+      'loading': true,                    // Show loading
+      'display_excerpt_homepage': false   // Display Excerpt Homepagee
     };
 
 
@@ -193,6 +192,7 @@ $(document).foundation();
         }
 
 
+
 //  #Featured Post Image
 //  ==================================================
 
@@ -301,6 +301,14 @@ jQuery(document).ready(function($) {
 // if(template.hasClass('post-template')) {
 //     template.addClass('animated fadeIn');
 // }
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', config.analytics_id, config.analytics_url);
+ga('send', 'pageview');
 
 }(jQuery));
 

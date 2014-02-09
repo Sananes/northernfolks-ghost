@@ -35,14 +35,16 @@ ul.off-canvas-list li label {
     color: #fff;
 }
 ul.off-canvas-list li label,
-.left-off-canvas-toggle {
+.left-off-canvas-toggle,
+#pagination {
     background: #663b46 !important;
 }
  .left-off-canvas-toggle {
     color:#fff !important;
  }
  #navigation .menu_item,
-.off-canvas-list .menu_item {
+.off-canvas-list .menu_item,
+#pagination a {
     color: #ffc8d6;
 }
 .off-canvas-list .menu_item:hover {
@@ -75,7 +77,7 @@ ul.off-canvas-list li label,
 *-----------------------------------------*/
 
 #footer a, #footer {
-    color: #cdfae9;
+    color: #ffc8d6;
 }
 #footer a:hover {
     color: #fff;

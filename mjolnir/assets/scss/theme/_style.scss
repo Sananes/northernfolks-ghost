@@ -258,7 +258,22 @@ ul.off-canvas-list li label {
 //*-----------------------------------------
 #pagination {
 //display:none;
+	background:lighten($primary_color, 20%);
 	font-weight: 300;
+	padding:20px 0;
+	text-align:center;
+
+	.mpagination {
+		.newer_posts {
+			margin-right:20px;
+		}
+	}
+	a {
+		color: lighten($primary_color, 50%);
+		&:hover {
+			color: #fff;
+		}
+	}
 }
 
 //*-----------------------------------------

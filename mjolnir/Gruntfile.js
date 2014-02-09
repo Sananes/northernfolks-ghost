@@ -23,7 +23,7 @@ module.exports = function(grunt) {
               {expand: false, src: ['assets/vendor/**'], dest: 'build/'},
               {expand: false, src: ['assets/fonts/**'], dest: 'build/'},
               {expand: false, src: ['assets/images/**'], dest: 'build/'},
-              {expand: false, src: ['assets/js/**'], dest: 'build/'},
+              {expand: false, src: ['!assets/js/**'], dest: 'build/'},
               {expand: false, src: ['partials/**'], dest: 'build/'},
               {expand: false, src: ['assets/scss/**'], dest: 'build/'},
               {expand: false, src: ['*', '!.gitignore','!node_modules', '!.DS_Store'], dest: 'build/'},
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
       min: {
         files: [{
             expand: false,
-            src: ['assets/js/*.js'],
+            src: ['assets/js/*.js', '!assets/js/fswit.js', '!assets/js/cookie.js', '!assets/js/bgcheck.js'],
             dest: 'build/assets/js/scripts.js'
         }]
       }

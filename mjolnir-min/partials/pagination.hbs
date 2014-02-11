@@ -1,0 +1,17 @@
+<div id="pagination">
+    <div class="row">
+
+        <div class="large-4 small-6 large-centered small-centered columns text-center {{#if prev}}mpagination{{/if}}">
+                {{#if prev}}
+                    <a class="pagination_item newer_posts" href="{{pageUrl prev}}"><span class="fa fa-arrow-circle-o-left"></span> <span>Previous</span></a>
+                {{/if}}
+
+                {{#if next}}
+                    <a class="pagination_item older_posts" href="{{pageUrl next}}"><span>Next</span> <span class="fa fa-arrow-circle-o-right"></span></a>
+                {{/if}}
+        </div>
+    </div>
+</div>
+<div class="endless" style="text-align: center; display: none;">
+    <a id="loading" href="#"><span class="animate spin infinite">Loading...</span></a>
+</div>

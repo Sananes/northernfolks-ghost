@@ -1,0 +1,23 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! Showcase block for static page }}
+{{> page_showcase }}
+
+<div id="mainbody" class="post" role="main">
+    <div class="row">
+        <div class="large-10 large-centered small-centered columns">
+            {{#post}}
+            <div class="block">
+                <article class="{{post_class}}">
+                    <div class="post_content">
+                        {{content}}
+                    </div>
+                </article>
+            </div>
+            {{/post}}
+        </div>
+    </div>
+</div>

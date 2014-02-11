@@ -13,6 +13,26 @@
     <meta name="MobileOptimized" content="320" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Social Cards -->
+    <meta property="og:site_name" content="{{meta_title}}">
+    <meta property="og:url" content="{{@blog.url}}" />
+    <meta property="og:title" content="Apollo" />
+    <meta property="og:description" content="{{@blog.description}}" />
+    {{#if @blog.logo}}
+    <meta property="og:image" content="{{@blog.logo}}" />
+    {{/if}}
+    <meta property="og:type" content="website">
+
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@sites_twitter_handle">
+    <meta name="twitter:creator" content="@authors_twitter_handle">
+    <meta name="twitter:title" content="{{meta_title}}">
+    <meta name="twitter:description" content="{{@blog.description}}">
+    {{#if @blog.logo}}
+    <meta name="twitter:image:src" content="{{@blog.logo}}">
+    {{/if}}
+
     {{! JavaScript & CSS Files }}
     <link rel="stylesheet" href="{{asset "css/main.css"}}" />
     <link rel="stylesheet" id="theme_stylesheet" href="{{asset "css/default.css"}}" />

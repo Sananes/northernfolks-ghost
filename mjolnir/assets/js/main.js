@@ -1,4 +1,25 @@
+/*************************
+Site Name:  Mjolnir
+Company:    NorthernFolks
+Author:     Aaron Sananes & Daniel Sandvik
+Website:    http://www.northernfolks.com
 
+**************************/
+
+
+$(document).foundation();
+
+//  #Configuration
+//  ==================================================
+
+    var config = {
+      'infinite_scrolling': true,         // Infinite Scrolling
+      'disqus_shortname': 'shortname',    // Disqus Short Name
+      'analytics_id' : 'UA-46397399-1',   // Google Analytics Id
+      'analytics_url': 'yoursite.com',    // Google Analytics URL
+      'loading': true,                    // Show loading
+      'display_excerpt_homepage': false   // Display Excerpt Homepagee
+    };
 
 
 (function ($) {
